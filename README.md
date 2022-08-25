@@ -1,3 +1,5 @@
+![RAGTIMER Logo](logo/logo_sm.png)
+
 # RAGTIMER
 Random Assume Guarantee Testing Induced Model Executions for Reachability (RAGTIMER)
 
