@@ -40,7 +40,7 @@ name    (tab-sep reactants)    >    (tab-sep products)    rate constant
 All reactions and chemicals must have unique names. Names must include
 no whitespace characters. Use the number `0` to indicate a null reactant or product (i.e. spontaneous production or consumption). Catalysts can be included as normal; their behavior is accounted for in the dependency graph builder.
 
-###IVy Models
+### IVy Models
 Two IVy Models are generated based off of the information in the input file. The first is written to the file 'test_v2.ivy' and testing of this model only produces one trace before intentionally using assertion failure to stop the tests. The second is written to the file 'test_v3.ivy' and can produce multiple traces. 
 
 Documentation for the IVy model generator is coming soon.
