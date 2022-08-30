@@ -576,7 +576,7 @@ ivyFile.write("\nisolate iso_proto = protocol with enabled_checker, updater, goa
 
 ivyFile.close()        #ivy model complete
 
-ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", "test_v2.ivy"])
+ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.firstIvyModel])
 ivy_to_cpp_command.wait()
 
 print("starting to run initial test")
@@ -1086,7 +1086,7 @@ ivyFile.write("\nisolate iso_proto = protocol with enabled_checker, updater, goa
 
 ivyFile.close()        #ivy model complete
 
-ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", "test_v3.ivy"])
+ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.secondIvyModel])
 ivy_to_cpp_command.wait()
 
 runswanted = input("How many traces do you want to the target specified? (Type an integer greater than 0): ") #Amount of traces desired is recorded
