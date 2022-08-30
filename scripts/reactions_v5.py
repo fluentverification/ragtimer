@@ -3,6 +3,13 @@ import math
 import os
 import depgraph
 
+class Options:
+    infile = "8reaction_input.txt"
+    firstIvyModel = "test_v2.ivy"
+    secondIvyModel = "test_v3.ivy"
+    traceList = "trace_list.txt"
+    reactionList = "reaction_list.txt"
+
 class Reaction:
     def __init__(self, priority, executions):
         self.reactants = []
@@ -27,51 +34,16 @@ class TargetReaction:
         self.reaction = reaction
         self.secondTargets = secondTargets
 
-#numOfReactions = int(input("Number of reactions: "))
-
 o = "{"
 c = "}"
 
-infile = "8reaction_input.txt"
-reactions1 = depgraph.makeDepGraph(infile)
+reactions1 = depgraph.makeDepGraph(Options.infile)
 
 reactions = []
 count = 0
 
 for obj in reactions1:
     count += 1
-    """
-    if len(obj.reactants) == 0:
-        reactant1 = ""
-        reactant1num = 0
-        reactant2 = ""
-        reactant2num = 0
-    elif len(obj.reactants) == 1:
-        reactant1 = obj.reactants[0]
-        reactant1num = 1
-        reactant2 = ""
-        reactant2num = 0
-    elif len(obj.reactants) == 2:
-        reactant1 = obj.reactants[0]
-        reactant1num = 1
-        reactant2 = obj.reactants[1]
-        reactant2num = 1
-    if len(obj.products) == 0:
-        product1 = ""
-        product1num = 0
-        product2 = ""
-        product2num = 0
-    elif len(obj.products) == 1:
-        product1 = obj.products[0]
-        product1num = 1
-        product2 = ""
-        product2num = 0
-    elif len(obj.products) == 2:
-        product1 = obj.products[0]
-        product1num = 1
-        product2 = obj.products[1]
-        product2num = 1
-        """
     reactantsTemp = obj.reactants
     productsTemp = obj.products
     reactNumTemp = []
@@ -88,46 +60,10 @@ for obj in reactions1:
 
 numOfReactions = count
 
-"""count = 0
-for obj in reactions: #Prints each of the reactions that have been recorded
-    count = count + 1
-    count2 = 0
-    for x in range(len(obj.reactants)):
-        count2 += 1
-        if count2 == 1:
-            print(obj.reactantsNum[count2-1], obj.reactants[count2-1])
-        else:
-            print("+", obj.reactantsNum[count2-1], obj.reactants[count2-1])
-        if count2 == len(obj.reactants):
-            print(" -> ")
-    if len(obj.reactants) == 0:
-        print(" NULL -> ")
-    count2 = 0
-    for x in range(len(obj.products)):
-        count2 += 1
-        if count2 == 1:
-            print(obj.productsNum[count2-1], obj.products[count2-1])
-        else:
-            print("+", obj.productsNum[count2-1], obj.products[count2-1])
-        if count2 == len(obj.products):
-            print("\n")
-    if len(obj.products) == 0:
-        print(" NULL \n\n")
-"""
-
-
 print("\n")
 spec = []
 
 for obj in reactions: #adds all the species recorded in the reactions to a list
-    """if (obj.reactant1 not in spec and obj.reactant1 != ""):
-        spec.append(obj.reactant1)
-    if (obj.reactant2 not in spec and obj.reactant2 != ""):
-        spec.append(obj.reactant2)
-    if (obj.product1 not in spec and obj.product1 != ""):
-        spec.append(obj.product1)
-    if (obj.product2 not in spec and obj.product2 != ""):
-        spec.append(obj.product2)"""
     count2 = 0
     for x in range(len(obj.reactants)):
         count2 += 1
@@ -148,7 +84,7 @@ chemicals = [] # Stores string names of chemicals
 initials = [] # Stores initial values of chemicals
 targets = [] # Stores target values of chemicals
 
-with open(infile, 'r') as inpt:
+with open(Options.infile, 'r') as inpt:
     # Read the line of chemical names
     line = inpt.readline().strip()
     if not line or line == "":
@@ -197,10 +133,6 @@ for obj in targets:
         targetSpecies = chemicals[count - 1]
         targetNum = obj
 
-
-#upOrDown = "5"
-
-#if upOrDown == "5":
 for obj in speciesList:
     if obj.name == targetSpecies:
         if obj.value > int(targetNum):
@@ -244,7 +176,7 @@ for obj in reactions: #each reactions priority is displayed
     count += 1
     print("reaction", str(count), ":", str(obj.priority))
 
-ivyFile = open("test_v2.ivy", "w") #an ivy model for the CRN is made to have assertion failure at first idling action
+ivyFile = open(Options.firstIvyModel, "w") #an ivy model for the CRN is made to have assertion failure at first idling action
 
 ivyFile.write(f"""#lang ivy 1.7
 
@@ -672,7 +604,7 @@ if first_iters >= 10000:
 print("The iters recorded for this initial example is", first_iters)
 
 ######
-ivyFile = open("test_v3.ivy", "w") #an ivy model for the CRN is made without assertion failure at first idling action
+ivyFile = open(Options.secondIvyModel, "w") #an ivy model for the CRN is made without assertion failure at first idling action
 
 ivyFile.write(f"""#lang ivy 1.7
 
@@ -736,7 +668,6 @@ for obj in reactions:
                 count2 += 1
                 if count2 == 1:
                     ivyFile.write(f"(reactant{count2}:updater.num")
-                    #print(len(obj.reactants))
                 else:
                     ivyFile.write(f",reactant{count2}:updater.num")
                 if count2 == len(obj.reactants):
@@ -1181,9 +1112,9 @@ iters = 0
 
 transitions = 0
 
-tracelist = open("trace_list.txt", "w") #The traces by themselves are recorded in 'trace_list.txt'
+tracelist = open(Options.traceList, "w") #The traces by themselves are recorded in 'trace_list.txt'
 
-transitionmap = open("reaction_list.txt", "w")  #The traces and additional information is stored in 'reactoin_list.txt'
+transitionmap = open(Options.reactionList, "w")  #The traces and additional information is stored in 'reactoin_list.txt'
 
 count3 = 0
 
@@ -1234,8 +1165,8 @@ with open("test_v3.txt", "r") as f:
             iters = 0
             transitions = 0
 
-print("\nThe traces recorded and the information on those traces are stored in 'reaction_list.txt'")
-print("\nThe traces by themselves are found in 'trace_list.txt'")
+print(f"\nThe traces recorded and the information on those traces are stored in '{Options.traceList}'")
+print(f"\nThe traces by themselves are found in '{Options.reactionList}'")
 transitionmap.close()
 
 tracelist.close()
