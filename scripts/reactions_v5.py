@@ -13,6 +13,7 @@ class Options:
     secondTestResult = "test_v3.txt"
     traceList = "trace_list.txt"
     reactionList = "reaction_list.txt"
+    desiredRuns = 50
 
 class Reaction:
     def __init__(self, priority, executions):
@@ -1093,7 +1094,9 @@ ivyFile.close()        #ivy model complete
 ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.secondIvyModel])
 ivy_to_cpp_command.wait()
 
-runswanted = input("How many traces do you want to the target specified? (Type an integer greater than 0): ") #Amount of traces desired is recorded
+# runswanted = input("How many traces do you want to the target specified? (Type an integer greater than 0): ") #Amount of traces desired is recorded
+runswanted = Options.desiredRuns #Amount of traces desired is recorded
+
 
 print("starting to run rest of tests")
 firsthalf = f"./{Options.secondIvyModelName} iters="
@@ -1101,7 +1104,7 @@ middle = str(first_iters*1.25)
 middle2 = " runs="
 secondhalf = ""
 # secondhalf = f" >{Options.secondTestResult}"
-firstpart = firsthalf + middle + middle2 + runswanted
+firstpart = firsthalf + middle + middle2 + str(runswanted)
 fullstring = firstpart + secondhalf
 print(fullstring)
 
@@ -1137,9 +1140,12 @@ count3 = 0
 
 # with open(Options.secondTestResult, "r") as f:
 count = 0
-while True:
+for line in cppout.split("\n"):
+    if len(line) < 16:
+        print(line)
+        continue
     count3 += 1
-    line = f.readline()
+    # line = f.readline()
     if not line:
         break
     if iters == 0:
@@ -1234,6 +1240,8 @@ with open(Options.reactionList, "r") as f:
                     Total[x] = Total[x] + int(line[14])
                     iterations[x].append(int(line[14]))
 
+print("Totaltranlist",Totaltranlist)
+print("Totaliterlist",Totaliterlist)
 print("\n\nAverage number of transitions in a trace is:", Totaltran/int(runswanted))
 print("\nThe biggest number of transitions recorded in a trace is:", max(Totaltranlist))
 print("\nThe smallest number of transitions recorded in a trace is:", min(Totaltranlist))

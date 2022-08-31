@@ -26,7 +26,7 @@ classes/%.class: src/%.java
 # Test execution
 
 test:
-	PRISM_DIR=$(PRISM_DIR) PRISM_MAINCLASS=simulate.BuildModel bin/run
+	PRISM_DIR=$(PRISM_DIR) PRISM_MAINCLASS=simulate.GetProbability bin/run
 # 	prism -importmodel buildModel.tra,sta,lab -exportmodel out.tra,sta,lab -ctmc pro.csl > final_prism_report.txt
 
 # Clean up
