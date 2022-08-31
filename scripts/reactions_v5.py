@@ -1099,11 +1099,20 @@ print("starting to run rest of tests")
 firsthalf = f"./{Options.secondIvyModelName} iters="
 middle = str(first_iters*1.25)
 middle2 = " runs="
-secondhalf = f" >{Options.secondTestResult}"
+secondhalf = ""
+# secondhalf = f" >{Options.secondTestResult}"
 firstpart = firsthalf + middle + middle2 + runswanted
 fullstring = firstpart + secondhalf
 print(fullstring)
-os.system(fullstring)
+
+
+# os.system(fullstring)
+cppout = subprocess.check_output(fullstring.split(" "), universal_newlines = True)
+
+#check output:
+with open("checkoutput.txt", "w") as co:
+    co.write(str(cppout))
+
 print("finished randomized testing")#More tests run with 1.25 times the amount of iters needed for the first test, for the specified number of traces wanted by the user
 
 reaction_exec_count = []
@@ -1126,61 +1135,61 @@ trace = []
 
 count3 = 0
 
-with open(Options.secondTestResult, "r") as f:
-    count = 0
-    while True:
-        count3 += 1
-        line = f.readline()
-        if not line:
-            break
-        if iters == 0:
-            transitionmap.write("Run ")
-            transitionmap.write(str(count+1))
-            transitionmap.write(":\n\n")
-            trace = []
-        if line[0] == ">":
-            if line[11:17] != "idling":
-                iters += 1
-                if iters == math.floor(first_iters * 1.25):
-                    print("Error!\tRun", count+1, "did not reach the target state\n")
-                if line[11:20] == "fail_test":
-                    print("Error occurred during randomized testing!")
-                    exit(1)
-        if line[0] == "<":
-            if line[2] == "i":
-                transitions += 1
-                transitionmap.write(line[24:26])
-                transitionmap.write("\t")
-                #tracelistfile.write(line[24:26])
-                #tracelistfile.write("\t")
-                trace.append(line[24:26])
-                reaction_exec_count[int(line[25])-1] += 1
-        if line[0] == "t":
-            if trace in tracelist:
-                print(f"***Run {count} was a duplicate and has been thrown out of {Options.traceList}")
-            else:
-                tracelist.append(trace)
-                for x in trace:
-                    tracelistfile.write(f"{x}\t")
-                tracelistfile.write("\n")
-            count += 1
-            transitionmap.write("\n\nRun ")
-            transitionmap.write(str(count))
-            transitionmap.write(" information\n\nIterations before idling was reached: ")
-            transitionmap.write(str(iters))
-            transitionmap.write("\nNumber of transitions: ")
-            transitionmap.write(str(transitions))
-            count2 = 0
-            for x in range(numOfReactions):
-                transitionmap.write("\nr")
-                transitionmap.write(str(x+1))
-                transitionmap.write("executions: ")
-                transitionmap.write(str(reaction_exec_count[x]))
-                reaction_exec_count[x] = 0
-            transitionmap.write("\n\n\n\n")
-            #tracelistfile.write("\n")
-            iters = 0
-            transitions = 0
+# with open(Options.secondTestResult, "r") as f:
+count = 0
+while True:
+    count3 += 1
+    line = f.readline()
+    if not line:
+        break
+    if iters == 0:
+        transitionmap.write("Run ")
+        transitionmap.write(str(count+1))
+        transitionmap.write(":\n\n")
+        trace = []
+    if line[0] == ">":
+        if line[11:17] != "idling":
+            iters += 1
+            if iters == math.floor(first_iters * 1.25):
+                print("Error!\tRun", count+1, "did not reach the target state\n")
+            if line[11:20] == "fail_test":
+                print("Error occurred during randomized testing!")
+                exit(1)
+    if line[0] == "<":
+        if line[2] == "i":
+            transitions += 1
+            transitionmap.write(line[24:26])
+            transitionmap.write("\t")
+            #tracelistfile.write(line[24:26])
+            #tracelistfile.write("\t")
+            trace.append(line[24:26])
+            reaction_exec_count[int(line[25])-1] += 1
+    if line[0] == "t":
+        if trace in tracelist:
+            print(f"***Run {count} was a duplicate and has been thrown out of {Options.traceList}")
+        else:
+            tracelist.append(trace)
+            for x in trace:
+                tracelistfile.write(f"{x}\t")
+            tracelistfile.write("\n")
+        count += 1
+        transitionmap.write("\n\nRun ")
+        transitionmap.write(str(count))
+        transitionmap.write(" information\n\nIterations before idling was reached: ")
+        transitionmap.write(str(iters))
+        transitionmap.write("\nNumber of transitions: ")
+        transitionmap.write(str(transitions))
+        count2 = 0
+        for x in range(numOfReactions):
+            transitionmap.write("\nr")
+            transitionmap.write(str(x+1))
+            transitionmap.write("executions: ")
+            transitionmap.write(str(reaction_exec_count[x]))
+            reaction_exec_count[x] = 0
+        transitionmap.write("\n\n\n\n")
+        #tracelistfile.write("\n")
+        iters = 0
+        transitions = 0
 
 print(f"\nThe traces recorded and the information on those traces are stored in '{Options.traceList}'")
 print(f"\nThe traces by themselves are found in '{Options.reactionList}'")
