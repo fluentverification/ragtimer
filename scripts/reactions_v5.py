@@ -1106,6 +1106,8 @@ print(fullstring)
 os.system(fullstring)
 print("finished randomized testing")#More tests run with 1.25 times the amount of iters needed for the first test, for the specified number of traces wanted by the user
 
+"""
+
 reaction_exec_count = []
 
 for x in range(numOfReactions):
@@ -1236,3 +1238,4 @@ for x in range(numOfReactions):
     print("\n\nAverage number of reaction", x+1, "executions in a trace is:", Total[x]/int(runswanted))
     print("\nThe biggest number of reaction", x+1, "executions recorded in a trace is:", max(iterations[x]))
     print("\nThe smallest number of reaction", x+1, "executions recorded in a trace is:", min(iterations[x]))
+"""
