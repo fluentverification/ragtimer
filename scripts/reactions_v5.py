@@ -6,7 +6,11 @@ import depgraph
 class Options:
     infile = "8reaction_input.txt"
     firstIvyModel = "test_v2.ivy"
+    firstIvyModelName = "test_v2"
+    firstTestResult = "test_v2.txt"
     secondIvyModel = "test_v3.ivy"
+    secondIvyModelName = "test_v3"
+    secondTestResult = "test_v3.txt"
     traceList = "trace_list.txt"
     reactionList = "reaction_list.txt"
 
@@ -179,7 +183,6 @@ for obj in reactions: #each reactions priority is displayed
 ivyFile = open(Options.firstIvyModel, "w") #an ivy model for the CRN is made to have assertion failure at first idling action
 
 ivyFile.write(f"""#lang ivy 1.7
-
 object updater = {o}
     type num
     interpret num -> bv[10]
@@ -196,7 +199,6 @@ object updater = {o}
         y := x - 1
     {c}
 {c}
-
 """)
 
 if upOrDown == "1":
@@ -218,7 +220,6 @@ object goal = {o}
         {c}
     {c}
 {c}
-
 """)
 
 ivyFile.write("object enabled_checker = {\n\n\t")
@@ -380,11 +381,11 @@ for obj in reactions:
         """)
         ivyFile.write(f"""if r{count}_stage = 0 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 2) + 1}
         {c}
         else if r{count}_stage = 1 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 3) + 1}
         {c}
         else if r{count}_stage = 2 {o}
             r{count}_count_rate := 5;
@@ -392,7 +393,7 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 3 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 2) + 1}
         {c}
         else if r{count}_stage = 4 {o}
             r{count}_count_rate := 4;
@@ -400,11 +401,11 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 5 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 3) + 1}
         {c}
         else if r{count}_stage = 6 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 2) + 1}
         {c}
         else if r{count}_stage = 7 {o}
             r{count}_count_rate := 4;
@@ -414,7 +415,6 @@ for obj in reactions:
             r{count}_stage := 0
         {c}
     {c}
-
     """)
 
 ivyFile.write("\n}\n")
@@ -580,12 +580,12 @@ ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "targe
 ivy_to_cpp_command.wait()
 
 print("starting to run initial test")
-os.system("./test_v2 seed=367 iters=10000 runs=1 >test_v2.txt")
+os.system(f"./{Options.firstIvyModelName} seed=367 iters=10000 runs=1 >{Options.firstTestResult}")
 print("finished initial test") #test is run and results are stored in test_v2.txt
 
 first_iters = 0
 
-with open("test_v2.txt", "r") as f: #The amount of iters needed to reach the goal in the first example is recorded
+with open(Options.firstTestResult, "r") as f: #The amount of iters needed to reach the goal in the first example is recorded
     count = 0
     while True:
         line = f.readline()
@@ -607,7 +607,6 @@ print("The iters recorded for this initial example is", first_iters)
 ivyFile = open(Options.secondIvyModel, "w") #an ivy model for the CRN is made without assertion failure at first idling action
 
 ivyFile.write(f"""#lang ivy 1.7
-
 object updater = {o}
     type num
     interpret num -> bv[10]
@@ -624,7 +623,6 @@ object updater = {o}
         y := x - 1
     {c}
 {c}
-
 """)
 
 if upOrDown == "1":
@@ -646,7 +644,6 @@ object goal = {o}
         {c}
     {c}
 {c}
-
 """)
 
 ivyFile.write("object enabled_checker = {\n\n\t")
@@ -841,7 +838,6 @@ for obj in reactions:
             r{count}_stage := 0
         {c}
     {c}
-
     """)
 
 ivyFile.write("\n}\n")
@@ -1092,15 +1088,14 @@ ivy_to_cpp_command.wait()
 runswanted = input("How many traces do you want to the target specified? (Type an integer greater than 0): ") #Amount of traces desired is recorded
 
 print("starting to run rest of tests")
-firsthalf = "./test_v3 iters="
+firsthalf = f"./{Options.secondIvyModelName} iters="
 middle = str(first_iters*1.25)
 middle2 = " runs="
-secondhalf = " >test_v3.txt"
+secondhalf = f" >{Options.secondTestResult}"
 firstpart = firsthalf + middle + middle2 + runswanted
 fullstring = firstpart + secondhalf
 print(fullstring)
 os.system(fullstring)
-results = subprocess.check_output([f"./{Options.secondIvyModelName}", f"iters={first_iters*1.25}", f"runs={runswanted}"],shell=True)
 print("finished randomized testing")#More tests run with 1.25 times the amount of iters needed for the first test, for the specified number of traces wanted by the user
 
 reaction_exec_count = []
@@ -1119,7 +1114,7 @@ transitionmap = open(Options.reactionList, "w")  #The traces and additional info
 
 count3 = 0
 
-with open("test_v3.txt", "r") as f:
+with open(Options.secondTestResult, "r") as f:
     count = 0
     while True:
         count3 += 1
@@ -1186,7 +1181,7 @@ iterations = []
 for x in range(numOfReactions):
     iterations.append([])
 
-with open("reaction_list.txt", "r") as f:
+with open(Options.reactionList, "r") as f:
     count = 0
     while True:
         line = f.readline()
