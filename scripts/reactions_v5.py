@@ -1104,7 +1104,9 @@ firstpart = firsthalf + middle + middle2 + runswanted
 fullstring = firstpart + secondhalf
 print(fullstring)
 os.system(fullstring)
+results = subprocess.check_output([f"./{Options.secondIvyModelName}", f"iters={first_iters*1.25}", f"runs={runswanted}"],shell=True)
 print("finished randomized testing")#More tests run with 1.25 times the amount of iters needed for the first test, for the specified number of traces wanted by the user
+
 
 """
 
