@@ -807,11 +807,11 @@ for obj in reactions:
         """)
         ivyFile.write(f"""if r{count}_stage = 0 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 2) + 1}
         {c}
         else if r{count}_stage = 1 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 3) + 1}
         {c}
         else if r{count}_stage = 2 {o}
             r{count}_count_rate := 5;
@@ -819,7 +819,7 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 3 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 2) + 1}
         {c}
         else if r{count}_stage = 4 {o}
             r{count}_count_rate := 4;
@@ -827,11 +827,11 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 5 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 3) + 1}
         {c}
         else if r{count}_stage = 6 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.priority * 2) + 1}
         {c}
         else if r{count}_stage = 7 {o}
             r{count}_count_rate := 4;
@@ -1113,13 +1113,9 @@ iters = 0
 
 transitions = 0
 
-tracelistfile = open(Options.traceList, "w") #The traces by themselves are recorded in 'trace_list.txt'
+tracelist = open(Options.traceList, "w") #The traces by themselves are recorded in 'trace_list.txt'
 
 transitionmap = open(Options.reactionList, "w")  #The traces and additional information is stored in 'reactoin_list.txt'
-
-tracelist = []
-
-trace = []
 
 count3 = 0
 
@@ -1134,7 +1130,6 @@ with open("test_v3.txt", "r") as f:
             transitionmap.write("Run ")
             transitionmap.write(str(count+1))
             transitionmap.write(":\n\n")
-            trace = []
         if line[0] == ">":
             if line[11:17] != "idling":
                 iters += 1
@@ -1148,19 +1143,11 @@ with open("test_v3.txt", "r") as f:
                 transitions += 1
                 transitionmap.write(line[24:26])
                 transitionmap.write("\t")
-                #tracelistfile.write(line[24:26])
-                #tracelistfile.write("\t")
-                trace.append(line[24:26])
+                tracelist.write(line[24:26])
+                tracelist.write("\t")
                 reaction_exec_count[int(line[25])-1] += 1
         if line[0] == "t":
-            if trace in tracelist:
-                print(f"***Run {count} was a duplicate and has been thrown out of {Options.traceList}")
-            else:
-                tracelist.append(trace)
-                for x in trace:
-                    tracelistfile.write(f"{x}\t")
-                tracelistfile.write("\n")
-            count += 1
+            count = count + 1
             transitionmap.write("\n\nRun ")
             transitionmap.write(str(count))
             transitionmap.write(" information\n\nIterations before idling was reached: ")
@@ -1175,7 +1162,7 @@ with open("test_v3.txt", "r") as f:
                 transitionmap.write(str(reaction_exec_count[x]))
                 reaction_exec_count[x] = 0
             transitionmap.write("\n\n\n\n")
-            #tracelistfile.write("\n")
+            tracelist.write("\n")
             iters = 0
             transitions = 0
 
@@ -1183,7 +1170,7 @@ print(f"\nThe traces recorded and the information on those traces are stored in 
 print(f"\nThe traces by themselves are found in '{Options.reactionList}'")
 transitionmap.close()
 
-tracelistfile.close()
+tracelist.close()
 
 Totaltran = 0
 Totaliter = 0
