@@ -381,11 +381,11 @@ for obj in reactions:
         """)
         ivyFile.write(f"""if r{count}_stage = 0 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 1 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 3) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 2 {o}
             r{count}_count_rate := 5;
@@ -393,7 +393,7 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 3 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 4 {o}
             r{count}_count_rate := 4;
@@ -401,11 +401,11 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 5 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 3) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 6 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 7 {o}
             r{count}_count_rate := 4;
@@ -804,11 +804,11 @@ for obj in reactions:
         """)
         ivyFile.write(f"""if r{count}_stage = 0 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 1 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 3) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 2 {o}
             r{count}_count_rate := 5;
@@ -816,7 +816,7 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 3 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 4 {o}
             r{count}_count_rate := 4;
@@ -824,11 +824,11 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 5 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 3) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 6 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 7 {o}
             r{count}_count_rate := 4;
