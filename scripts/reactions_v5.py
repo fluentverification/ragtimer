@@ -380,11 +380,11 @@ for obj in reactions:
         """)
         ivyFile.write(f"""if r{count}_stage = 0 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 1 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 3) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 2 {o}
             r{count}_count_rate := 5;
@@ -392,7 +392,7 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 3 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 4 {o}
             r{count}_count_rate := 4;
@@ -400,11 +400,11 @@ for obj in reactions:
         {c}
         else if r{count}_stage = 5 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 3) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 6 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 2) + 1}
+            r{count}_rate := {(obj.priority * 1) + 1}
         {c}
         else if r{count}_stage = 7 {o}
             r{count}_count_rate := 4;
@@ -1103,9 +1103,6 @@ os.system(fullstring)
 results = subprocess.check_output([f"./{Options.secondIvyModelName}", f"iters={first_iters*1.25}", f"runs={runswanted}"],shell=True)
 print("finished randomized testing")#More tests run with 1.25 times the amount of iters needed for the first test, for the specified number of traces wanted by the user
 
-
-"""
-
 reaction_exec_count = []
 
 for x in range(numOfReactions):
@@ -1236,4 +1233,3 @@ for x in range(numOfReactions):
     print("\n\nAverage number of reaction", x+1, "executions in a trace is:", Total[x]/int(runswanted))
     print("\nThe biggest number of reaction", x+1, "executions recorded in a trace is:", max(iterations[x]))
     print("\nThe smallest number of reaction", x+1, "executions recorded in a trace is:", min(iterations[x]))
-"""
