@@ -15,12 +15,13 @@ class Options:
     reactionList = "reaction_list.txt"
 
 class Reaction:
-    def __init__(self, priority, executions):
+    def __init__(self, priority, tierCount, executions):
         self.reactants = []
         self.reactantsNum = []
         self.products = []
         self.productsNum = []
         self.priority = priority
+        self.tierCount = tierCount
         self.executions = executions
 
 class Species:
@@ -56,7 +57,11 @@ for obj in reactions1:
         reactNumTemp.append(1)
     for x in range(len(productsTemp)):
         prodNumTemp.append(1)
-    reactions.append(Reaction(obj.tier, obj.executions))
+    count1 = 0
+    for y in reactions1:
+        if y.tier == obj.tier:
+            count1 += 1
+    reactions.append(Reaction(obj.tier, count1, obj.executions))
     reactions[count-1].reactants = reactantsTemp
     reactions[count-1].products = productsTemp
     reactions[count-1].reactantsNum = reactNumTemp
@@ -381,35 +386,35 @@ for obj in reactions:
         """)
         ivyFile.write(f"""if r{count}_stage = 0 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 1 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 2 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 3 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 4 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 5 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 6 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 7 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else {o}
             r{count}_stage := 0
@@ -804,35 +809,35 @@ for obj in reactions:
         """)
         ivyFile.write(f"""if r{count}_stage = 0 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 1 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 2 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 3 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 4 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 5 {o}
             r{count}_count_rate := 5;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 6 {o}
             r{count}_count_rate := 3;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else if r{count}_stage = 7 {o}
             r{count}_count_rate := 4;
-            r{count}_rate := {(obj.priority * 1) + 1}
+            r{count}_rate := {(obj.tierCount)}
         {c}
         else {o}
             r{count}_stage := 0
