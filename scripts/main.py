@@ -28,7 +28,10 @@ if __name__ == "__main__":
     prefix = prefix_parser.parsePrefix(o)
     # print(prefix)
 
-    for i in range(len(paths)):
-        reactions_v5.randTest(i, reactions1, prefix, i, False, paths[i])
+    for a in range(len(paths)):
+        print(80*"-")
+        print(paths[a])
+        print(80*"-")
+        reactions_v5.randTest(i, reactions1, prefix, a, False, paths[a])
 
-    os.system("make test")
+        os.system("make test")

@@ -1,0 +1,69 @@
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 359: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+bin/run: 21: [[: not found
+New highest probability: 3.352534e-87 at line 1
+New highest probability: 1.835885e-84 at line 3
+New highest probability: 5.067358e-74 at line 4
+New highest probability: 2.205276e-68 at line 5
+New highest probability: 3.586513e-68 at line 18
+New highest probability: 3.612080e-68 at line 19
+Total probability: 9.462115e-68
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 359: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+bin/run: 21: [[: not found
+New highest probability: 7.402580e-78 at line 1
+New highest probability: 9.748648e-76 at line 7
+New highest probability: 1.020336e-71 at line 13
+New highest probability: 1.266034e-65 at line 18
+Total probability: 1.266307e-65
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+Variables: (r,l,rl,g,ga,gbg,gd)
+
+Transitions: _PREFIX_	r3	r5	
+Probability: 3.928779e-02
+State: (49,2,0,49,1,1,0)
+
+Variables: (r,l,rl,g,ga,gbg,gd)
+
+Transitions: _PREFIX_	r8	r5	
+Probability: 2.971006e-02
+State: (50,2,0,49,1,1,0)
+
+
+--------------------------------------------------------------------------------
+r3	r5	
+--------------------------------------------------------------------------------
+prefix.varnames ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+SPEC ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+[49, 2, 0, 49, 1, 1, 0]
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 198
+starting to run rest of tests
+./test_v3 iters=247.5 seed=1154 runs=25
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+--------------------------------------------------------------------------------
+r8	r5	
+--------------------------------------------------------------------------------
+prefix.varnames ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+SPEC ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+[50, 2, 0, 49, 1, 1, 0]
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 187
+starting to run rest of tests
+./test_v3 iters=233.75 seed=809 runs=25
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'

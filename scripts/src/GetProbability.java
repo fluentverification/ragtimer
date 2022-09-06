@@ -40,6 +40,8 @@ public class GetProbability
       double recordHigh = 0.0f;
       int invalidSince = -2;
 
+      boolean newInit = false;
+
       // give PRISM output a log file
       PrismLog mainLog = new PrismDevNullLog();
 
@@ -95,8 +97,6 @@ public class GetProbability
 
         // Break the string into a transition set
         String[] tr_st=x.split("\\s+");
-
-        Boolean newInit = false;
         
         if (tr_st[0].contains("_PREFIX_")) {
           String staStr = "Variables: (";
@@ -129,6 +129,9 @@ public class GetProbability
         if (newInit) tdx = 1;
         // Loop through each transition in the trace string
         for (; tdx < tr_st.length; tdx++) {
+          if (tr_st[tdx] == "") {
+            continue;
+          }
           index = -1;
           totalRate = 0.0;
           // Loop in order to get the total rate of possible outgoing transitions
@@ -149,7 +152,8 @@ public class GetProbability
           }
           // Make sure we found the valid transition
           if (index == -1) {
-            System.out.printf("ERROR - Index remains -1, invalid trace at line %d\n", pathCount);
+            System.out.printf("ERROR - Index remains -1, invalid trace at line %d at %d", pathCount, tdx);
+            System.out.println(" with transition " + tr_st[tdx]);
             // System.out.println(pathCount);
             break;
           }
@@ -195,7 +199,9 @@ public class GetProbability
       // close PRISM
       prism.closeDown();
 
-      System.out.printf("Total probability: %e\n", totalProbability);
+      if (!newInit) {
+        System.out.printf("Total probability: %e\n", totalProbability);
+      }
     } 
     catch (FileNotFoundException e) {
 			System.out.println("FileNotFound Error: " + e.getMessage());

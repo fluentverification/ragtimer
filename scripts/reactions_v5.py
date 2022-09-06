@@ -1178,6 +1178,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefix
             transitionmap.write(str(count+1))
             transitionmap.write(":\n\n")
             trace = []
+            for t in prefix.transitions[prefix_index]:
+                trace.append(t)
         if line[0] == ">":
             if line[11:17] != "idling":
                 iters += 1
@@ -1200,8 +1202,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefix
                 print(f"***Run {count} was a duplicate and has been thrown out of {Options.traceList}")
             else:
                 tracelist.append(trace)
+                # tracelistfile.write(f"{prefixTrans}\t")    
                 for x in trace:
-                    tracelistfile.write(f"{prefixTrans}\t")    
                     tracelistfile.write(f"{x}\t")
                 tracelistfile.write("\n")
             count += 1
