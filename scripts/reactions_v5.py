@@ -3,6 +3,7 @@ import math
 import os
 import depgraph
 import random
+import prefix_parser
 
 
 class Options:
@@ -40,12 +41,10 @@ class TargetReaction:
         self.reaction = reaction
         self.secondTargets = secondTargets
 
-def randTest(runswanted, printing=True):
+def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefixTrans=""):
 
     o = "{"
     c = "}"
-
-    reactions1 = depgraph.makeDepGraph(Options.infile, printing)
 
     reactions = []
     count = 0
@@ -72,18 +71,25 @@ def randTest(runswanted, printing=True):
         print("\n")
 
     spec = []
+    for s in prefix.varnames:
+        spec.append(s)
+    
+    print("prefix.varnames", prefix.varnames)
+    print("SPEC", spec)
 
-    for obj in reactions: #adds all the species recorded in the reactions to a list
-        count2 = 0
-        for x in range(len(obj.reactants)):
-            count2 += 1
-            if obj.reactants[count2-1] not in spec:
-                spec.append(obj.reactants[count2-1])
-        count2 = 0
-        for x in range(len(obj.products)):
-            count2 += 1
-            if obj.products[count2-1] not in spec:
-                spec.append(obj.products[count2-1])
+
+    # the prefix parser can take care of this fast, commented out for now
+    # for obj in reactions: #adds all the species recorded in the reactions to a list
+    #     count2 = 0
+    #     for x in range(len(obj.reactants)):
+    #         count2 += 1
+    #         if obj.reactants[count2-1] not in spec:
+    #             spec.append(obj.reactants[count2-1])
+    #     count2 = 0
+    #     for x in range(len(obj.products)):
+    #         count2 += 1
+    #         if obj.products[count2-1] not in spec:
+    #             spec.append(obj.products[count2-1])
 
     #print(spec)
 
@@ -92,6 +98,7 @@ def randTest(runswanted, printing=True):
 
     chemicals = [] # Stores string names of chemicals
     initials = [] # Stores initial values of chemicals
+    # initials = [] # Stores initial values of chemicals
     targets = [] # Stores target values of chemicals
 
     with open(Options.infile, 'r') as inpt:
@@ -105,11 +112,18 @@ def randTest(runswanted, printing=True):
 
         # Read the line of initial values
         line = inpt.readline().strip()
-        if not line or line == "":
-            print("ERROR! CANNOT READ SECOND LINE")
-            quit()
-        for val in line.split():
-            initials.append(int(val))
+        if len(prefix.values[prefix_index]) > 0:
+            for v in prefix.values[prefix_index]:
+                initials.append(int(v))
+        else:
+            if not line or line == "":
+                print("ERROR! CANNOT READ SECOND LINE")
+                quit()
+            for val in line.split():
+                initials.append(int(val))
+        
+        print(initials)
+
 
         # Read the line of target values (-1 is don't care)
         line = inpt.readline().strip()
@@ -146,30 +160,30 @@ def randTest(runswanted, printing=True):
 
     for obj in speciesList:
         if obj.name == targetSpecies:
-            if obj.value > int(targetNum):
+            if int(obj.value) > int(targetNum):
                 upOrDown = "3"
-            elif obj.value < int(targetNum):
+            elif int(obj.value) < int(targetNum):
                 upOrDown = "1"
-            elif obj.value == int(targetNum):
+            elif int(obj.value) == int(targetNum):
                 print("\nSpecified target is already achieved in target state, please start over")
                 exit()
 
     for obj in speciesList:
         if obj.name == targetSpecies:
             if upOrDown == "1":
-                if obj.value >= int(targetNum):
+                if int(obj.value) >= int(targetNum):
                     print("\nSpecified target is already achieved in target state, please start over")
                     exit()
             elif upOrDown == "2":
-                if obj.value > int(targetNum):
+                if int(obj.value) > int(targetNum):
                     print("\nSpecified target is already achieved in target state, please start over")
                     exit()
             elif upOrDown == "3":
-                if obj.value <= int(targetNum):
+                if int(obj.value) <= int(targetNum):
                     print("\nSpecified target is already achieved in target state, please start over")
                     exit()
             elif upOrDown == "4":
-                if obj.value < int(targetNum):
+                if int(obj.value) < int(targetNum):
                     print("\nSpecified target is already achieved in target state, please start over")
                     exit()
                 if targetNum == "0":
@@ -1187,6 +1201,7 @@ def randTest(runswanted, printing=True):
             else:
                 tracelist.append(trace)
                 for x in trace:
+                    tracelistfile.write(f"{prefixTrans}\t")    
                     tracelistfile.write(f"{x}\t")
                 tracelistfile.write("\n")
             count += 1

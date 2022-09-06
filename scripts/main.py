@@ -1,34 +1,34 @@
 import os
 import reactions_v5
+import depgraph
+import prefix_parser
 import sys
+import subprocess
 
 if __name__ == "__main__":
 
-    # print()
-    # print(80*"=")
-    # print("Checking", i)
-    # print(80*"=")
-    # print()
     i = sys.argv[1]
-    reactions_v5.randTest(i, False)
+
+    reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, False)
+    
+    with open("trace_list.txt", "w") as t:
+        t.write("")
+
+    paths = []
+    for r in reactions1:
+        if (r.tier == 0):
+            depgraph.printPrefixes("trace_list.txt", "", r, paths)
+
+    # print(paths)
+    # quit()
+
+    o = subprocess.check_output(["make", "test"],universal_newlines=True)
+
+    print(o)
+    prefix = prefix_parser.parsePrefix(o)
+    # print(prefix)
+
+    for i in range(len(paths)):
+        reactions_v5.randTest(i, reactions1, prefix, i, False, paths[i])
+
     os.system("make test")
-    # os.system("rm test_v*")
-    
-#    with open("trace_list.txt", "w") as tl:
-#        with open("lazy_paths.txt", "r") as lp:
-#            tl.write(lp.read())
-    
-    # os.system("make")
-
-    
-    # for i in range(50,500,10):
-    #     print()
-    #     print(80*"=")
-    #     print("Checking", i)
-    #     print(80*"=")
-    #     print()
-    #     reactions_v5.randTest(i, False)
-    #     os.system("make test")
-
-    # os.system("python3 reactions_v5.py")
-

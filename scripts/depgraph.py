@@ -37,15 +37,15 @@ class Reaction:
 		return r
 
 
-def printPrefixes(filename, path, reaction):
+def printPrefixes(filename, path, reaction, paths):
 	path = reaction.name + "\t" + path
 	if (len(reaction.dependsOn) == 0):
 		with open(filename, 'a') as f:
-			path = "_PREFIX_\t" + path + "\n"
-			f.write(path)
+			paths.append(path)
+			f.write("_PREFIX_\t" + path + "\n")
 			return
 	for r in reaction.dependsOn:
-		printPrefixes(filename, path, r)
+		printPrefixes(filename, path, r, paths)
 	
 
 
