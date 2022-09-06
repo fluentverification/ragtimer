@@ -1,6 +1,10 @@
 Run 1:
 
+<<<<<<< HEAD
 r3	r5	r3	r8	r3	r5	r5	r5	r3	r3	r8	r5	r5	r8	r5	r3	r3	r5	r5	r3	r5	r8	r5	r5	r8	r3	r5	r5	r8	r5	r3	r3	r8	r5	r5	r3	r5	r8	r5	r5	r8	r3	r5	r8	r3	r8	r3	r8	r5	r8	r8	r5	r3	r5	r8	r5	r3	r8	r8	r5	r5	r8	r8	r5	r5	r8	r5	r5	r8	r3	r8	r3	r8	r5	r8	r5	r5	r5	r5	r3	r5	r3	r8	r3	r5	r8	r8	r5	r3	r5	r5	r5	r5	r5	r5	r5	r5	r5	r5	
+=======
+r8	r3	r8	r8	r3	r5	r5	r3	r8	r5	r8	r5	r3	r5	r5	r5	r8	r8	r3	r5	r5	r8	r5	r5	r8	r3	r5	r8	r3	r5	r3	r8	r8	r5	r8	r5	r3	r3	r5	r5	r5	r3	r3	r5	r8	r3	r5	r5	r5	r5	r8	r5	r3	r3	r5	r5	r5	r5	r8	r8	r3	r5	r8	r5	r3	r5	r8	r5	r8	r5	r3	r3	r8	r5	r3	r5	r3	r5	r8	r8	r3	r5	r3	r3	r5	r5	r5	r5	r3	r5	r8	r5	r8	r5	r5	r5	r5	r5	r5	
+>>>>>>> 4536381df9921aaa93beb101aad6088e07aa4162
 
 Run 1 information
 
@@ -17,6 +21,7 @@ r8executions: 27
 
 
 
+<<<<<<< HEAD
 Run 2:
 
 r3	r8	r5	r5	r3	r3	r3	r5	r5	r8	r5	r3	r8	r3	r5	r5	r5	r5	r8	r8	r3	r5	r8	r5	r3	r3	r5	r5	r5	r5	r8	r5	r3	r3	r8	r5	r5	r3	r5	r3	r8	r5	r3	r5	r8	r5	r5	r3	r8	r3	r8	r3	r5	r8	r3	r5	r5	r5	r3	r5	r8	r5	r5	r5	r5	r5	r3	r8	r3	r5	r3	r8	r5	r3	r5	r3	r5	r8	r5	r3	r3	r8	r3	r5	r8	r5	r3	r3	r5	r5	r8	r5	r5	r5	r5	r3	r5	r5	r5	
@@ -473,3 +478,5 @@ r8executions: 22
 
 
 
+=======
+>>>>>>> 4536381df9921aaa93beb101aad6088e07aa4162

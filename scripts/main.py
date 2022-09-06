@@ -18,6 +18,7 @@ if __name__ == "__main__":
     for r in reactions1:
         if (r.tier == 0):
             depgraph.printPrefixes("trace_list.txt", "", r, paths)
+<<<<<<< HEAD
 
     # print(paths)
     # quit()
@@ -35,3 +36,19 @@ if __name__ == "__main__":
         reactions_v5.randTest(i, reactions1, prefix, a, False, paths[a])
 
         os.system("make test")
+=======
+
+    # print(paths)
+    # quit()
+
+    o = subprocess.check_output(["make", "test"],universal_newlines=True)
+
+    print(o)
+    prefix = prefix_parser.parsePrefix(o)
+    # print(prefix)
+
+    for i in range(len(paths)):
+        reactions_v5.randTest(i, reactions1, prefix, i, False, paths[i])
+
+    os.system("make test")
+>>>>>>> 4536381df9921aaa93beb101aad6088e07aa4162

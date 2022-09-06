@@ -1204,6 +1204,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefix
                 tracelist.append(trace)
                 # tracelistfile.write(f"{prefixTrans}\t")    
                 for x in trace:
+                    tracelistfile.write(f"{prefixTrans}\t")    
                     tracelistfile.write(f"{x}\t")
                 tracelistfile.write("\n")
             count += 1
