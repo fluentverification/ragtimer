@@ -37,6 +37,17 @@ class Reaction:
 		return r
 
 
+def printPrefixes(filename, path, reaction):
+	path = reaction.name + "\t" + path
+	if (len(reaction.dependsOn) == 0):
+		with open(filename, 'a') as f:
+			path = "_PREFIX_\t" + path + "\n"
+			f.write(path)
+			return
+	for r in reaction.dependsOn:
+		printPrefixes(filename, path, r)
+	
+
 
 '''
 Recursive graph building function
@@ -45,7 +56,7 @@ Inputs: recursion depth, reaction array, chemical name array, initial values,
 Output: None
 '''
 
-def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_history, parent):
+def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_history, parent, printing=True):
 	
 	deltaTarget = []
 	needChems = []
@@ -73,25 +84,27 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 	# For every required reaction
 	for r in needReactions:
 		
-		# Print user-readable information
-		print(80*"-")
-		if parent:
-			print("TIER", recdepth, "Checking", r.name,"From parent",parent.name)
-		else:
-			print("TIER", recdepth, "Checking", r.name,"From parent",parent)
-		print(80*"-")
-		print()
-		print("Current Initial State\t",initials)
-		print("Current Target State \t",targets)
-		print("Delta Target-Initial \t",deltaTarget)
-		print("Chemicals Required   \t",needChems)
-		print("In these quantities  \t",needChemQty)
+		if printing:
+			# Print user-readable information
+			print(80*"-")
+			if parent:
+				print("TIER", recdepth, "Checking", r.name,"From parent",parent.name)
+			else:
+				print("TIER", recdepth, "Checking", r.name,"From parent",parent)
+			print(80*"-")
+			print()
+			print("Current Initial State\t",initials)
+			print("Current Target State \t",targets)
+			print("Delta Target-Initial \t",deltaTarget)
+			print("Chemicals Required   \t",needChems)
+			print("In these quantities  \t",needChemQty)
 
 		# Check for cycles and alert user
 		if r.name in reaction_history:
-			print()
-			print(r.name, "in reaction history. CYCLE DETECTED.\n")
-			print()
+			if printing:
+				print()
+				print(r.name, "in reaction history. CYCLE DETECTED.\n")
+				print()
 			continue
 
 		# Add current reaction to the reaction history (to look for cycles)
@@ -110,7 +123,8 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 
 		# Add to the required executions in the reaction object
 		r.executions = r.executions + reqExec
-		print("\nRequired Executions\t",r.executions)
+		if printing:
+			print("\nRequired Executions\t",r.executions)
 
 		# Find out new "initial state" after reqExec executions
 		new_initials = []
@@ -130,9 +144,10 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 			else:
 				new_targets.append(targets[c])
 		
-		# Print updated initial and target states, after r fires
-		print("Initial After",reqExec,"Execs\t",new_initials)
-		print("Target After",reqExec,"Execs\t",new_targets)
+		if printing:
+			# Print updated initial and target states, after r fires
+			print("Initial After",reqExec,"Execs\t",new_initials)
+			print("Target After",reqExec,"Execs\t",new_targets)
 
 		# Update the parent to note this dependency
 		if parent:
@@ -144,11 +159,12 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 		if recdepth < r.tier or r.tier == -1:
 			r.tier = recdepth
 
-		# Print the updated reaction object
-		print(r)
+		if printing:
+			# Print the updated reaction object
+			print(r)
 
 		# Recurse (find requirements for this reaction)
-		buildGraph(recdepth+1, reactions, chemicals, new_initials, new_targets, r_hist, r)
+		buildGraph(recdepth+1, reactions, chemicals, new_initials, new_targets, r_hist, r, False)
 
 
 '''
@@ -157,7 +173,7 @@ Input: File name (string) for reaction file in format from docs.md
 Output: Array of reaction objects
 '''
 
-def makeDepGraph(infile):
+def makeDepGraph(infile, printing=True):
 	
 	chemicals = [] # Stores string names of chemicals
 	initials = [] # Stores initial values of chemicals
@@ -169,7 +185,7 @@ def makeDepGraph(infile):
 		# Read the line of chemical names
 		line = inpt.readline().strip()
 		if not line or line == "":
-			print("ERROR! CANNOT READ FIRST LINE")
+			print("ERROR IN DEPGRAPH! CANNOT READ FIRST LINE")
 			quit()
 		for chem in line.split():
 			chemicals.append(str(chem).strip())
@@ -177,7 +193,7 @@ def makeDepGraph(infile):
 		# Read the line of initial values
 		line = inpt.readline().strip()
 		if not line or line == "":
-			print("ERROR! CANNOT READ SECOND LINE")
+			print("ERROR IN DEPGRAPH! CANNOT READ SECOND LINE")
 			quit()
 		for val in line.split():
 			initials.append(int(val))
@@ -185,7 +201,7 @@ def makeDepGraph(infile):
 		# Read the line of target values (-1 is don't care)
 		line = inpt.readline().strip()
 		if not line or line == "":
-			print("ERROR! CANNOT READ THIRD LINE")
+			print("ERROR IN DEPGRAPH! CANNOT READ THIRD LINE")
 			quit()
 		for val in line.split():
 			targets.append(int(val))
@@ -217,27 +233,29 @@ def makeDepGraph(infile):
 
 	reaction_history = []
 
-	print(80*"=")
+	if printing:
+		print(80*"=")
 
 	# Recursively find the necessary reactions
-	buildGraph(0, reactions, chemicals, initials, targets, reaction_history, None)
+	buildGraph(0, reactions, chemicals, initials, targets, reaction_history, None, printing)
 
-	# Print the list of necessary reactions and their dependencies
-	print()
-	print(80*"=")
-	print("NECESSARY REACTIONS")
-	print(80*"=")
+	if printing:
+		# Print the list of necessary reactions and their dependencies
+		print()
+		print(80*"=")
+		print("NECESSARY REACTIONS")
+		print(80*"=")
 
-	# Print only necessary reactions:
-	for react in reactions:
-		if react.tier > -1:
-			print(react)
+		# Print only necessary reactions:
+		for react in reactions:
+			if react.tier > -1:
+				print(react)
 
-	# Uncomment to print all reactions instead:
-	# for react in reactions:
-	# 	print(react)
-	
-	print(80*"=")
+	if printing:
+		# Uncomment to print all reactions instead:
+		# for react in reactions:
+		# 	print(react)
+		print(80*"=")
 
 	return reactions
 

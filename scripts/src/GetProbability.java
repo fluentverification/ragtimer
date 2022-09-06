@@ -96,6 +96,25 @@ public class GetProbability
         // Break the string into a transition set
         String[] tr_st=x.split("\\s+");
 
+        Boolean newInit = false;
+        
+        if (tr_st[0].contains("_PREFIX_")) {
+          String staStr = "Variables: (";
+          newInit = true;
+          // Get variable names
+          int vari = 0;
+          while (true) {
+            staStr += sim.getVariableName(vari);;
+            if (sim.getVariableName(vari+1) == null) {
+              staStr += ")\n";
+              break;
+            }
+            staStr += ",";
+            vari++;
+          }
+          System.out.println(staStr);
+        }
+
         // create a new path
         sim.createNewPath();
         sim.initialisePath(null);
@@ -105,9 +124,11 @@ public class GetProbability
         double pathProbability = 1.0;
         double totalRate = 0.0;
         // System.out.printf("%d length\n", tr_st.length);
-
+        
+        int tdx = 0;
+        if (newInit) tdx = 1;
         // Loop through each transition in the trace string
-        for (int tdx=0; tdx < tr_st.length; tdx++) {
+        for (; tdx < tr_st.length; tdx++) {
           index = -1;
           totalRate = 0.0;
           // Loop in order to get the total rate of possible outgoing transitions
@@ -142,8 +163,12 @@ public class GetProbability
           sim.manualTransition(index);
         }
 
+        if (newInit) {
+          System.out.printf("Transitions: %s\nProbability: %e\nState: %s\n\n", x, pathProbability, sim.getCurrentState());
+        }
+
         // Check that we end up at a state satisfying the property
-        if (target.evaluateBoolean(sim.getCurrentState())) {
+        else if (target.evaluateBoolean(sim.getCurrentState())) {
           // If we end up in a target state, update our total probability
           totalProbability += pathProbability;
           if (recordHigh < pathProbability) {
@@ -159,6 +184,7 @@ public class GetProbability
           if (invalidSince < 0) {
             invalidSince = pathCount;
           }
+          // System.out.printf("Target not reached. Current State: %s\n", sim.getCurrentState());
           // sim.getPathFull().exportToLog(new PrismPrintStreamLog(System.out), true, ",", null);
           // System.out.printf(">> Path Reaches Target :)\n");
           // System.out.printf("pathProbability %e\n", pathProbability);
