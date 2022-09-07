@@ -59,7 +59,7 @@ if __name__ == "__main__":
         if (r.tier == 0):
             depgraph.printPrefixes("trace_list.txt", "", r)
 
-    os.system("make")
+    # os.system("make")
     o = subprocess.check_output(["make", "test"],universal_newlines=True)
 
     print("Printing output for debug reasons")

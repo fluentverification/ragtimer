@@ -4,7 +4,7 @@ import os
 import depgraph
 import random
 import prefix_parser
-
+import sys
 
 class Options:
     infile = "8reaction_input.txt"
@@ -41,7 +41,7 @@ class TargetReaction:
         self.reaction = reaction
         self.secondTargets = secondTargets
 
-def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefixTrans=""):
+def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
 
     o = "{"
     c = "}"
@@ -607,7 +607,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefix
     ivy_to_cpp_command.wait()
 
     print("starting to run initial test")
-    seed = random.randint(0,4096)
+    seed = random.randint(0,sys.maxsize)
     os.system(f"./{Options.firstIvyModelName} seed={seed} iters=10000 runs=1 >{Options.firstTestResult}")
     # os.system(f"./{Options.firstIvyModelName} seed=367 iters=10000 runs=1 >{Options.firstTestResult}")
     print("finished initial test") #test is run and results are stored in test_v2.txt
@@ -1121,24 +1121,46 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefix
     # runswanted = input("How many traces do you want to the target specified? (Type an integer greater than 0): ") #Amount of traces desired is recorded
     # runswanted = desiredRuns #Amount of traces desired is recorded
 
+    # split runs up so we can 
+    intRuns = int(runswanted)
+    runsSplit = []
+    while intRuns > 500:
+        runsSplit.append(500)
+        intRuns -= 500
+    if intRuns > 0:
+        runsSplit.append(intRuns)
 
-    print("starting to run rest of tests")
-    firsthalf = f"./{Options.secondIvyModelName} iters="
-    middle = str(first_iters*1.25)
-    middle2 = " seed=" + str(seed) + " runs="
-    secondhalf = ""
-    # secondhalf = f" >{Options.secondTestResult}"
-    firstpart = firsthalf + middle + middle2 + str(runswanted)
-    fullstring = firstpart + secondhalf
-    print(fullstring)
+    cppout = ""
+    group = 0
+
+    for r in runsSplit:
+        group += 1
+        print("Running test for " + str(r) + " iters in group " + str(group) + " of " + str(len(runsSplit)))
+        runCommand = []
+        runCommand.append(f"./{Options.secondIvyModelName}")
+        runCommand.append("iters=" + str(math.ceil(first_iters*1.25)))
+        seed = random.randint(0,sys.maxsize)
+        runCommand.append("seed=" + str(seed))
+        runCommand.append("runs=" + str(r))
+
+        cppout += subprocess.check_output(runCommand, universal_newlines = True)
+
+        # firsthalf = f"./{Options.secondIvyModelName} iters="
+        # middle = str(math.ceil(first_iters*1.25))
+        # middle2 = " seed=" + str(seed) + " runs="
+        # secondhalf = ""
+        # # secondhalf = f" >{Options.secondTestResult}"
+        # firstpart = firsthalf + middle + middle2 + str(runswanted)
+        # fullstring = firstpart + secondhalf
+        # print(fullstring)
 
 
     # os.system(fullstring)
-    cppout = subprocess.check_output(fullstring.split(" "), universal_newlines = True)
+    # cppout = subprocess.check_output(fullstring.split(" "), universal_newlines = True)
 
     #check output:
-    with open("checkoutput.txt", "w") as co:
-        co.write(str(cppout).replace("\\r\\n", "\n"))
+    # with open("checkoutput.txt", "w") as co:
+    #     co.write(str(cppout).replace("\\r\\n", "\n"))
 
     print("finished randomized testing")#More tests run with 1.25 times the amount of iters needed for the first test, for the specified number of traces wanted by the user
 
@@ -1204,7 +1226,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True, prefix
                 tracelist.append(trace)
                 # tracelistfile.write(f"{prefixTrans}\t")    
                 for x in trace:
-                    tracelistfile.write(f"{prefixTrans}\t")    
+                    # tracelistfile.write(f"{prefixTrans}\t")    
                     tracelistfile.write(f"{x}\t")
                 tracelistfile.write("\n")
             count += 1
