@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # quit()
 
     o = subprocess.check_output(["make", "test"],universal_newlines=True)
-    print(o)
+    # print(o)
     prefix = prefix_parser.parsePrefix(o)
     # print(prefix)
 
@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
         # os.system("make test")
         o = subprocess.check_output(["make", "test"],universal_newlines=True)
-        print(o)
+        # print(o)
         for line in o.splitlines(False):
             if "Total" in line:
                 prob += float(line.split(": ")[1])

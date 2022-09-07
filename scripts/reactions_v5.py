@@ -18,12 +18,13 @@ class Options:
     reactionList = "reaction_list.txt"
 
 class Reaction:
-    def __init__(self, priority, executions):
+    def __init__(self, priority, tierCount, executions):
         self.reactants = []
         self.reactantsNum = []
         self.products = []
         self.productsNum = []
         self.priority = priority
+        self.tierCount = tierCount
         self.executions = executions
 
 class Species:
@@ -74,8 +75,9 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
     for s in prefix.varnames:
         spec.append(s)
     
-    print("prefix.varnames", prefix.varnames)
-    print("SPEC", spec)
+    if printing:
+        print("prefix.varnames", prefix.varnames)
+        print("SPEC", spec)
 
 
     # the prefix parser can take care of this fast, commented out for now
@@ -122,7 +124,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             for val in line.split():
                 initials.append(int(val))
         
-        print(initials)
+        # print(initials)
 
 
         # Read the line of target values (-1 is don't care)
@@ -407,41 +409,40 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             """)
             ivyFile.write(f"""if r{count}_stage = 0 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 2) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 1 {o}
                 r{count}_count_rate := 3;
-                r{count}_rate := {(obj.priority * 3) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 2 {o}
                 r{count}_count_rate := 5;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 3 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 2) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 4 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 5 {o}
                 r{count}_count_rate := 5;
-                r{count}_rate := {(obj.priority * 3) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 6 {o}
                 r{count}_count_rate := 3;
-                r{count}_rate := {(obj.priority * 2) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 7 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else {o}
                 r{count}_stage := 0
             {c}
         {c}
-
         """)
 
     ivyFile.write("\n}\n")
@@ -836,41 +837,40 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             """)
             ivyFile.write(f"""if r{count}_stage = 0 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 1 {o}
                 r{count}_count_rate := 3;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 2 {o}
                 r{count}_count_rate := 5;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 3 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 4 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 5 {o}
                 r{count}_count_rate := 5;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 6 {o}
                 r{count}_count_rate := 3;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else if r{count}_stage = 7 {o}
                 r{count}_count_rate := 4;
-                r{count}_rate := {(obj.priority * 1) + 1}
+                r{count}_rate := {(obj.tierCount)}
             {c}
             else {o}
                 r{count}_stage := 0
             {c}
         {c}
-
         """)
 
     ivyFile.write("\n}\n")
@@ -1135,7 +1135,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
 
     for r in runsSplit:
         group += 1
-        print("Running test for " + str(r) + " iters in group " + str(group) + " of " + str(len(runsSplit)))
+        print("Running test for " + str(r) + " simulation runs in group " + str(group) + " of " + str(len(runsSplit)))
         runCommand = []
         runCommand.append(f"./{Options.secondIvyModelName}")
         runCommand.append("iters=" + str(math.ceil(first_iters*1.25)))
