@@ -1,0 +1,29 @@
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 359: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+bin/run: 21: [[: not found
+New highest probability: 1.253522e-80 at line 1
+New highest probability: 1.500650e-80 at line 2
+New highest probability: 3.077965e-79 at line 3
+New highest probability: 1.296572e-70 at line 4
+New highest probability: 2.232545e-69 at line 12
+New highest probability: 4.131206e-69 at line 27
+New highest probability: 1.405944e-68 at line 104
+New highest probability: 1.505344e-66 at line 105
+New highest probability: 2.101772e-66 at line 121
+New highest probability: 2.420010e-66 at line 189
+New highest probability: 6.354918e-66 at line 287
+New highest probability: 1.358398e-65 at line 374
+New highest probability: 1.439230e-65 at line 421
+Total probability: 5.236627e-65
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 199
+starting to run rest of tests
+./test_v3 iters=248.75 seed=2095 runs=430
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'

@@ -1,0 +1,18 @@
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 359: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 194
+starting to run rest of tests
+./test_v3 iters=242.5 seed=3355 runs=960
+Traceback (most recent call last):
+  File "/home/landon/ragtimer/scripts/main.py", line 13, in <module>
+    reactions_v5.randTest(i, False)
+  File "/home/landon/ragtimer/scripts/reactions_v5.py", line 1123, in randTest
+    cppout = subprocess.check_output(fullstring.split(" "), universal_newlines = True)
+  File "/usr/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['./test_v3', 'iters=242.5', 'seed=3355', 'runs=960']' died with <Signals.SIGKILL: 9>.

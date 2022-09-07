@@ -1,0 +1,84 @@
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 359: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 359: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+Variables: (r,l,rl,g,ga,gbg,gd)
+
+Transitions: _PREFIX_	r3	r5	
+Probability: 3.928779e-02
+State: (49,2,0,49,1,1,0)
+
+Variables: (r,l,rl,g,ga,gbg,gd)
+
+Transitions: _PREFIX_	r8	r5	
+Probability: 2.971006e-02
+State: (50,2,0,49,1,1,0)
+
+
+--------------------------------------------------------------------------------
+r3	r5	
+--------------------------------------------------------------------------------
+prefix.varnames ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+SPEC ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+[49, 2, 0, 49, 1, 1, 0]
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 197
+Running test for 500 iters in group 1 of 2
+Running test for 500 iters in group 2 of 2
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 7.402875e-73 at line 1
+New highest probability: 1.811294e-72 at line 8
+New highest probability: 1.048580e-70 at line 18
+New highest probability: 4.288821e-70 at line 22
+New highest probability: 2.966779e-66 at line 27
+New highest probability: 1.109071e-65 at line 46
+New highest probability: 3.985270e-65 at line 90
+New highest probability: 5.584600e-65 at line 281
+New highest probability: 7.035604e-65 at line 487
+Total probability: 5.342269e-64
+
+--------------------------------------------------------------------------------
+r8	r5	
+--------------------------------------------------------------------------------
+prefix.varnames ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+SPEC ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+[50, 2, 0, 49, 1, 1, 0]
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 186
+Running test for 500 iters in group 1 of 2
+Running test for 500 iters in group 2 of 2
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 1.191660e-78 at line 1
+New highest probability: 6.874364e-78 at line 4
+New highest probability: 1.284266e-75 at line 6
+New highest probability: 3.732678e-72 at line 12
+New highest probability: 7.909868e-71 at line 18
+New highest probability: 7.586177e-70 at line 29
+New highest probability: 1.464773e-66 at line 35
+New highest probability: 9.509763e-66 at line 49
+New highest probability: 2.226494e-65 at line 271
+New highest probability: 6.207358e-65 at line 279
+New highest probability: 8.307325e-65 at line 842
+Total probability: 3.162213e-64
+
+Total Sum of Unique Path Probabilities: 8.504482e-64

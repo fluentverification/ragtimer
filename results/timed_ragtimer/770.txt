@@ -1,0 +1,20 @@
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 359: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+bin/run: 21: [[: not found
+New highest probability: 1.260253e-90 at line 1
+New highest probability: 5.202412e-77 at line 3
+New highest probability: 7.002714e-70 at line 6
+New highest probability: 9.390351e-65 at line 9
+Total probability: 5.644212e-64
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 198
+starting to run rest of tests
+./test_v3 iters=247.5 seed=2142 runs=770
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'

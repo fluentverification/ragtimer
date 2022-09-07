@@ -1,0 +1,6 @@
+gbg = 50
+
+// get the probability by other means
+// here we just want a binary property
+// which we desire to reach 
+// (i.e. a bool that describes the failure state)
