@@ -3,7 +3,7 @@
 Reaction objects store details about reactions.
 '''
 
-from audioop import add
+import math
 
 
 class Reaction:
@@ -18,6 +18,7 @@ class Reaction:
 		self.dependCount = []
 		self.executions = 0
 		self.tier = -1
+		self.useless = False
 	
 	# Add a reactant to the reaction
 	def addReactant(self, reactant):
@@ -26,6 +27,40 @@ class Reaction:
 	# Add a product to the reaction
 	def addProduct(self, product):
 		self.products.append(product)
+
+	def check_usefulness(self, new_initials, new_targets, add_or_sub, parent):
+
+		print("Checking usefulness on", str(self.name))
+		print(new_initials)
+		print(new_targets)
+		print(len(self.dependsOn))
+		infinite_dependsOn = True
+		for d in self.dependCount:
+			if d != math.inf:
+				infinite_dependsOn = False
+		if infinite_dependsOn:
+			for i in range(len(new_initials)):
+				deltaR = new_targets[i] - new_initials[i]
+				print("deltaR",deltaR)
+				if ((add_or_sub[i] == 'a' and deltaR > 0) or (add_or_sub[i] == 's' and deltaR < 0)):
+					# print("add_or_sub",add_or_sub[i])
+					self.useless = True
+					print("Useless", str(self.name))
+					if parent:
+						parent.dependCount[len(parent.dependCount)-1] = math.inf
+					break
+		else:
+			self.useless = False
+
+			# 	if new_targets[i] - 
+			# for d in deltaTarget:
+			# 	if d != 0:
+			# 		self.useless = True
+
+		# if self.useless and parent:
+		# 	parent.dependCount[len(parent.dependCount)-1] = math.inf
+		# 	parent.dependsOn.append("APPROPRIATE DEPENDENCY NOT FOUND. BRANCH UNREACHABLE")
+
 
 	# Custom tostring function for reactions
 	def __str__(self) -> str:
@@ -37,7 +72,10 @@ class Reaction:
 		r = r + "\nTier " + str(self.tier) + "\n"
 		for d in range(len(self.dependsOn)):
 			r = r + " - Depends On " + str(self.dependsOn[d].name) + " " + str(self.dependCount[d]) + " times\n"
+		if self.useless:
+			r = r + "USELESS"
 		return r
+	
 
 
 def printPrefixes(filename, path, reaction, paths):
@@ -130,6 +168,7 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 				print()
 				print(r.name, "in reaction history. CYCLE DETECTED.\n")
 				print()
+			
 			continue
 
 		# Add current reaction to the reaction history (to look for cycles)
@@ -197,6 +236,9 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 
 		# Recurse (find requirements for this reaction)
 		buildGraph(recdepth+1, reactions, chemicals, new_initials, new_targets, r_hist, r, add_or_sub, printing)
+
+		r.check_usefulness(new_initials, new_targets, add_or_sub, parent)
+
 
 
 '''
@@ -291,11 +333,21 @@ def makeDepGraph(infile, printing=True):
 			if react.tier > -1:
 				print(react)
 
-	if printing:
 		# Uncomment to print all reactions instead:
 		# for react in reactions:
 		# 	print(react)
 		print(50*"=")
+
+	unreachable = True
+	for r in reactions:
+		if r.tier > 0 and not(r.useless):
+			print(r.name)
+			unreachable = False
+	
+	if unreachable:
+		if printing:
+			print("\nUNREACHABLE PROPERTY! Your probability is automatically zero!\n")
+		return None
 
 	return reactions
 
