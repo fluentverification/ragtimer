@@ -60,7 +60,11 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             reactNumTemp.append(1)
         for x in range(len(productsTemp)):
             prodNumTemp.append(1)
-        reactions.append(Reaction(obj.tier, obj.executions))
+        count1 = 0
+        for y in reactions1:
+            if y.tier == obj.tier:
+                count1 += 1
+        reactions.append(Reaction(obj.tier, count1, obj.executions))
         reactions[count-1].reactants = reactantsTemp
         reactions[count-1].products = productsTemp
         reactions[count-1].reactantsNum = reactNumTemp
