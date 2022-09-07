@@ -3,6 +3,9 @@
 Reaction objects store details about reactions.
 '''
 
+from audioop import add
+
+
 class Reaction:
 
 	# Initialize a basic, empty reaction
@@ -56,8 +59,10 @@ Inputs: recursion depth, reaction array, chemical name array, initial values,
 Output: None
 '''
 
-def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_history, parent, printing=True):
+def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_history, parent, add_or_sub, printing=True):
 	
+	print(add_or_sub)
+
 	deltaTarget = []
 	needChems = []
 	needChemQty = []
@@ -67,32 +72,52 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 	for i in range(numChems):
 		if targets[i] > -1:
 			deltaR = targets[i] - initials[i]
+			# print(deltaR)
+			if not ((add_or_sub[i] == 'a' and deltaR > 0) or (add_or_sub[i] == 's' and deltaR < 0)):
+				deltaR = 0
+			# 	deltaTarget.append(deltaR)
+			# elif add_or_sub[i] == 's' and deltaR < 0:
+			# else:
 			deltaTarget.append(deltaR)
-			if deltaR > 0:
-				needChems.append(chemicals[i])
-				needChemQty.append(deltaR)
+			needChems.append(chemicals[i])
+			needChemQty.append(deltaR)
 		else:
 			deltaTarget.append(0)
 
-	# Figure out what reactions we need to generate necessary chemicals
+	if printing:
+		print("chemicals \t" + str(chemicals))
+		print("deltaTarget\t" + str(deltaTarget))
+
 	needReactions = []
+
+	# Figure out what reactions we need to generate/consume chemicals
 	for c in range(len(needChems)):
 		for r in range(len(reactions)):
-			if needChems[c] in reactions[r].products:
-				needReactions.append(reactions[r])
-	
+			if needChemQty[c] > 0:
+				if needChems[c] in reactions[r].products:
+					needReactions.append(reactions[r])
+					if printing:
+						print("Check reaction", reactions[r].name, "to obtain", needChems[c])
+			elif needChemQty[c] < 0:
+				if needChems[c] in reactions[r].reactants:
+					needReactions.append(reactions[r])
+					if printing:
+						print("Check reaction", reactions[r].name, "to reduce", needChems[c])
+
 	# For every required reaction
 	for r in needReactions:
 		
 		if printing:
 			# Print user-readable information
-			print(80*"-")
+			print()
+			print(50*"-")
 			if parent:
 				print("TIER", recdepth, "Checking", r.name,"From parent",parent.name)
 			else:
 				print("TIER", recdepth, "Checking", r.name,"From parent",parent)
-			print(80*"-")
+			print(50*"-")
 			print()
+			print("List of Chemicals    \t",chemicals)
 			print("Current Initial State\t",initials)
 			print("Current Target State \t",targets)
 			print("Delta Target-Initial \t",deltaTarget)
@@ -116,10 +141,17 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 		# Update required number of executions
 		reqExec = 0
 		for d in range(numChems):
-			for p in range(len(r.products)):
-				if chemicals[d] in r.products[p]:
-					if deltaTarget[d] > reqExec:
-						reqExec = deltaTarget[d]
+			if deltaTarget[d] > 0:
+				for p in range(len(r.products)):
+					if chemicals[d] in r.products[p]:
+						if deltaTarget[d] > reqExec:
+							reqExec = deltaTarget[d]
+			elif deltaTarget[d] < 0:
+				for p in range(len(r.reactants)):
+					if chemicals[d] in r.reactants[p]:
+						if -deltaTarget[d] > reqExec:
+							reqExec = -deltaTarget[d]
+
 
 		# Add to the required executions in the reaction object
 		r.executions = r.executions + reqExec
@@ -164,7 +196,7 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 			print(r)
 
 		# Recurse (find requirements for this reaction)
-		buildGraph(recdepth+1, reactions, chemicals, new_initials, new_targets, r_hist, r, False)
+		buildGraph(recdepth+1, reactions, chemicals, new_initials, new_targets, r_hist, r, add_or_sub, printing)
 
 
 '''
@@ -234,17 +266,25 @@ def makeDepGraph(infile, printing=True):
 	reaction_history = []
 
 	if printing:
-		print(80*"=")
+		print(50*"=")
+
+	# Check if we should add or subtract for each chemical
+	add_or_sub = []
+	for i in range(len(initials)):
+		if initials[i] > targets[i] and targets[i] >= 0:
+			add_or_sub.append('s')
+		else:
+			add_or_sub.append('a')
 
 	# Recursively find the necessary reactions
-	buildGraph(0, reactions, chemicals, initials, targets, reaction_history, None, printing)
+	buildGraph(0, reactions, chemicals, initials, targets, reaction_history, None, add_or_sub, printing)
 
 	if printing:
 		# Print the list of necessary reactions and their dependencies
 		print()
-		print(80*"=")
+		print(50*"=")
 		print("NECESSARY REACTIONS")
-		print(80*"=")
+		print(50*"=")
 
 		# Print only necessary reactions:
 		for react in reactions:
@@ -255,7 +295,7 @@ def makeDepGraph(infile, printing=True):
 		# Uncomment to print all reactions instead:
 		# for react in reactions:
 		# 	print(react)
-		print(80*"=")
+		print(50*"=")
 
 	return reactions
 
@@ -263,4 +303,4 @@ def makeDepGraph(infile, printing=True):
 # Main function... use 8-reaction file if 
 # no other input is provided
 if __name__=="__main__":
-	makeDepGraph("8reaction_input.txt")
+	makeDepGraph("8reaction_input.txt", True)

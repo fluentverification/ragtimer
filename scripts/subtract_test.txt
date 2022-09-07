@@ -1,0 +1,75 @@
+==================================================
+['s', 'a', 'a', 'a', 'a', 'a', 'a']
+chemicals 	['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+deltaTarget	[-50, 0, 0, 0, 0, 0, 0]
+Check reaction r2 to reduce r
+Check reaction r3 to reduce r
+
+--------------------------------------------------
+TIER 0 Checking r2 From parent None
+--------------------------------------------------
+
+List of Chemicals    	 ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+Current Initial State	 [50, 2, 0, 50, 0, 10, 0]
+Current Target State 	 [0, -1, -1, -1, -1, -1, -1]
+Delta Target-Initial 	 [-50, 0, 0, 0, 0, 0, 0]
+Chemicals Required   	 ['r']
+In these quantities  	 [-50]
+
+Required Executions	 50
+Initial After 50 Execs	 [50, 2, 0, 50, 0, 10, 0]
+Target After 50 Execs	 [50, -1, -1, -1, -1, -1, -1]
+
+r2 - Rate 0.0004
+Reactants ['r']
+Products []
+Required Executions 50
+Tier 0
+
+['s', 'a', 'a', 'a', 'a', 'a', 'a']
+chemicals 	['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+deltaTarget	[0, 0, 0, 0, 0, 0, 0]
+
+--------------------------------------------------
+TIER 0 Checking r3 From parent None
+--------------------------------------------------
+
+List of Chemicals    	 ['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+Current Initial State	 [50, 2, 0, 50, 0, 10, 0]
+Current Target State 	 [0, -1, -1, -1, -1, -1, -1]
+Delta Target-Initial 	 [-50, 0, 0, 0, 0, 0, 0]
+Chemicals Required   	 ['r']
+In these quantities  	 [-50]
+
+Required Executions	 50
+Initial After 50 Execs	 [50, 52, 50, 50, 0, 10, 0]
+Target After 50 Execs	 [50, 50, -1, -1, -1, -1, -1]
+
+r3 - Rate 0.042
+Reactants ['r', 'l']
+Products ['rl', 'l']
+Required Executions 50
+Tier 0
+
+['s', 'a', 'a', 'a', 'a', 'a', 'a']
+chemicals 	['r', 'l', 'rl', 'g', 'ga', 'gbg', 'gd']
+deltaTarget	[0, 0, 0, 0, 0, 0, 0]
+
+==================================================
+NECESSARY REACTIONS
+==================================================
+
+r2 - Rate 0.0004
+Reactants ['r']
+Products []
+Required Executions 50
+Tier 0
+
+
+r3 - Rate 0.042
+Reactants ['r', 'l']
+Products ['rl', 'l']
+Required Executions 50
+Tier 0
+
+==================================================
