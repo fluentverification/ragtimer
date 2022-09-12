@@ -1,0 +1,27 @@
+﻿Peak memory usage: 324 MB
+Analysis results for yeastPolarization_1.modest
+Status:          Finished 
+Simulation time: 15.3 s
+
++ Property 1
+  Estimated value:     1.739973894266819E-06 
+  Confidence interval: [1.5660570633087284E-06, 1.9138907252249094E-06] 
+  Runs used:           1809 
+  Run type:            MA / fixed effort (64) 
+  Status:              Finished 
+
+  + Sample data
+    Mean:     1.739973894266819E-06 
+    Variance: 1.4209332836733682E-11 
+    Skewness: 4.820111395515419 
+    Kurtosis: 40.271202066393116 
+
+  + Error bounds
+    Statement: CI: 100(1 - α)% of intervals contain true value (CLT assumption) 
+    α:         0.050000000000000044 
+
+  + Importance function
+    Type:               Ad-hoc monolithic 
+    Level calc. method: Expected success (1) 
+    Level calc. sweeps: 8 
+    Levels:             11 
