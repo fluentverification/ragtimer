@@ -1045,34 +1045,44 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                 count2 += 1
                 if x.priority == 0:
                     count3 += 1
-                    count4 = count2
+                    countTemp = count2
                     if count3 == 1:
                         ivyFile.write(f"r{count2}_executions")
                     if count3 >= 2:
                         ivyFile.write(f" + r{count2}_executions")
                 if count2 == numOfReactions:
                     ivyFile.write(") >= ")
-                    ivyFile.write(f"{reactions[count4-1].executions})")
+                    count4 = 0
+                    for q in reactions:
+                        count4 += 1
+                        if count4 == countTemp:
+                            ivyFile.write(f"{q.executions})")
+                            break
             count2 = 0
             count3 = 0
             for y in reactions:
                 count2 += 1
                 if x.priority == 1:
                     count3 += 1
-                    count4 = count2
+                    countTemp = count2
                     if count3 == 1:
                         ivyFile.write(f" & ((r{count2}_executions")
                     if count3 >= 2:
                         ivyFile.write(f" + r{count2}_executions")
                 if count2 == numOfReactions and count3 > 0:
                     ivyFile.write(") >= ")
-                    ivyFile.write(f"{reactions[count4-1].executions})")
+                    count4 = 0
+                    for q in reactions:
+                        count4 += 1
+                        if count4 == countTemp:
+                            ivyFile.write(f"{q.executions})")
+                            break
             count2 = 0
             count3 = 0
             for y in reactions:
                 count2 += 1
                 if x.priority == 2:
-                    count4=count2
+                    countTemp=count2
                     count3 += 1
                     if count3 == 1:
                         ivyFile.write(f" & ((r{count2}_executions")
@@ -1080,12 +1090,18 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         ivyFile.write(f" + r{count2}_executions")
                 if count2 == numOfReactions and count3 > 0:
                     ivyFile.write(") >= ")
-                    ivyFile.write(f"{reactions[count4-1].executions})")
+                    count4 = 0
+                    for q in reactions:
+                        count4 += 1
+                        if count4 == countTemp:
+                            ivyFile.write(f"{q.executions})")
+                            break
             count2 = 0
             count3 = 0
             for y in reactions:
                 count2 += 1
                 if y.priority == 3:
+                    countTemp = count2
                     count3 += 1
                     if count3 == 1:
                         ivyFile.write(f" & ((r{count2}_executions")
@@ -1093,7 +1109,12 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         ivyFile.write(f" + r{count2}_executions")
                 if count2 == numOfReactions and count3 > 0:
                     ivyFile.write(") >= ")
-                    ivyFile.write(f"{y.executions})")
+                    count4 = 0
+                    for q in reactions:
+                        count4 += 1
+                        if count4 == countTemp:
+                            ivyFile.write(f"{q.executions})")
+                            break
             ivyFile.write(f")\n\t{c}\n\n")
             
         
