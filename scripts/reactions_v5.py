@@ -1056,8 +1056,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                     for q in reactions:
                         count4 += 1
                         if count4 == countTemp:
-                            #ivyFile.write(f"{q.executions})")
-                            ivyFile.write("25")
+                            ivyFile.write(f"{q.executions})")
                             break
             count2 = 0
             count3 = 0
