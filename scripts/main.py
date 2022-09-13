@@ -49,7 +49,7 @@ if __name__ == "__main__":
         print(50*"-")
         print(paths[a])
         print(50*"-")
-        reactions_v5.randTest(iters, reactions1, prefix, a, False)
+        reactions_v5.randTest(iters, reactions1, prefix, a, printing=True)
 
         # os.system("make test")
         o = subprocess.check_output(["make", "test"],universal_newlines=True)

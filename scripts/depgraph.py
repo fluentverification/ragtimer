@@ -36,7 +36,7 @@ class Reaction:
 		print(len(self.dependsOn))
 		infinite_dependsOn = True
 		for d in self.dependCount:
-			if d != math.inf:
+			if d != 0:
 				infinite_dependsOn = False
 		if infinite_dependsOn:
 			for i in range(len(new_initials)):
@@ -47,7 +47,8 @@ class Reaction:
 					self.useless = True
 					print("Useless", str(self.name))
 					if parent:
-						parent.dependCount[len(parent.dependCount)-1] = math.inf
+						parent.dependCount[len(parent.dependCount)-1] = 0
+					self.tier = -1
 					break
 		else:
 			self.useless = False
@@ -86,7 +87,8 @@ def printPrefixes(filename, path, reaction, paths):
 			f.write("_PREFIX_\t" + path + "\n")
 			return
 	for r in reaction.dependsOn:
-		printPrefixes(filename, path, r, paths)
+		if r.tier > -1:
+			printPrefixes(filename, path, r, paths)
 	
 
 
@@ -355,4 +357,5 @@ def makeDepGraph(infile, printing=True):
 # Main function... use 8-reaction file if 
 # no other input is provided
 if __name__=="__main__":
-	makeDepGraph("8reaction_input.txt", True)
+	# makeDepGraph("8reaction_input.txt", True)
+	makeDepGraph("../models/KuwaharaEnzyme/6reaction.ragtimer", True)

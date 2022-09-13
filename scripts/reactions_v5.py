@@ -7,7 +7,8 @@ import prefix_parser
 import sys
 
 class Options:
-    infile = "8reaction_input.txt"
+    # infile = "8reaction_input.txt"
+    infile = "../models/KuwaharaEnzyme/6reaction.ragtimer"
     firstIvyModel = "test_v2.ivy"
     firstIvyModelName = "test_v2"
     firstTestResult = "test_v2.txt"
@@ -1148,6 +1149,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
         runCommand.append("runs=" + str(r))
 
         cppout += subprocess.check_output(runCommand, universal_newlines = True)
+
+        # print(cppout)
 
         # firsthalf = f"./{Options.secondIvyModelName} iters="
         # middle = str(math.ceil(first_iters*1.25))

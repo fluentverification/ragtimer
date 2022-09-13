@@ -4,7 +4,8 @@ import os
 import depgraph
 
 class Options:
-    infile = "8reaction_input.txt"
+    # infile = "8reaction_input.txt"
+    infile = "../models/KuwaharaEnzyme/6reaction.ragtimer"
     firstIvyModel = "test_v2.ivy"
     firstIvyModelName = "test_v2"
     firstTestResult = "test_v2.txt"
