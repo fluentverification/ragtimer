@@ -1042,7 +1042,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             ivyFile.write(") | (((")
             for y in reactions:     ####This only works CRNs that don't need to go past the 3rd tier
                 count2 += 1
-                if y.priority == 0:
+                if x.priority == 0:
                     count3 += 1
                     if count3 == 1:
                         ivyFile.write(f"r{count2}_executions")
@@ -1055,7 +1055,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             count3 = 0
             for y in reactions:
                 count2 += 1
-                if y.priority == 1:
+                if x.priority == 1:
                     count3 += 1
                     if count3 == 1:
                         ivyFile.write(f" & ((r{count2}_executions")
@@ -1068,7 +1068,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             count3 = 0
             for y in reactions:
                 count2 += 1
-                if y.priority == 2:
+                if x.priority == 2:
                     count3 += 1
                     if count3 == 1:
                         ivyFile.write(f" & ((r{count2}_executions")
