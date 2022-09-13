@@ -981,7 +981,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                             ivyFile.write(f" + r{count1}_executions")
                     if count1 == numOfReactions:
                         ivyFile.write(") < ")
-                        ivyFile.write(str(obj.executions))
+                        ivyFile.write(str(y.executions))
                 ivyFile.write("\n\t}\n\t")
             else:
                 ivyFile.write(f" {o}\n\t\tassert idle = 0;\n\t\tassert enabled_checker.is_enabled_r{count}(")
