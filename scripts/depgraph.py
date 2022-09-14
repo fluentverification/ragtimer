@@ -381,4 +381,4 @@ def makeDepGraph(infile, printing=True):
 # no other input is provided
 if __name__=="__main__":
 	# makeDepGraph("8reaction_input.txt", True)
-	makeDepGraph("../models/SingleSpecies/2reaction.ragtimer", True)
+	makeDepGraph("../model.ragtimer", True)

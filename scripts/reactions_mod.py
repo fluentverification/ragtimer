@@ -5,7 +5,7 @@ import depgraph
 
 class Options:
     # infile = "8reaction_input.txt"
-    infile = "../models/SingleSpecies/2reaction.ragtimer"
+    infile = "../model.ragtimer"
     firstIvyModel = "test_v2.ivy"
     firstIvyModelName = "test_v2"
     firstTestResult = "test_v2.txt"
