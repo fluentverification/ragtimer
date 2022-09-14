@@ -176,6 +176,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                 exit()
 
     print(upOrDown)
+    print(speciesList)
 
     for obj in speciesList:
         if obj.name == targetSpecies:
