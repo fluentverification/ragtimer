@@ -1,170 +1,130 @@
 Run 1:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 1 information
 
-Iterations before idling was reached: 47
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 38
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 2:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 2 information
 
-Iterations before idling was reached: 46
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 39
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 3:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 3 information
 
-Iterations before idling was reached: 47
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 38
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 4:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 4 information
 
-Iterations before idling was reached: 46
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 38
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 5:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 5 information
 
-Iterations before idling was reached: 47
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 39
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 6:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 6 information
 
-Iterations before idling was reached: 46
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 38
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 7:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 7 information
 
-Iterations before idling was reached: 47
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 39
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 8:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 8 information
 
-Iterations before idling was reached: 47
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 39
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 9:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 9 information
 
-Iterations before idling was reached: 48
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 39
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 
 Run 10:
 
-r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	r6	r4	
+r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	r1	
 
 Run 10 information
 
-Iterations before idling was reached: 47
-Number of transitions: 46
-r1executions: 0
+Iterations before idling was reached: 38
+Number of transitions: 38
+r1executions: 38
 r2executions: 0
-r3executions: 0
-r4executions: 23
-r5executions: 0
-r6executions: 23
 
 
 

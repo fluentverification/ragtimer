@@ -1,14 +1,49 @@
 bin/run: 21: [[: not found
+Traceback (most recent call last):
+  File "/usr/local/bin/ivy_to_cpp", line 11, in <module>
+    load_entry_point('ms-ivy==1.7.0', 'console_scripts', 'ivy_to_cpp')()
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_to_cpp.py", line 5134, in main
+    main_int(False)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_to_cpp.py", line 5177, in main_int
+    ivy_init.ivy_init(create_isolate=False)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_init.py", line 106, in ivy_init
+    source_file(fn,f,**skwargs)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_init.py", line 72, in source_file
+    ivy_load_file(f,**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_compiler.py", line 2171, in ivy_load_file
+    decls = read_module(f)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_compiler.py", line 2143, in read_module
+    reload(ivy_parser)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_parser.py", line 2668, in <module>
+    parser = yacc.yacc(start='top',tabmodule='ivy_parsetab',errorlog=yacc.NullLogger(),outputdir=tabdir,debug=None)
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 3438, in yacc
+    lr = LRGeneratedTable(grammar, method, debuglog)
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 2135, in __init__
+    self.lr_parse_table()
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 2551, in lr_parse_table
+    self.add_lalr_lookaheads(C)
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 2527, in add_lalr_lookaheads
+    self.add_lookaheads(lookd, followsets)
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 2500, in add_lookaheads
+    if a not in p.lookaheads[state]:
+KeyboardInterrupt
 Expect to see a message claiming an error: assertion failure.
 This message indicates correct functionality.
 r1
+--------------------------------------------------
+r1	r1	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7f5156d4cfa0>, <reactions_v5.Species object at 0x7f515655f670>]
+1
 Traceback (most recent call last):
-  File "/home/landon/ragtimer/scripts/main.py", line 47, in <module>
-    o = subprocess.check_output(["make", "test"],universal_newlines=True)
-  File "/usr/lib/python3.9/subprocess.py", line 424, in check_output
-    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-  File "/usr/lib/python3.9/subprocess.py", line 507, in run
-    stdout, stderr = process.communicate(input, timeout=timeout)
-  File "/usr/lib/python3.9/subprocess.py", line 1121, in communicate
-    stdout = self.stdout.read()
+  File "/home/landonjefftaylor/ragtimer/scripts/main.py", line 73, in <module>
+    reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=PRINTING)
+  File "/home/landonjefftaylor/ragtimer/scripts/reactions_v5.py", line 629, in randTest
+    ivy_to_cpp_command.wait()
+  File "/usr/lib/python3.10/subprocess.py", line 1204, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1938, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/lib/python3.10/subprocess.py", line 1896, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
 KeyboardInterrupt
