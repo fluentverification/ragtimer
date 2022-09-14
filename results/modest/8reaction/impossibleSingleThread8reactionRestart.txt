@@ -1,0 +1,13 @@
+﻿Peak memory usage: 151 MB
+Analysis results for yeastPolarization_1.modest
+Status:          Cancelled (2% done) 
+Simulation time: 102243.3 s
+
++ 1
+  Status: Cancelled (2% done) 
+
+  + Importance function
+    Type:               Ad-hoc monolithic 
+    Level calc. method: Expected success (1)
+
+    traces generated: 326156 
