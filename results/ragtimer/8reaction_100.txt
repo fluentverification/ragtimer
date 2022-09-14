@@ -1,0 +1,354 @@
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.cpp: In function ‘unsigned int hash_space::string_hash(const char*, unsigned int, unsigned int)’:
+test_v2.cpp:623:23: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                       ^
+test_v2.cpp:623:26: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                          ^
+test_v2.cpp:623:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                             ^
+test_v2.cpp:623:32: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                                ^~~
+test_v2.ivy: line 350: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+test_v3.cpp: In function ‘unsigned int hash_space::string_hash(const char*, unsigned int, unsigned int)’:
+test_v3.cpp:623:23: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                       ^
+test_v3.cpp:623:26: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                          ^
+test_v3.cpp:623:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                             ^
+test_v3.cpp:623:32: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                                ^~~
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.cpp: In function ‘unsigned int hash_space::string_hash(const char*, unsigned int, unsigned int)’:
+test_v2.cpp:623:23: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                       ^
+test_v2.cpp:623:26: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                          ^
+test_v2.cpp:623:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                             ^
+test_v2.cpp:623:32: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                                ^~~
+test_v2.ivy: line 350: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+test_v3.cpp: In function ‘unsigned int hash_space::string_hash(const char*, unsigned int, unsigned int)’:
+test_v3.cpp:623:23: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                       ^
+test_v3.cpp:623:26: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                          ^
+test_v3.cpp:623:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                             ^
+test_v3.cpp:623:32: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                                ^~~
+bin/run: 21: [[: not found
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+r3
+r5
+r8
+--------------------------------------------------
+r3	r5	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7fb58e873730>, <reactions_v5.Species object at 0x7fb58e873760>, <reactions_v5.Species object at 0x7fb58e8736d0>, <reactions_v5.Species object at 0x7fb58e873940>, <reactions_v5.Species object at 0x7fb58e8739a0>, <reactions_v5.Species object at 0x7fb58e873a00>, <reactions_v5.Species object at 0x7fb58e873a60>]
+1
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 150
+Running test for 50 simulation runs in group 1 of 1
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/bin/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 5.432330e-76 at line 1
+New highest probability: 7.848484e-68 at line 7
+New highest probability: 5.020999e-66 at line 15
+Total probability: 5.391017e-66
+
+--------------------------------------------------
+r5	r8	r5	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7fb58e8738b0>, <reactions_v5.Species object at 0x7fb58e8736a0>, <reactions_v5.Species object at 0x7fb58e873760>, <reactions_v5.Species object at 0x7fb58e873d90>, <reactions_v5.Species object at 0x7fb58e873ac0>, <reactions_v5.Species object at 0x7fb58e873940>, <reactions_v5.Species object at 0x7fb58e8739a0>]
+1
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 255
+Running test for 50 simulation runs in group 1 of 1
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/bin/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+ERROR - Index remains -1, invalid trace at line 1 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 2 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 3 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 4 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 5 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 6 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 7 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 8 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 9 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 10 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 11 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 12 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 13 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 14 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 15 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 16 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 17 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 18 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 19 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 20 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 21 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 22 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 23 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 24 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 25 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 26 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 27 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 28 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 29 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 30 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 31 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 32 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 33 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 34 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 35 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 36 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 37 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 38 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 39 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 40 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 41 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 42 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 43 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 44 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 45 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 46 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 47 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 48 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 49 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+ERROR - Index remains -1, invalid trace at line 50 at 0 with transition r5
+AVTRAN-[r1]
+AVTRAN-[r2]
+AVTRAN-[r3]
+AVTRAN-[r8]
+Total probability: 0.000000e+00
+
+Total Sum of Unique Path Probabilities: 5.391017e-66

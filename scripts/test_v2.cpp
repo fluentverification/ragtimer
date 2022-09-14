@@ -1146,80 +1146,117 @@ int test_v2::___ivy_choose(int rng,const char *name,int id) {
             ss << ':' << ___ivy_stack[i];
         return ___ivy_gen->choose(rng,ss.str().c_str());
     }
-bool test_v2::selector__execute_r1(){
+void test_v2::ext__protocol__update_r8(){
+    {
+        ivy_assume((protocol__idle == (0 & 1)), "test_v2.ivy: line 339");
+        {
+            bool loc__0;
+    loc__0 = (bool)___ivy_choose(0,"loc:0",63);
+            {
+                ___ivy_stack.push_back(191);
+                loc__0 = enabled_checker__is_enabled_r8();
+                ___ivy_stack.pop_back();
+                ivy_assume(loc__0, "test_v2.ivy: line 340");
+            }
+        }
+        {
+            bool loc__0;
+    loc__0 = (bool)___ivy_choose(0,"loc:0",64);
+            {
+                ___ivy_stack.push_back(192);
+                loc__0 = selector__execute_r8();
+                ___ivy_stack.pop_back();
+                if(loc__0){
+                    {
+                        ___ivy_stack.push_back(193);
+                        inspector__check_guard_r8();
+                        ___ivy_stack.pop_back();
+                        ___ivy_stack.push_back(194);
+                        protocol__r_rl = updater__incr(protocol__r_rl);
+                        ___ivy_stack.pop_back();
+                        ___ivy_stack.push_back(195);
+                        protocol__r8_executions = updater__incr(protocol__r8_executions);
+                        ___ivy_stack.pop_back();
+                    }
+                }
+            }
+        }
+    }
+}
+bool test_v2::selector__execute_r8(){
     bool y;
     y = (bool)___ivy_choose(0,"fml:y",0);
     {
-        selector__r1_exec = ((selector__r1_exec + (1 & 255)) & 255);
-        if(((selector__r1_rate < selector__r1_exec) || (selector__r1_exec == selector__r1_rate))){
+        selector__r8_exec = ((selector__r8_exec + (1 & 255)) & 255);
+        if(((selector__r8_rate < selector__r8_exec) || (selector__r8_exec == selector__r8_rate))){
             {
                 y = true;
-                selector__r1_exec = (0 & 255);
-                selector__r1_count = ((selector__r1_count + (1 & 255)) & 255);
+                selector__r8_exec = (0 & 255);
+                selector__r8_count = ((selector__r8_count + (1 & 255)) & 255);
             }
         }
         else {
             y = false;
         }
-        if(((selector__r1_count_rate < selector__r1_count) || (selector__r1_count == selector__r1_count_rate))){
+        if(((selector__r8_count_rate < selector__r8_count) || (selector__r8_count == selector__r8_count_rate))){
             {
-                selector__r1_stage = ((selector__r1_stage + (1 & 7)) & 7);
-                selector__r1_count = (0 & 255);
-                selector__r1_count_rate = (4 & 255);
-                selector__r1_rate = (1 & 255);
+                selector__r8_stage = ((selector__r8_stage + (1 & 7)) & 7);
+                selector__r8_count = (0 & 255);
+                selector__r8_count_rate = (4 & 255);
+                selector__r8_rate = (2 & 255);
             }
         }
         else {
-            if((selector__r1_stage == (1 & 7))){
+            if((selector__r8_stage == (1 & 7))){
                 {
-                    selector__r1_count_rate = (3 & 255);
-                    selector__r1_rate = (1 & 255);
+                    selector__r8_count_rate = (3 & 255);
+                    selector__r8_rate = (2 & 255);
                 }
             }
             else {
-                if((selector__r1_stage == (2 & 7))){
+                if((selector__r8_stage == (2 & 7))){
                     {
-                        selector__r1_count_rate = (5 & 255);
-                        selector__r1_rate = (1 & 255);
+                        selector__r8_count_rate = (5 & 255);
+                        selector__r8_rate = (2 & 255);
                     }
                 }
                 else {
-                    if((selector__r1_stage == (3 & 7))){
+                    if((selector__r8_stage == (3 & 7))){
                         {
-                            selector__r1_count_rate = (4 & 255);
-                            selector__r1_rate = (1 & 255);
+                            selector__r8_count_rate = (4 & 255);
+                            selector__r8_rate = (2 & 255);
                         }
                     }
                     else {
-                        if((selector__r1_stage == (4 & 7))){
+                        if((selector__r8_stage == (4 & 7))){
                             {
-                                selector__r1_count_rate = (4 & 255);
-                                selector__r1_rate = (1 & 255);
+                                selector__r8_count_rate = (4 & 255);
+                                selector__r8_rate = (2 & 255);
                             }
                         }
                         else {
-                            if((selector__r1_stage == (5 & 7))){
+                            if((selector__r8_stage == (5 & 7))){
                                 {
-                                    selector__r1_count_rate = (5 & 255);
-                                    selector__r1_rate = (1 & 255);
+                                    selector__r8_count_rate = (5 & 255);
+                                    selector__r8_rate = (2 & 255);
                                 }
                             }
                             else {
-                                if((selector__r1_stage == (6 & 7))){
+                                if((selector__r8_stage == (6 & 7))){
                                     {
-                                        selector__r1_count_rate = (3 & 255);
-                                        selector__r1_rate = (1 & 255);
+                                        selector__r8_count_rate = (3 & 255);
+                                        selector__r8_rate = (2 & 255);
                                     }
                                 }
                                 else {
-                                    if((selector__r1_stage == (7 & 7))){
+                                    if((selector__r8_stage == (7 & 7))){
                                         {
-                                            selector__r1_count_rate = (4 & 255);
-                                            selector__r1_rate = (1 & 255);
+                                            selector__r8_count_rate = (4 & 255);
+                                            selector__r8_rate = (2 & 255);
                                         }
                                     }
                                     else {
-                                        selector__r1_stage = (0 & 7);
+                                        selector__r8_stage = (0 & 7);
                                     }
                                 }
                             }
@@ -1234,57 +1271,212 @@ bool test_v2::selector__execute_r1(){
 void test_v2::__init(){
     {
         {
-            selector__r1_count = (0 & 255);
-            selector__r1_count_rate = (4 & 255);
+            selector__r3_count = (0 & 255);
+            selector__r5_count = (0 & 255);
+            selector__r8_count = (0 & 255);
+            selector__r3_count_rate = (4 & 255);
+            selector__r5_count_rate = (4 & 255);
+            selector__r8_count_rate = (4 & 255);
         }
         {
-            protocol__r_s1 = (1 & 1023);
-            protocol__r_s2 = (42 & 1023);
-            protocol__r1_executions = (0 & 1023);
+            protocol__r_r = (50 & 1023);
+            protocol__r_l = (2 & 1023);
+            protocol__r_rl = (0 & 1023);
+            protocol__r_g = (50 & 1023);
+            protocol__r_ga = (0 & 1023);
+            protocol__r_gbg = (0 & 1023);
+            protocol__r_gd = (0 & 1023);
+            protocol__r3_executions = (0 & 1023);
+            protocol__r5_executions = (0 & 1023);
+            protocol__r8_executions = (0 & 1023);
             protocol__idle = (0 & 1);
         }
     }
 }
-void test_v2::ext__protocol__update_r1(){
+bool test_v2::selector__execute_r3(){
+    bool y;
+    y = (bool)___ivy_choose(0,"fml:y",0);
     {
-        ivy_assume((protocol__idle == (0 & 1)), "test_v2.ivy: line 164");
+        selector__r3_exec = ((selector__r3_exec + (1 & 255)) & 255);
+        if(((selector__r3_rate < selector__r3_exec) || (selector__r3_exec == selector__r3_rate))){
+            {
+                y = true;
+                selector__r3_exec = (0 & 255);
+                selector__r3_count = ((selector__r3_count + (1 & 255)) & 255);
+            }
+        }
+        else {
+            y = false;
+        }
+        if(((selector__r3_count_rate < selector__r3_count) || (selector__r3_count == selector__r3_count_rate))){
+            {
+                selector__r3_stage = ((selector__r3_stage + (1 & 7)) & 7);
+                selector__r3_count = (0 & 255);
+                selector__r3_count_rate = (4 & 255);
+                selector__r3_rate = (2 & 255);
+            }
+        }
+        else {
+            if((selector__r3_stage == (1 & 7))){
+                {
+                    selector__r3_count_rate = (3 & 255);
+                    selector__r3_rate = (2 & 255);
+                }
+            }
+            else {
+                if((selector__r3_stage == (2 & 7))){
+                    {
+                        selector__r3_count_rate = (5 & 255);
+                        selector__r3_rate = (2 & 255);
+                    }
+                }
+                else {
+                    if((selector__r3_stage == (3 & 7))){
+                        {
+                            selector__r3_count_rate = (4 & 255);
+                            selector__r3_rate = (2 & 255);
+                        }
+                    }
+                    else {
+                        if((selector__r3_stage == (4 & 7))){
+                            {
+                                selector__r3_count_rate = (4 & 255);
+                                selector__r3_rate = (2 & 255);
+                            }
+                        }
+                        else {
+                            if((selector__r3_stage == (5 & 7))){
+                                {
+                                    selector__r3_count_rate = (5 & 255);
+                                    selector__r3_rate = (2 & 255);
+                                }
+                            }
+                            else {
+                                if((selector__r3_stage == (6 & 7))){
+                                    {
+                                        selector__r3_count_rate = (3 & 255);
+                                        selector__r3_rate = (2 & 255);
+                                    }
+                                }
+                                else {
+                                    if((selector__r3_stage == (7 & 7))){
+                                        {
+                                            selector__r3_count_rate = (4 & 255);
+                                            selector__r3_rate = (2 & 255);
+                                        }
+                                    }
+                                    else {
+                                        selector__r3_stage = (0 & 7);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return y;
+}
+void test_v2::ext__protocol__update_r3(){
+    {
+        ivy_assume((protocol__idle == (0 & 1)), "test_v2.ivy: line 331");
         {
             bool loc__0;
-    loc__0 = (bool)___ivy_choose(0,"loc:0",29);
+    loc__0 = (bool)___ivy_choose(0,"loc:0",65);
             {
-                ___ivy_stack.push_back(72);
-                loc__0 = enabled_checker__is_enabled_r1(protocol__r_s1);
+                ___ivy_stack.push_back(196);
+                loc__0 = enabled_checker__is_enabled_r3(protocol__r_r, protocol__r_l);
                 ___ivy_stack.pop_back();
-                ivy_assume(loc__0, "test_v2.ivy: line 165");
+                ivy_assume(loc__0, "test_v2.ivy: line 332");
             }
         }
         {
             bool loc__0;
-    loc__0 = (bool)___ivy_choose(0,"loc:0",30);
+    loc__0 = (bool)___ivy_choose(0,"loc:0",66);
             {
-                ___ivy_stack.push_back(73);
-                loc__0 = selector__execute_r1();
+                ___ivy_stack.push_back(197);
+                loc__0 = selector__execute_r3();
                 ___ivy_stack.pop_back();
                 if(loc__0){
                     {
-                        ___ivy_stack.push_back(74);
-                        inspector__check_guard_r1(protocol__r_s1);
+                        ___ivy_stack.push_back(198);
+                        inspector__check_guard_r3(protocol__r_r, protocol__r_l);
                         ___ivy_stack.pop_back();
-                        ___ivy_stack.push_back(75);
-                        protocol__r_s1 = updater__decr(protocol__r_s1);
+                        ___ivy_stack.push_back(199);
+                        protocol__r_r = updater__decr(protocol__r_r);
                         ___ivy_stack.pop_back();
-                        ___ivy_stack.push_back(76);
-                        protocol__r_s1 = updater__incr(protocol__r_s1);
+                        ___ivy_stack.push_back(200);
+                        protocol__r_l = updater__decr(protocol__r_l);
                         ___ivy_stack.pop_back();
-                        ___ivy_stack.push_back(77);
-                        protocol__r_s2 = updater__incr(protocol__r_s2);
+                        ___ivy_stack.push_back(201);
+                        protocol__r_rl = updater__incr(protocol__r_rl);
                         ___ivy_stack.pop_back();
-                        ___ivy_stack.push_back(78);
-                        protocol__r1_executions = updater__incr(protocol__r1_executions);
+                        ___ivy_stack.push_back(202);
+                        protocol__r_l = updater__incr(protocol__r_l);
                         ___ivy_stack.pop_back();
-                        if((((80 & 1023) < protocol__r_s2) || (protocol__r_s2 == (80 & 1023)))){
-                            ___ivy_stack.push_back(79);
-                            goal__achieved(protocol__r_s2);
+                        ___ivy_stack.push_back(203);
+                        protocol__r3_executions = updater__incr(protocol__r3_executions);
+                        ___ivy_stack.pop_back();
+                    }
+                }
+            }
+        }
+    }
+}
+void test_v2::goal__achieved(unsigned v){
+    __ivy_out  << "< goal.achieved" << "(" << v << ")" << std::endl;
+    {
+        ivy_assert((((50 & 1023) < v) || (v == (50 & 1023))), "test_v2.ivy: line 25");
+        protocol__idle = (1 & 1);
+        ___ivy_stack.push_back(204);
+        imp__goal__achieved(v);
+        ___ivy_stack.pop_back();
+    }
+}
+void test_v2::ext__protocol__update_r5(){
+    {
+        ivy_assume((protocol__idle == (0 & 1)), "test_v2.ivy: line 335");
+        {
+            bool loc__0;
+    loc__0 = (bool)___ivy_choose(0,"loc:0",67);
+            {
+                ___ivy_stack.push_back(205);
+                loc__0 = enabled_checker__is_enabled_r5(protocol__r_rl, protocol__r_g);
+                ___ivy_stack.pop_back();
+                ivy_assume(loc__0, "test_v2.ivy: line 336");
+            }
+        }
+        {
+            bool loc__0;
+    loc__0 = (bool)___ivy_choose(0,"loc:0",68);
+            {
+                ___ivy_stack.push_back(206);
+                loc__0 = selector__execute_r5();
+                ___ivy_stack.pop_back();
+                if(loc__0){
+                    {
+                        ___ivy_stack.push_back(207);
+                        inspector__check_guard_r5(protocol__r_rl, protocol__r_g);
+                        ___ivy_stack.pop_back();
+                        ___ivy_stack.push_back(208);
+                        protocol__r_rl = updater__decr(protocol__r_rl);
+                        ___ivy_stack.pop_back();
+                        ___ivy_stack.push_back(209);
+                        protocol__r_g = updater__decr(protocol__r_g);
+                        ___ivy_stack.pop_back();
+                        ___ivy_stack.push_back(210);
+                        protocol__r_ga = updater__incr(protocol__r_ga);
+                        ___ivy_stack.pop_back();
+                        ___ivy_stack.push_back(211);
+                        protocol__r_gbg = updater__incr(protocol__r_gbg);
+                        ___ivy_stack.pop_back();
+                        ___ivy_stack.push_back(212);
+                        protocol__r5_executions = updater__incr(protocol__r5_executions);
+                        ___ivy_stack.pop_back();
+                        if((((50 & 1023) < protocol__r_gbg) || (protocol__r_gbg == (50 & 1023)))){
+                            ___ivy_stack.push_back(213);
+                            goal__achieved(protocol__r_gbg);
                             ___ivy_stack.pop_back();
                         }
                     }
@@ -1293,21 +1485,133 @@ void test_v2::ext__protocol__update_r1(){
         }
     }
 }
+bool test_v2::selector__execute_r5(){
+    bool y;
+    y = (bool)___ivy_choose(0,"fml:y",0);
+    {
+        selector__r5_exec = ((selector__r5_exec + (1 & 255)) & 255);
+        if(((selector__r5_rate < selector__r5_exec) || (selector__r5_exec == selector__r5_rate))){
+            {
+                y = true;
+                selector__r5_exec = (0 & 255);
+                selector__r5_count = ((selector__r5_count + (1 & 255)) & 255);
+            }
+        }
+        else {
+            y = false;
+        }
+        if(((selector__r5_count_rate < selector__r5_count) || (selector__r5_count == selector__r5_count_rate))){
+            {
+                selector__r5_stage = ((selector__r5_stage + (1 & 7)) & 7);
+                selector__r5_count = (0 & 255);
+                selector__r5_count_rate = (4 & 255);
+                selector__r5_rate = (1 & 255);
+            }
+        }
+        else {
+            if((selector__r5_stage == (1 & 7))){
+                {
+                    selector__r5_count_rate = (3 & 255);
+                    selector__r5_rate = (1 & 255);
+                }
+            }
+            else {
+                if((selector__r5_stage == (2 & 7))){
+                    {
+                        selector__r5_count_rate = (5 & 255);
+                        selector__r5_rate = (1 & 255);
+                    }
+                }
+                else {
+                    if((selector__r5_stage == (3 & 7))){
+                        {
+                            selector__r5_count_rate = (4 & 255);
+                            selector__r5_rate = (1 & 255);
+                        }
+                    }
+                    else {
+                        if((selector__r5_stage == (4 & 7))){
+                            {
+                                selector__r5_count_rate = (4 & 255);
+                                selector__r5_rate = (1 & 255);
+                            }
+                        }
+                        else {
+                            if((selector__r5_stage == (5 & 7))){
+                                {
+                                    selector__r5_count_rate = (5 & 255);
+                                    selector__r5_rate = (1 & 255);
+                                }
+                            }
+                            else {
+                                if((selector__r5_stage == (6 & 7))){
+                                    {
+                                        selector__r5_count_rate = (3 & 255);
+                                        selector__r5_rate = (1 & 255);
+                                    }
+                                }
+                                else {
+                                    if((selector__r5_stage == (7 & 7))){
+                                        {
+                                            selector__r5_count_rate = (4 & 255);
+                                            selector__r5_rate = (1 & 255);
+                                        }
+                                    }
+                                    else {
+                                        selector__r5_stage = (0 & 7);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return y;
+}
+void test_v2::imp__goal__achieved(unsigned v){
+    {
+    }
+}
+void test_v2::inspector__check_guard_r5(unsigned reactant1, unsigned reactant2){
+    __ivy_out  << "< inspector.check_guard_r5" << "(" << reactant1 << "," << reactant2 << ")" << std::endl;
+    {
+        ivy_assert(((((1 & 1023) < reactant1) || (reactant1 == (1 & 1023))) && (((1 & 1023) < reactant2) || (reactant2 == (1 & 1023)))), "test_v2.ivy: line 66");
+        ___ivy_stack.push_back(214);
+        imp__inspector__check_guard_r5(reactant1, reactant2);
+        ___ivy_stack.pop_back();
+    }
+}
+void test_v2::inspector__check_guard_r3(unsigned reactant1, unsigned reactant2){
+    __ivy_out  << "< inspector.check_guard_r3" << "(" << reactant1 << "," << reactant2 << ")" << std::endl;
+    {
+        ivy_assert(((((1 & 1023) < reactant1) || (reactant1 == (1 & 1023))) && (((1 & 1023) < reactant2) || (reactant2 == (1 & 1023)))), "test_v2.ivy: line 61");
+        ___ivy_stack.push_back(215);
+        imp__inspector__check_guard_r3(reactant1, reactant2);
+        ___ivy_stack.pop_back();
+    }
+}
+void test_v2::inspector__check_guard_r8(){
+    __ivy_out  << "< inspector.check_guard_r8" << std::endl;
+    {
+        ivy_assert(true, "test_v2.ivy: line 71");
+        ___ivy_stack.push_back(216);
+        imp__inspector__check_guard_r8();
+        ___ivy_stack.pop_back();
+    }
+}
+void test_v2::ext__protocol__idling(){
+    {
+        ivy_assume((protocol__idle == (1 & 1)), "test_v2.ivy: line 345");
+        ivy_assert((protocol__idle == (0 & 1)), "test_v2.ivy: line 350");
+    }
+}
 unsigned test_v2::updater__incr(unsigned x){
     unsigned y;
     y = (unsigned)___ivy_choose(0,"fml:y",0);
     y = ((x + (1 & 1023)) & 1023);
     return y;
-}
-void test_v2::goal__achieved(unsigned v){
-    __ivy_out  << "< goal.achieved" << "(" << v << ")" << std::endl;
-    {
-        ivy_assert((((80 & 1023) < v) || (v == (80 & 1023))), "test_v2.ivy: line 25");
-        protocol__idle = (1 & 1);
-        ___ivy_stack.push_back(71);
-        imp__goal__achieved(v);
-        ___ivy_stack.pop_back();
-    }
 }
 unsigned test_v2::updater__decr(unsigned x){
     unsigned y;
@@ -1315,33 +1619,24 @@ unsigned test_v2::updater__decr(unsigned x){
     y = ((x - (1 & 1023)) & 1023);
     return y;
 }
-void test_v2::ext__protocol__idling(){
-    {
-        ivy_assume((protocol__idle == (1 & 1)), "test_v2.ivy: line 170");
-        ivy_assert((protocol__idle == (0 & 1)), "test_v2.ivy: line 175");
-    }
-}
-void test_v2::imp__goal__achieved(unsigned v){
+void test_v2::imp__inspector__check_guard_r5(unsigned reactant1, unsigned reactant2){
     {
     }
 }
-void test_v2::imp__inspector__check_guard_r1(unsigned reactant1){
-    {
-    }
-}
-void test_v2::inspector__check_guard_r1(unsigned reactant1){
-    __ivy_out  << "< inspector.check_guard_r1" << "(" << reactant1 << ")" << std::endl;
-    {
-        ivy_assert((((1 & 1023) < reactant1) || (reactant1 == (1 & 1023))), "test_v2.ivy: line 48");
-        ___ivy_stack.push_back(80);
-        imp__inspector__check_guard_r1(reactant1);
-        ___ivy_stack.pop_back();
-    }
-}
-bool test_v2::enabled_checker__is_enabled_r1(unsigned reactant1){
+bool test_v2::enabled_checker__is_enabled_r8(){
     bool y;
     y = (bool)___ivy_choose(0,"fml:y",0);
-    if((((1 & 1023) < reactant1) || (reactant1 == (1 & 1023)))){
+    y = true;
+    return y;
+}
+void test_v2::imp__inspector__check_guard_r3(unsigned reactant1, unsigned reactant2){
+    {
+    }
+}
+bool test_v2::enabled_checker__is_enabled_r3(unsigned reactant1, unsigned reactant2){
+    bool y;
+    y = (bool)___ivy_choose(0,"fml:y",0);
+    if(((((1 & 1023) < reactant1) || (reactant1 == (1 & 1023))) && (((1 & 1023) < reactant2) || (reactant2 == (1 & 1023))))){
         y = true;
     }
     else {
@@ -1351,19 +1646,44 @@ bool test_v2::enabled_checker__is_enabled_r1(unsigned reactant1){
 }
 void test_v2::ext__protocol__fail_test(){
     {
-        ivy_assume((protocol__idle == (0 & 1)), "test_v2.ivy: line 181");
+        ivy_assume((protocol__idle == (0 & 1)), "test_v2.ivy: line 356");
         {
             bool loc__0;
-    loc__0 = (bool)___ivy_choose(0,"loc:0",31);
+    loc__0 = (bool)___ivy_choose(0,"loc:0",69);
+            bool loc__1;
+    loc__1 = (bool)___ivy_choose(0,"loc:1",69);
+            bool loc__2;
+    loc__2 = (bool)___ivy_choose(0,"loc:2",69);
             {
-                ___ivy_stack.push_back(81);
-                loc__0 = enabled_checker__is_enabled_r1(protocol__r_s1);
+                ___ivy_stack.push_back(217);
+                loc__0 = enabled_checker__is_enabled_r3(protocol__r_r, protocol__r_l);
                 ___ivy_stack.pop_back();
-                ivy_assume((loc__0 == false), "test_v2.ivy: line 182");
+                ___ivy_stack.push_back(218);
+                loc__1 = enabled_checker__is_enabled_r5(protocol__r_rl, protocol__r_g);
+                ___ivy_stack.pop_back();
+                ___ivy_stack.push_back(219);
+                loc__2 = enabled_checker__is_enabled_r8();
+                ___ivy_stack.pop_back();
+                ivy_assume(((loc__0 == false) && (loc__1 == false) && (loc__2 == false)), "test_v2.ivy: line 357");
             }
         }
-        ivy_assert(false, "test_v2.ivy: line 186");
+        ivy_assert(false, "test_v2.ivy: line 361");
     }
+}
+void test_v2::imp__inspector__check_guard_r8(){
+    {
+    }
+}
+bool test_v2::enabled_checker__is_enabled_r5(unsigned reactant1, unsigned reactant2){
+    bool y;
+    y = (bool)___ivy_choose(0,"fml:y",0);
+    if(((((1 & 1023) < reactant1) || (reactant1 == (1 & 1023))) && (((1 & 1023) < reactant2) || (reactant2 == (1 & 1023))))){
+        y = true;
+    }
+    else {
+        y = false;
+    }
+    return y;
 }
 void test_v2::__tick(int __timeout){
 }
@@ -1405,32 +1725,66 @@ init_gen::init_gen(){
     mk_bv("updater.exec_stage",3);
     mk_bv("updater.num",10);
     mk_bv("updater.exec_var",8);
+    mk_const("protocol.r3_executions","updater.num");
+    mk_const("protocol.r5_executions","updater.num");
+    mk_const("protocol.r_rl","updater.num");
+    mk_const("selector.r5_count","updater.exec_var");
+    mk_const("protocol.r_gd","updater.num");
+    mk_const("selector.r5_stage","updater.exec_stage");
+    mk_const("protocol.r_ga","updater.num");
+    mk_const("selector.r8_exec","updater.exec_var");
+    mk_const("selector.r8_count","updater.exec_var");
     mk_const("_generating","Bool");
+    mk_const("selector.r5_count_rate","updater.exec_var");
+    mk_const("selector.r8_count_rate","updater.exec_var");
+    mk_const("selector.r5_rate","updater.exec_var");
+    mk_const("selector.r8_rate","updater.exec_var");
+    mk_const("selector.r3_rate","updater.exec_var");
+    mk_const("selector.r3_stage","updater.exec_stage");
     mk_const("protocol.idle","protocol.2bit");
-    mk_const("selector.r1_rate","updater.exec_var");
-    mk_const("protocol.r1_executions","updater.num");
-    mk_const("selector.r1_exec","updater.exec_var");
-    mk_const("selector.r1_count_rate","updater.exec_var");
-    mk_const("protocol.r_s2","updater.num");
-    mk_const("protocol.r_s1","updater.num");
-    mk_const("selector.r1_count","updater.exec_var");
-    mk_const("selector.r1_stage","updater.exec_stage");
+    mk_const("selector.r8_stage","updater.exec_stage");
+    mk_const("selector.r3_count_rate","updater.exec_var");
+    mk_const("selector.r3_count","updater.exec_var");
+    mk_const("protocol.r_r","updater.num");
+    mk_const("protocol.r_l","updater.num");
+    mk_const("selector.r3_exec","updater.exec_var");
+    mk_const("protocol.r_gbg","updater.num");
+    mk_const("selector.r5_exec","updater.exec_var");
+    mk_const("protocol.r_g","updater.num");
+    mk_const("protocol.r8_executions","updater.num");
     add("(assert (and\
       and\
     ))");
 }
 bool init_gen::generate(test_v2& obj) {
     alits.clear();
+    obj.protocol__r3_executions = (unsigned)(rand() % 1024);
+    obj.protocol__r5_executions = (unsigned)(rand() % 1024);
+    obj.protocol__r_rl = (unsigned)(rand() % 1024);
+    obj.selector__r5_count = (unsigned)(rand() % 256);
+    obj.protocol__r_gd = (unsigned)(rand() % 1024);
+    obj.selector__r5_stage = (unsigned)(rand() % 8);
+    obj.protocol__r_ga = (unsigned)(rand() % 1024);
+    obj.selector__r8_exec = (unsigned)(rand() % 256);
+    obj.selector__r8_count = (unsigned)(rand() % 256);
     obj._generating = (bool)(rand() % 2);
+    obj.selector__r5_count_rate = (unsigned)(rand() % 256);
+    obj.selector__r8_count_rate = (unsigned)(rand() % 256);
+    obj.selector__r5_rate = (unsigned)(rand() % 256);
+    obj.selector__r8_rate = (unsigned)(rand() % 256);
+    obj.selector__r3_rate = (unsigned)(rand() % 256);
+    obj.selector__r3_stage = (unsigned)(rand() % 8);
     obj.protocol__idle = (unsigned)(rand() % 2);
-    obj.selector__r1_rate = (unsigned)(rand() % 256);
-    obj.protocol__r1_executions = (unsigned)(rand() % 1024);
-    obj.selector__r1_exec = (unsigned)(rand() % 256);
-    obj.selector__r1_count_rate = (unsigned)(rand() % 256);
-    obj.protocol__r_s2 = (unsigned)(rand() % 1024);
-    obj.protocol__r_s1 = (unsigned)(rand() % 1024);
-    obj.selector__r1_count = (unsigned)(rand() % 256);
-    obj.selector__r1_stage = (unsigned)(rand() % 8);
+    obj.selector__r8_stage = (unsigned)(rand() % 8);
+    obj.selector__r3_count_rate = (unsigned)(rand() % 256);
+    obj.selector__r3_count = (unsigned)(rand() % 256);
+    obj.protocol__r_r = (unsigned)(rand() % 1024);
+    obj.protocol__r_l = (unsigned)(rand() % 1024);
+    obj.selector__r3_exec = (unsigned)(rand() % 256);
+    obj.protocol__r_gbg = (unsigned)(rand() % 1024);
+    obj.selector__r5_exec = (unsigned)(rand() % 256);
+    obj.protocol__r_g = (unsigned)(rand() % 1024);
+    obj.protocol__r8_executions = (unsigned)(rand() % 1024);
 
     // std::cout << slvr << std::endl;
     bool __res = solve();
@@ -1442,36 +1796,50 @@ bool init_gen::generate(test_v2& obj) {
     obj.__init();
     return __res;
 }
-class ext__protocol__update_r1_gen : public gen {
+class ext__protocol__update_r8_gen : public gen {
   public:
-    ext__protocol__update_r1_gen();
+    ext__protocol__update_r8_gen();
     bool generate(test_v2&);
     void execute(test_v2&);
 };
-ext__protocol__update_r1_gen::ext__protocol__update_r1_gen(){
+ext__protocol__update_r8_gen::ext__protocol__update_r8_gen(){
     mk_bv("protocol.2bit",1);
     mk_bv("updater.exec_stage",3);
     mk_bv("updater.num",10);
     mk_bv("updater.exec_var",8);
+    mk_const("protocol.r3_executions","updater.num");
+    mk_const("protocol.r5_executions","updater.num");
+    mk_const("protocol.r_rl","updater.num");
+    mk_const("selector.r5_count","updater.exec_var");
+    mk_const("protocol.r_gd","updater.num");
+    mk_const("selector.r5_stage","updater.exec_stage");
+    mk_const("protocol.r_ga","updater.num");
+    mk_const("selector.r8_exec","updater.exec_var");
+    mk_const("selector.r8_count","updater.exec_var");
     mk_const("_generating","Bool");
+    mk_const("selector.r5_count_rate","updater.exec_var");
+    mk_const("selector.r8_count_rate","updater.exec_var");
+    mk_const("selector.r5_rate","updater.exec_var");
+    mk_const("selector.r8_rate","updater.exec_var");
+    mk_const("selector.r3_rate","updater.exec_var");
+    mk_const("selector.r3_stage","updater.exec_stage");
     mk_const("protocol.idle","protocol.2bit");
-    mk_const("selector.r1_rate","updater.exec_var");
-    mk_const("protocol.r1_executions","updater.num");
-    mk_const("selector.r1_exec","updater.exec_var");
-    mk_const("selector.r1_count_rate","updater.exec_var");
-    mk_const("protocol.r_s2","updater.num");
-    mk_const("protocol.r_s1","updater.num");
-    mk_const("selector.r1_count","updater.exec_var");
-    mk_const("selector.r1_stage","updater.exec_stage");
-    mk_const("__ts0_a","Bool");
-    add("(assert (and (= __ts0_a (bvuge protocol.r_s1 #b0000000001)) "
-"     (= protocol.idle #b0) "
-"     __ts0_a))");
+    mk_const("selector.r8_stage","updater.exec_stage");
+    mk_const("selector.r3_count_rate","updater.exec_var");
+    mk_const("selector.r3_count","updater.exec_var");
+    mk_const("protocol.r_r","updater.num");
+    mk_const("protocol.r_l","updater.num");
+    mk_const("selector.r3_exec","updater.exec_var");
+    mk_const("protocol.r_gbg","updater.num");
+    mk_const("selector.r5_exec","updater.exec_var");
+    mk_const("protocol.r_g","updater.num");
+    mk_const("protocol.r8_executions","updater.num");
+    mk_const("__new_fml:y","Bool");
+    add("(assert (and (= |__new_fml:y| and) (= protocol.idle #b0) |__new_fml:y|))");
 }
-bool ext__protocol__update_r1_gen::generate(test_v2& obj) {
+bool ext__protocol__update_r8_gen::generate(test_v2& obj) {
     push();
     slvr.add(__to_solver(*this,apply("protocol.idle"),obj.protocol__idle));
-    slvr.add(__to_solver(*this,apply("protocol.r_s1"),obj.protocol__r_s1));
     alits.clear();
 
     // std::cout << slvr << std::endl;
@@ -1483,9 +1851,139 @@ bool ext__protocol__update_r1_gen::generate(test_v2& obj) {
     obj.___ivy_gen = this;
     return __res;
 }
-void ext__protocol__update_r1_gen::execute(test_v2& obj){
-    __ivy_out << "> protocol.update_r1" << std::endl;
-    obj.ext__protocol__update_r1();
+void ext__protocol__update_r8_gen::execute(test_v2& obj){
+    __ivy_out << "> protocol.update_r8" << std::endl;
+    obj.ext__protocol__update_r8();
+}
+class ext__protocol__update_r3_gen : public gen {
+  public:
+    ext__protocol__update_r3_gen();
+    bool generate(test_v2&);
+    void execute(test_v2&);
+};
+ext__protocol__update_r3_gen::ext__protocol__update_r3_gen(){
+    mk_bv("protocol.2bit",1);
+    mk_bv("updater.exec_stage",3);
+    mk_bv("updater.num",10);
+    mk_bv("updater.exec_var",8);
+    mk_const("protocol.r3_executions","updater.num");
+    mk_const("protocol.r5_executions","updater.num");
+    mk_const("protocol.r_rl","updater.num");
+    mk_const("selector.r5_count","updater.exec_var");
+    mk_const("protocol.r_gd","updater.num");
+    mk_const("selector.r5_stage","updater.exec_stage");
+    mk_const("protocol.r_ga","updater.num");
+    mk_const("selector.r8_exec","updater.exec_var");
+    mk_const("selector.r8_count","updater.exec_var");
+    mk_const("_generating","Bool");
+    mk_const("selector.r5_count_rate","updater.exec_var");
+    mk_const("selector.r8_count_rate","updater.exec_var");
+    mk_const("selector.r5_rate","updater.exec_var");
+    mk_const("selector.r8_rate","updater.exec_var");
+    mk_const("selector.r3_rate","updater.exec_var");
+    mk_const("selector.r3_stage","updater.exec_stage");
+    mk_const("protocol.idle","protocol.2bit");
+    mk_const("selector.r8_stage","updater.exec_stage");
+    mk_const("selector.r3_count_rate","updater.exec_var");
+    mk_const("selector.r3_count","updater.exec_var");
+    mk_const("protocol.r_r","updater.num");
+    mk_const("protocol.r_l","updater.num");
+    mk_const("selector.r3_exec","updater.exec_var");
+    mk_const("protocol.r_gbg","updater.num");
+    mk_const("selector.r5_exec","updater.exec_var");
+    mk_const("protocol.r_g","updater.num");
+    mk_const("protocol.r8_executions","updater.num");
+    mk_const("__ts0_a","Bool");
+    add("(assert (and (= __ts0_a "
+"        (and (bvuge protocol.r_r #b0000000001) "
+"             (bvuge protocol.r_l #b0000000001))) "
+"     (= protocol.idle #b0) "
+"     __ts0_a))");
+}
+bool ext__protocol__update_r3_gen::generate(test_v2& obj) {
+    push();
+    slvr.add(__to_solver(*this,apply("protocol.idle"),obj.protocol__idle));
+    slvr.add(__to_solver(*this,apply("protocol.r_r"),obj.protocol__r_r));
+    slvr.add(__to_solver(*this,apply("protocol.r_l"),obj.protocol__r_l));
+    alits.clear();
+
+    // std::cout << slvr << std::endl;
+    bool __res = solve();
+    if (__res) {
+
+    }
+    pop();
+    obj.___ivy_gen = this;
+    return __res;
+}
+void ext__protocol__update_r3_gen::execute(test_v2& obj){
+    __ivy_out << "> protocol.update_r3" << std::endl;
+    obj.ext__protocol__update_r3();
+}
+class ext__protocol__update_r5_gen : public gen {
+  public:
+    ext__protocol__update_r5_gen();
+    bool generate(test_v2&);
+    void execute(test_v2&);
+};
+ext__protocol__update_r5_gen::ext__protocol__update_r5_gen(){
+    mk_bv("protocol.2bit",1);
+    mk_bv("updater.exec_stage",3);
+    mk_bv("updater.num",10);
+    mk_bv("updater.exec_var",8);
+    mk_const("protocol.r3_executions","updater.num");
+    mk_const("protocol.r5_executions","updater.num");
+    mk_const("protocol.r_rl","updater.num");
+    mk_const("selector.r5_count","updater.exec_var");
+    mk_const("protocol.r_gd","updater.num");
+    mk_const("selector.r5_stage","updater.exec_stage");
+    mk_const("protocol.r_ga","updater.num");
+    mk_const("selector.r8_exec","updater.exec_var");
+    mk_const("selector.r8_count","updater.exec_var");
+    mk_const("_generating","Bool");
+    mk_const("selector.r5_count_rate","updater.exec_var");
+    mk_const("selector.r8_count_rate","updater.exec_var");
+    mk_const("selector.r5_rate","updater.exec_var");
+    mk_const("selector.r8_rate","updater.exec_var");
+    mk_const("selector.r3_rate","updater.exec_var");
+    mk_const("selector.r3_stage","updater.exec_stage");
+    mk_const("protocol.idle","protocol.2bit");
+    mk_const("selector.r8_stage","updater.exec_stage");
+    mk_const("selector.r3_count_rate","updater.exec_var");
+    mk_const("selector.r3_count","updater.exec_var");
+    mk_const("protocol.r_r","updater.num");
+    mk_const("protocol.r_l","updater.num");
+    mk_const("selector.r3_exec","updater.exec_var");
+    mk_const("protocol.r_gbg","updater.num");
+    mk_const("selector.r5_exec","updater.exec_var");
+    mk_const("protocol.r_g","updater.num");
+    mk_const("protocol.r8_executions","updater.num");
+    mk_const("__ts0_a","Bool");
+    add("(assert (and (= __ts0_a "
+"        (and (bvuge protocol.r_rl #b0000000001) "
+"             (bvuge protocol.r_g #b0000000001))) "
+"     (= protocol.idle #b0) "
+"     __ts0_a))");
+}
+bool ext__protocol__update_r5_gen::generate(test_v2& obj) {
+    push();
+    slvr.add(__to_solver(*this,apply("protocol.r_rl"),obj.protocol__r_rl));
+    slvr.add(__to_solver(*this,apply("protocol.idle"),obj.protocol__idle));
+    slvr.add(__to_solver(*this,apply("protocol.r_g"),obj.protocol__r_g));
+    alits.clear();
+
+    // std::cout << slvr << std::endl;
+    bool __res = solve();
+    if (__res) {
+
+    }
+    pop();
+    obj.___ivy_gen = this;
+    return __res;
+}
+void ext__protocol__update_r5_gen::execute(test_v2& obj){
+    __ivy_out << "> protocol.update_r5" << std::endl;
+    obj.ext__protocol__update_r5();
 }
 class ext__protocol__idling_gen : public gen {
   public:
@@ -1498,16 +1996,33 @@ ext__protocol__idling_gen::ext__protocol__idling_gen(){
     mk_bv("updater.exec_stage",3);
     mk_bv("updater.num",10);
     mk_bv("updater.exec_var",8);
+    mk_const("protocol.r3_executions","updater.num");
+    mk_const("protocol.r5_executions","updater.num");
+    mk_const("protocol.r_rl","updater.num");
+    mk_const("selector.r5_count","updater.exec_var");
+    mk_const("protocol.r_gd","updater.num");
+    mk_const("selector.r5_stage","updater.exec_stage");
+    mk_const("protocol.r_ga","updater.num");
+    mk_const("selector.r8_exec","updater.exec_var");
+    mk_const("selector.r8_count","updater.exec_var");
     mk_const("_generating","Bool");
+    mk_const("selector.r5_count_rate","updater.exec_var");
+    mk_const("selector.r8_count_rate","updater.exec_var");
+    mk_const("selector.r5_rate","updater.exec_var");
+    mk_const("selector.r8_rate","updater.exec_var");
+    mk_const("selector.r3_rate","updater.exec_var");
+    mk_const("selector.r3_stage","updater.exec_stage");
     mk_const("protocol.idle","protocol.2bit");
-    mk_const("selector.r1_rate","updater.exec_var");
-    mk_const("protocol.r1_executions","updater.num");
-    mk_const("selector.r1_exec","updater.exec_var");
-    mk_const("selector.r1_count_rate","updater.exec_var");
-    mk_const("protocol.r_s2","updater.num");
-    mk_const("protocol.r_s1","updater.num");
-    mk_const("selector.r1_count","updater.exec_var");
-    mk_const("selector.r1_stage","updater.exec_stage");
+    mk_const("selector.r8_stage","updater.exec_stage");
+    mk_const("selector.r3_count_rate","updater.exec_var");
+    mk_const("selector.r3_count","updater.exec_var");
+    mk_const("protocol.r_r","updater.num");
+    mk_const("protocol.r_l","updater.num");
+    mk_const("selector.r3_exec","updater.exec_var");
+    mk_const("protocol.r_gbg","updater.num");
+    mk_const("selector.r5_exec","updater.exec_var");
+    mk_const("protocol.r_g","updater.num");
+    mk_const("protocol.r8_executions","updater.num");
     add("(assert (and (= protocol.idle #b1)))");
 }
 bool ext__protocol__idling_gen::generate(test_v2& obj) {
@@ -1539,25 +2054,55 @@ ext__protocol__fail_test_gen::ext__protocol__fail_test_gen(){
     mk_bv("updater.exec_stage",3);
     mk_bv("updater.num",10);
     mk_bv("updater.exec_var",8);
+    mk_const("protocol.r3_executions","updater.num");
+    mk_const("protocol.r5_executions","updater.num");
+    mk_const("protocol.r_rl","updater.num");
+    mk_const("selector.r5_count","updater.exec_var");
+    mk_const("protocol.r_gd","updater.num");
+    mk_const("selector.r5_stage","updater.exec_stage");
+    mk_const("protocol.r_ga","updater.num");
+    mk_const("selector.r8_exec","updater.exec_var");
+    mk_const("selector.r8_count","updater.exec_var");
     mk_const("_generating","Bool");
+    mk_const("selector.r5_count_rate","updater.exec_var");
+    mk_const("selector.r8_count_rate","updater.exec_var");
+    mk_const("selector.r5_rate","updater.exec_var");
+    mk_const("selector.r8_rate","updater.exec_var");
+    mk_const("selector.r3_rate","updater.exec_var");
+    mk_const("selector.r3_stage","updater.exec_stage");
     mk_const("protocol.idle","protocol.2bit");
-    mk_const("selector.r1_rate","updater.exec_var");
-    mk_const("protocol.r1_executions","updater.num");
-    mk_const("selector.r1_exec","updater.exec_var");
-    mk_const("selector.r1_count_rate","updater.exec_var");
-    mk_const("protocol.r_s2","updater.num");
-    mk_const("protocol.r_s1","updater.num");
-    mk_const("selector.r1_count","updater.exec_var");
-    mk_const("selector.r1_stage","updater.exec_stage");
+    mk_const("selector.r8_stage","updater.exec_stage");
+    mk_const("selector.r3_count_rate","updater.exec_var");
+    mk_const("selector.r3_count","updater.exec_var");
+    mk_const("protocol.r_r","updater.num");
+    mk_const("protocol.r_l","updater.num");
+    mk_const("selector.r3_exec","updater.exec_var");
+    mk_const("protocol.r_gbg","updater.num");
+    mk_const("selector.r5_exec","updater.exec_var");
+    mk_const("protocol.r_g","updater.num");
+    mk_const("protocol.r8_executions","updater.num");
+    mk_const("__ts0_a_a","Bool");
     mk_const("__ts0_a","Bool");
-    add("(assert (and (= __ts0_a (bvuge protocol.r_s1 #b0000000001)) "
+    mk_const("__new_fml:y_b","Bool");
+    add("(assert (and (= __ts0_a "
+"        (and (bvuge protocol.r_r #b0000000001) "
+"             (bvuge protocol.r_l #b0000000001))) "
+"     (= __ts0_a_a "
+"        (and (bvuge protocol.r_rl #b0000000001) "
+"             (bvuge protocol.r_g #b0000000001))) "
+"     (= |__new_fml:y_b| and) "
 "     (= protocol.idle #b0) "
-"     (= __ts0_a or)))");
+"     (= __ts0_a or) "
+"     (= __ts0_a_a or) "
+"     (= |__new_fml:y_b| or)))");
 }
 bool ext__protocol__fail_test_gen::generate(test_v2& obj) {
     push();
+    slvr.add(__to_solver(*this,apply("protocol.r_rl"),obj.protocol__r_rl));
     slvr.add(__to_solver(*this,apply("protocol.idle"),obj.protocol__idle));
-    slvr.add(__to_solver(*this,apply("protocol.r_s1"),obj.protocol__r_s1));
+    slvr.add(__to_solver(*this,apply("protocol.r_r"),obj.protocol__r_r));
+    slvr.add(__to_solver(*this,apply("protocol.r_l"),obj.protocol__r_l));
+    slvr.add(__to_solver(*this,apply("protocol.r_g"),obj.protocol__r_g));
     alits.clear();
 
     // std::cout << slvr << std::endl;
@@ -1609,8 +2154,10 @@ int ask_ret(long long bound) {
         }
     }
     test_v2_repl() : test_v2(){}
+    virtual void imp__inspector__check_guard_r5(unsigned reactant1, unsigned reactant2){}
     virtual void imp__goal__achieved(unsigned v){}
-    virtual void imp__inspector__check_guard_r1(unsigned reactant1){}
+    virtual void imp__inspector__check_guard_r8(){}
+    virtual void imp__inspector__check_guard_r3(unsigned reactant1, unsigned reactant2){}
 
     };
 
@@ -1814,9 +2361,21 @@ public:
                 }
                 else
     
-                if (action == "protocol.update_r1") {
+                if (action == "protocol.update_r3") {
                     check_arity(args,0,action);
-                    ivy.ext__protocol__update_r1();
+                    ivy.ext__protocol__update_r3();
+                }
+                else
+    
+                if (action == "protocol.update_r5") {
+                    check_arity(args,0,action);
+                    ivy.ext__protocol__update_r5();
+                }
+                else
+    
+                if (action == "protocol.update_r8") {
+                    check_arity(args,0,action);
+                    ivy.ext__protocol__update_r8();
                 }
                 else
     
@@ -1976,10 +2535,14 @@ int main(int argc, char **argv){
         weights.push_back(1.0);
         generators.push_back(new ext__protocol__idling_gen);
         weights.push_back(1.0);
-        generators.push_back(new ext__protocol__update_r1_gen);
+        generators.push_back(new ext__protocol__update_r3_gen);
         weights.push_back(1.0);
-        double totalweight = 3.0;
-        int num_gens = 3;
+        generators.push_back(new ext__protocol__update_r5_gen);
+        weights.push_back(1.0);
+        generators.push_back(new ext__protocol__update_r8_gen);
+        weights.push_back(1.0);
+        double totalweight = 5.0;
+        int num_gens = 5;
 
 
 #ifdef _WIN32

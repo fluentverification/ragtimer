@@ -1,26 +1,31 @@
 ctmc
 
-const double k1 = 1.0;
-const double k2 = 0.025;
+const double k1 = 0.0038; 
+const double k2 = 0.0004; 
+const double k3 = 0.042;
+const double k4 = 0.01;
+const double k5 = 0.011;
+const double k6 = 0.1;
+const double k7 = 1050;
+const double k8 = 3.21;
 
-const int MAX_AMOUNT = 250;
+module cycle
 
-module s1
+	r   : int init 50;
+	l   : int init 2;
+	rl  : int init 0;
+	g   : int init 50;
+	ga  : int init 0;
+	gbg : int init 0;
+	gd  : int init 0;
 
-    s1 : [0..MAX_AMOUNT] init 1;
+	[r1] true         -> k1            : (r' = r+1);
+	[r2] r>0          -> k2 * r        : (r' = r-1);
+	[r3] r>0 & l>0    -> k3 * l * r    : (r' = r-1) & (rl' = rl+1);
+	[r4] rl>0         -> k4 * rl       : (rl' = rl-1) & (r' = r+1);
+	[r5] rl>0 & g>0   -> k5 * rl * g   : (rl' = rl-1) & (g' = g-1)   & (ga' = ga+1) & (gbg' = gbg+1);
+	[r6] ga>0         -> k6 * ga       : (ga' = ga-1) & (gd' = gd+1);
+	[r7] gbg>0 & gd>0 -> k7 * gbg * gd : (gbg' = gbg-1) & (gd' = gd-1) & (g' = g+1);
+	[r8] true         -> k8            : (rl' = rl+1);
 
-    [r1] s1>0 -> (s1' = s1);
-endmodule
-
-module s2
-
-    s2 : [0..MAX_AMOUNT] init 40;
-
-    [r1] s2<=MAX_AMOUNT-1 -> (s2' = s2 + 1);
-    [r2] s2>0 -> (s2' = s2 - 1);
-endmodule
-
-module reactionRates
-    [r1] (k1*s1)>0 -> (k1*s1) : true;
-    [r2] (k2*s2)>0 -> (k2*s2) : true;
 endmodule
