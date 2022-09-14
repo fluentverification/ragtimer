@@ -17,7 +17,7 @@ if __name__ == "__main__":
     if "each" in sys.argv:
         each = True
 
-    reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=False)
+    reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=True)
     
     # with open("trace_list.txt", "w") as t:
     #     t.write("")

@@ -51,7 +51,7 @@ def parsePrefix(o):
 
 if __name__ == "__main__":
     # dg = depgraph.makeDepGraph("8reaction_input.txt", False)
-    dg = depgraph.makeDepGraph("../models/KuwaharaEnzyme/6reaction.ragtimer", False)
+    dg = depgraph.makeDepGraph("../models/SingleSpecies/2reaction.ragtimer", False)
 
     with open("trace_list.txt", "w") as t:
         t.write("")

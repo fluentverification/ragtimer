@@ -365,7 +365,7 @@ def makeDepGraph(infile, printing=True):
 
 	unreachable = True
 	for r in reactions:
-		if r.tier > 0 and not(r.useless):
+		if r.tier >= 0 and not(r.useless):
 			print(r.name)
 			unreachable = False
 	
@@ -381,4 +381,4 @@ def makeDepGraph(infile, printing=True):
 # no other input is provided
 if __name__=="__main__":
 	# makeDepGraph("8reaction_input.txt", True)
-	makeDepGraph("../models/KuwaharaEnzyme/6reaction.ragtimer", True)
+	makeDepGraph("../models/SingleSpecies/2reaction.ragtimer", True)
