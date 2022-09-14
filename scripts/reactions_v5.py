@@ -51,6 +51,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     reactions = []
     count = 0
 
+
     for obj in reactions1:
         count += 1
         reactantsTemp = obj.reactants
@@ -72,6 +73,15 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         reactions[count-1].productsNum = prodNumTemp
 
     numOfReactions = count
+
+    if loose:
+        newTierIfLoose = len(reactions) + 1
+        for react in reactions:
+            if react.priority == -1:
+                react.priority = newTierIfLoose
+                react.tierCount = 20
+                if printing:
+                    print(react.reactants, react.priority)
 
     if printing:
         print("\n")
@@ -412,10 +422,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
             {c};
             if r{count}_count >= r{count}_count_rate {o}
                 r{count}_stage := r{count}_stage + 1;
-                r{count}_count := 0
-            {c};
-            """)
-            ivyFile.write(f"""if r{count}_stage = 0 {o}
+                r{count}_count := 0;
                 r{count}_count_rate := 4;
                 r{count}_rate := {(obj.tierCount)}
             {c}
@@ -584,12 +591,12 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                         ivyFile.write(f",r_{obj.reactants[count2-1]}")
                     if count2 == len(obj.reactants):
                         ivyFile.write(") = false")
-        if not(loose):
-            if count == numOfReactions:
-                ivyFile.write(")\n\t}")
-        else:
-            if count == numOfReactions:
-                ivyFile.write("\n\t}")
+        if count == numOfReactions:
+            ivyFile.write(")\n\t}")
+        # if not(loose):
+        # else:
+        #     if count == numOfReactions:
+        #         ivyFile.write("\n\t}")
         
     ivyFile.write("\n\n\tafter fail_test {\n\t\tassert false\n\t}\n\n}\n")
 
@@ -1132,7 +1139,11 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                             if count4 == countTemp:
                                 ivyFile.write(f"{q.executions})")
                                 break
-            ivyFile.write(f")\n\t{c}\n\n")
+                ivyFile.write(f")\n\t{c}\n\n")
+            else:
+                ivyFile.write(f"\n\t{c}\n\n")
+
+
             
         
     ivyFile.write("\n\n\tafter fail_test {\n\t\tassert false\n\t}\n\n}\n")
@@ -1171,9 +1182,9 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     # split runs up so we can 
     intRuns = int(runswanted)
     runsSplit = []
-    while intRuns > 500:
-        runsSplit.append(500)
-        intRuns -= 500
+    while intRuns > 250:
+        runsSplit.append(250)
+        intRuns -= 250
     if intRuns > 0:
         runsSplit.append(intRuns)
 

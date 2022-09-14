@@ -8,6 +8,8 @@ import math
 
 if __name__ == "__main__":
 
+    PRINTING = False
+
     print("Expect to see a message claiming an error: assertion failure.")
     print("This message indicates correct functionality.")
 
@@ -21,7 +23,7 @@ if __name__ == "__main__":
     if "loose" in sys.argv:
         loose = True
 
-    reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=True)
+    reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=PRINTING)
     
     # with open("trace_list.txt", "w") as t:
     #     t.write("")
@@ -68,7 +70,7 @@ if __name__ == "__main__":
         print(50*"-")
         print(paths[a])
         print(50*"-")
-        reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=False)
+        reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=PRINTING)
 
         # os.system("make test")
         o = subprocess.check_output(["make", "test"],universal_newlines=True)
