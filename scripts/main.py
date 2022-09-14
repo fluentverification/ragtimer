@@ -13,10 +13,13 @@ if __name__ == "__main__":
 
     i = sys.argv[1]
     each = False
+    loose = False
 
     if "each" in sys.argv:
         each = True
 
+    if "loose" in sys.argv:
+        loose = True
 
     reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=True)
     
@@ -65,7 +68,7 @@ if __name__ == "__main__":
         print(50*"-")
         print(paths[a])
         print(50*"-")
-        reactions_v5.randTest(iters, reactions1, prefix, a, printing=False)
+        reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=False)
 
         # os.system("make test")
         o = subprocess.check_output(["make", "test"],universal_newlines=True)

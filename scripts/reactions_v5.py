@@ -43,7 +43,7 @@ class TargetReaction:
         self.reaction = reaction
         self.secondTargets = secondTargets
 
-def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
+def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing=True):
 
     o = "{"
     c = "}"
@@ -463,7 +463,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
     count = 0
     for obj in reactions:
         count += 1
-        if obj.priority != -1:
+        if not(loose) and obj.priority != -1:
             ivyFile.write(f"\tindividual r{count}_executions : updater.num\n")
 
     ivyFile.write("\n\tafter init {\n\t\t")
@@ -474,7 +474,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
     count = 0
     for obj in reactions:
         count += 1
-        if obj.priority != -1:
+        if not(loose) and obj.priority != -1:
             ivyFile.write(f"r{count}_executions := 0;\n\t\t")
 
     ivyFile.write("idle := 0\n\t}\n\n\t")
@@ -487,7 +487,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             if selector.execute_r{count}""")
             if len(obj.reactants) == 0:
                 ivyFile.write(f" {o}\n\t\t\tcall inspector.check_guard_r{count}")
-                if len(obj.products) == 0:
+                if not(loose) and len(obj.products) == 0:
                     ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 else:
                     count2 = 0
@@ -495,7 +495,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         count2 += 1
                         for y in range(obj.productsNum[count2-1]):
                             ivyFile.write(f";\n\t\t\tr_{obj.products[count2-1]} := updater.incr(r_{obj.products[count2-1]})")
-                    ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
+                    if not(loose):
+                        ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 if obj.priority == 0:
                     ivyFile.write(f";\n\t\t\tif r_{targetSpecies} {equality}{targetNum} {o}\n\t\t\t\tcall goal.achieved(r_{targetSpecies})\n\t\t\t{c}\n\t\t")
                 else:
@@ -516,7 +517,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                             count3 += 1
                             for y in range(obj.reactantsNum[count2-1]):
                                 ivyFile.write(f";\n\t\t\tr_{obj.reactants[count3-1]} := updater.decr(r_{obj.reactants[count3-1]})")
-                if len(obj.products) == 0:
+                if not(loose) and len(obj.products) == 0:
                     ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 else:
                     count4 = 0
@@ -524,7 +525,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         count4 += 1
                         for t in range(obj.productsNum[count4-1]):
                             ivyFile.write(f";\n\t\t\tr_{obj.products[count4-1]} := updater.incr(r_{obj.products[count4-1]})")
-                    ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
+                    if not(loose):
+                        ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 if obj.priority == 0:
                     ivyFile.write(f";\n\t\t\tif r_{targetSpecies} {equality}{targetNum} {o}\n\t\t\t\tcall goal.achieved(r_{targetSpecies})\n\t\t\t{c}\n\t\t")
                 else:
@@ -582,8 +584,12 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         ivyFile.write(f",r_{obj.reactants[count2-1]}")
                     if count2 == len(obj.reactants):
                         ivyFile.write(") = false")
-        if count == numOfReactions:
-            ivyFile.write(")\n\t}")
+        if not(loose):
+            if count == numOfReactions:
+                ivyFile.write(")\n\t}")
+        else:
+            if count == numOfReactions:
+                ivyFile.write("\n\t}")
         
     ivyFile.write("\n\n\tafter fail_test {\n\t\tassert false\n\t}\n\n}\n")
 
@@ -891,7 +897,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
     count = 0
     for obj in reactions:
         count += 1
-        if obj.priority != -1:
+        if not(loose) and obj.priority != -1:
             ivyFile.write(f"\tindividual r{count}_executions : updater.num\n")
 
     ivyFile.write("\n\tafter init {\n\t\t")
@@ -902,7 +908,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
     count = 0
     for obj in reactions:
         count += 1
-        if obj.priority != -1:
+        if not(loose) and obj.priority != -1:
             ivyFile.write(f"r{count}_executions := 0;\n\t\t")
 
 
@@ -916,7 +922,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
             if selector.execute_r{count}""")
             if len(obj.reactants) == 0:
                 ivyFile.write(f" {o}\n\t\t\tcall inspector.check_guard_r{count}")
-                if len(obj.products) == 0:
+                if not(loose) and len(obj.products) == 0:
                     ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 else:
                     count2 = 0
@@ -924,7 +930,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         count2 += 1
                         for y in range(obj.productsNum[count2-1]):
                             ivyFile.write(f";\n\t\t\tr_{obj.products[count2-1]} := updater.incr(r_{obj.products[count2-1]})")
-                    ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
+                    if not(loose):
+                        ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 if obj.priority == 0:
                     ivyFile.write(f";\n\t\t\tif r_{targetSpecies} {equality}{targetNum} {o}\n\t\t\t\tcall goal.achieved(r_{targetSpecies})\n\t\t\t{c}\n\t\t")
                 else:
@@ -945,7 +952,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                             count3 += 1
                             for y in range(obj.reactantsNum[count2-1]):
                                 ivyFile.write(f";\n\t\t\tr_{obj.reactants[count3-1]} := updater.decr(r_{obj.reactants[count3-1]})")
-                if len(obj.products) == 0:
+                if not(loose) and len(obj.products) == 0:
                     ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 else:
                     count4 = 0
@@ -953,7 +960,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         count4 += 1
                         for t in range(obj.productsNum[count4-1]):
                             ivyFile.write(f";\n\t\t\tr_{obj.products[count4-1]} := updater.incr(r_{obj.products[count4-1]})")
-                    ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
+                    if not(loose):
+                        ivyFile.write(f";\n\t\t\tr{count}_executions := updater.incr(r{count}_executions)")
                 if obj.priority == 0:
                     ivyFile.write(f";\n\t\t\tif r_{targetSpecies} {equality}{targetNum} {o}\n\t\t\t\tcall goal.achieved(r_{targetSpecies})\n\t\t\t{c}\n\t\t")
                 else:
@@ -974,17 +982,18 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                 count1 = 0
                 count2 = 0
                 #if obj.priority != 0:
-                for y in reactions:
-                    count1 += 1
-                    if y.priority == obj.priority:
-                        count2 += 1
-                        if count2 == 1:
-                            ivyFile.write(f";\n\t\tassert (r{count1}_executions")
-                        if count2 >= 2:
-                            ivyFile.write(f" + r{count1}_executions")
-                    if count1 == numOfReactions:
-                        ivyFile.write(") < ")
-                        ivyFile.write(str(y.executions))
+                if not(loose):
+                    for y in reactions:
+                        count1 += 1
+                        if y.priority == obj.priority:
+                            count2 += 1
+                            if not(loose) and count2 == 1:
+                                ivyFile.write(f";\n\t\tassert (r{count1}_executions")
+                            if not(loose) and count2 >= 2:
+                                ivyFile.write(f" + r{count1}_executions")
+                        if count1 == numOfReactions:
+                            ivyFile.write(") < ")
+                            ivyFile.write(str(y.executions))
                 ivyFile.write("\n\t}\n\t")
             else:
                 ivyFile.write(f" {o}\n\t\tassert idle = 0;\n\t\tassert enabled_checker.is_enabled_r{count}(")
@@ -999,19 +1008,20 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                         ivyFile.write(f")")
                 count1 = 0
                 count2 = 0
-                for y in reactions:
-                    count1 += 1
-                    if y.priority == obj.priority:
-                        count2 += 1
-                        if count2 == 1:
-                            ivyFile.write(f";\n\t\tassert (r{count1}_executions")
-                        if count2 >= 2:
-                            ivyFile.write(f" + r{count1}_executions")
-                    if count1 == numOfReactions:
-                        ivyFile.write(") < ")
-                        ###
-                        ivyFile.write(str(obj.executions))
-                        ###
+                if not(loose):
+                    for y in reactions:
+                        count1 += 1
+                        if y.priority == obj.priority:
+                            count2 += 1
+                            if count2 == 1:
+                                ivyFile.write(f";\n\t\tassert (r{count1}_executions")
+                            if count2 >= 2:
+                                ivyFile.write(f" + r{count1}_executions")
+                        if count1 == numOfReactions:
+                            ivyFile.write(") < ")
+                            ###
+                            ivyFile.write(str(obj.executions))
+                            ###
                 ivyFile.write("\n\t}\n\t")
 
 
@@ -1043,81 +1053,85 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                     if count4 == len(obj.reactants):
                         ivyFile.write(") = false")
         if count == numOfReactions:
-            ivyFile.write(") | (((")
-            for y in reactions:     ####This only works CRNs that don't need to go past the 3rd tier
-                count2 += 1
-                if y.priority == 0:
-                    count3 += 1
-                    countTemp = count2
-                    if count3 == 1:
-                        ivyFile.write(f"r{count2}_executions")
-                    if count3 >= 2:
-                        ivyFile.write(f" + r{count2}_executions")
-                if count2 == numOfReactions:
-                    ivyFile.write(") >= ")
-                    count4 = 0
-                    for q in reactions:
-                        count4 += 1
-                        if count4 == countTemp:
-                            ivyFile.write(f"{q.executions})")
-                            break
-            count2 = 0
-            count3 = 0
-            for y in reactions:
-                count2 += 1
-                if y.priority == 1:
-                    count3 += 1
-                    countTemp = count2
-                    if count3 == 1:
-                        ivyFile.write(f" & ((r{count2}_executions")
-                    if count3 >= 2:
-                        ivyFile.write(f" + r{count2}_executions")
-                if count2 == numOfReactions and count3 > 0:
-                    ivyFile.write(") >= ")
-                    count4 = 0
-                    for q in reactions:
-                        count4 += 1
-                        if count4 == countTemp:
-                            ivyFile.write(f"{q.executions})")
-                            break
-            count2 = 0
-            count3 = 0
-            for y in reactions:
-                count2 += 1
-                if y.priority == 2:
-                    countTemp=count2
-                    count3 += 1
-                    if count3 == 1:
-                        ivyFile.write(f" & ((r{count2}_executions")
-                    if count3 >= 2:
-                        ivyFile.write(f" + r{count2}_executions")
-                if count2 == numOfReactions and count3 > 0:
-                    ivyFile.write(") >= ")
-                    count4 = 0
-                    for q in reactions:
-                        count4 += 1
-                        if count4 == countTemp:
-                            ivyFile.write(f"{q.executions})")
-                            break
-            count2 = 0
-            count3 = 0
-            for y in reactions:
-                count2 += 1
-                if y.priority == 3:
-                    countTemp = count2
-                    count3 += 1
-                    if count3 == 1:
-                        ivyFile.write(f" & ((r{count2}_executions")
-                    if count3 >= 2:
-                        ivyFile.write(f" + r{count2}_executions")
-                if count2 == numOfReactions and count3 > 0:
-                    ivyFile.write(") >= ")
-                    count4 = 0
-                    for q in reactions:
-                        count4 += 1
-                        if count4 == countTemp:
-                            ivyFile.write(f"{q.executions})")
-                            break
+            if not(loose):
+                ivyFile.write(") | (((")
+                for y in reactions:     ####This only works CRNs that don't need to go past the 3rd tier
+                    count2 += 1
+                    if y.priority == 0:
+                        count3 += 1
+                        countTemp = count2
+                        if count3 == 1:
+                            ivyFile.write(f"r{count2}_executions")
+                        if count3 >= 2:
+                            ivyFile.write(f" + r{count2}_executions")
+                    if count2 == numOfReactions:
+                        ivyFile.write(") >= ")
+                        count4 = 0
+                        for q in reactions:
+                            count4 += 1
+                            if count4 == countTemp:
+                                ivyFile.write(f"{q.executions})")
+                                break
+            else:
+                ivyFile.write(") ")
+            if not(loose):
+                count2 = 0
+                count3 = 0
+                for y in reactions:
+                    count2 += 1
+                    if y.priority == 1:
+                        count3 += 1
+                        countTemp = count2
+                        if count3 == 1:
+                            ivyFile.write(f" & ((r{count2}_executions")
+                        if count3 >= 2:
+                            ivyFile.write(f" + r{count2}_executions")
+                    if count2 == numOfReactions and count3 > 0:
+                        ivyFile.write(") >= ")
+                        count4 = 0
+                        for q in reactions:
+                            count4 += 1
+                            if count4 == countTemp:
+                                ivyFile.write(f"{q.executions})")
+                                break
+                count2 = 0
+                count3 = 0
+                for y in reactions:
+                    count2 += 1
+                    if y.priority == 2:
+                        countTemp=count2
+                        count3 += 1
+                        if count3 == 1:
+                            ivyFile.write(f" & ((r{count2}_executions")
+                        if count3 >= 2:
+                            ivyFile.write(f" + r{count2}_executions")
+                    if count2 == numOfReactions and count3 > 0:
+                        ivyFile.write(") >= ")
+                        count4 = 0
+                        for q in reactions:
+                            count4 += 1
+                            if count4 == countTemp:
+                                ivyFile.write(f"{q.executions})")
+                                break
+                count2 = 0
+                count3 = 0
+                for y in reactions:
+                    count2 += 1
+                    if y.priority == 3:
+                        countTemp = count2
+                        count3 += 1
+                        if count3 == 1:
+                            ivyFile.write(f" & ((r{count2}_executions")
+                        if count3 >= 2:
+                            ivyFile.write(f" + r{count2}_executions")
+                    if count2 == numOfReactions and count3 > 0:
+                        ivyFile.write(") >= ")
+                        count4 = 0
+                        for q in reactions:
+                            count4 += 1
+                            if count4 == countTemp:
+                                ivyFile.write(f"{q.executions})")
+                                break
             ivyFile.write(f")\n\t{c}\n\n")
             
         
@@ -1222,7 +1236,9 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
     # with open(Options.secondTestResult, "r") as f:
     count = 0
     for line in cppout.split("\n"):
-    #    print(line)
+    #    print(line)    
+
+
     #    if len(line) < 16:
     #        print(line)
     #        continue
