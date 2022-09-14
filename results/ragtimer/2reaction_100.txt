@@ -1,0 +1,14 @@
+bin/run: 21: [[: not found
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+r1
+Traceback (most recent call last):
+  File "/home/landon/ragtimer/scripts/main.py", line 47, in <module>
+    o = subprocess.check_output(["make", "test"],universal_newlines=True)
+  File "/usr/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.9/subprocess.py", line 1121, in communicate
+    stdout = self.stdout.read()
+KeyboardInterrupt

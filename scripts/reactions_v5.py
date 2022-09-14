@@ -79,7 +79,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         for react in reactions:
             if react.priority == -1:
                 react.priority = newTierIfLoose
-                react.tierCount = 20
+                react.tierCount = 45
                 if printing:
                     print(react.reactants, react.priority)
 
