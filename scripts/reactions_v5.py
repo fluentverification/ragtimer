@@ -175,8 +175,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, printing=True):
                 print("\nSpecified target is already achieved in target state, please start over")
                 exit()
 
-    print(upOrDown)
     print(speciesList)
+    print(upOrDown)
 
     for obj in speciesList:
         if obj.name == targetSpecies:
