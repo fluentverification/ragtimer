@@ -1156,11 +1156,11 @@ void test_v3::__init(){
         }
         {
             protocol__r_s1 = (1 & 1023);
-            protocol__r_s2 = (50 & 1023);
+            protocol__r_s2 = (51 & 1023);
             protocol__r_s3 = (0 & 1023);
-            protocol__r_s4 = (1 & 1023);
-            protocol__r_s5 = (50 & 1023);
-            protocol__r_s6 = (0 & 1023);
+            protocol__r_s4 = (0 & 1023);
+            protocol__r_s5 = (48 & 1023);
+            protocol__r_s6 = (1 & 1023);
             protocol__r4_executions = (0 & 1023);
             protocol__r6_executions = (0 & 1023);
             protocol__idle = (0 & 1);
@@ -1510,7 +1510,7 @@ void test_v3::ext__protocol__fail_test(){
                 ___ivy_stack.push_back(150);
                 loc__1 = enabled_checker__is_enabled_r6(protocol__r_s6);
                 ___ivy_stack.pop_back();
-                ivy_assume((((loc__0 == false) && (loc__1 == false)) || ((((24 & 1023) < protocol__r4_executions) || (protocol__r4_executions == (24 & 1023))) && (((24 & 1023) < protocol__r6_executions) || (protocol__r6_executions == (24 & 1023))))), "test_v3.ivy: line 275");
+                ivy_assume((((loc__0 == false) && (loc__1 == false)) || ((((25 & 1023) < protocol__r4_executions) || (protocol__r4_executions == (25 & 1023))) && (((24 & 1023) < protocol__r6_executions) || (protocol__r6_executions == (24 & 1023))))), "test_v3.ivy: line 275");
             }
         }
         ivy_assert(false, "test_v3.ivy: line 281");
@@ -1842,7 +1842,7 @@ ext__protocol__fail_test_gen::ext__protocol__fail_test_gen(){
 "     (= __ts0_a_a (bvuge protocol.r_s6 #b0000000001)) "
 "     (= protocol.idle #b0) "
 "     (or (and (= __ts0_a or) (= __ts0_a_a or)) "
-"         (and (bvuge protocol.r4_executions #b0000011000) "
+"         (and (bvuge protocol.r4_executions #b0000011001) "
 "              (bvuge protocol.r6_executions #b0000011000)))))");
 }
 bool ext__protocol__fail_test_gen::generate(test_v3& obj) {

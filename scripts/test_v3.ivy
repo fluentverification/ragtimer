@@ -212,11 +212,11 @@ object protocol = {
 
 	after init {
 		r_s1 := 1;
-		r_s2 := 50;
+		r_s2 := 51;
 		r_s3 := 0;
-		r_s4 := 1;
-		r_s5 := 50;
-		r_s6 := 0;
+		r_s4 := 0;
+		r_s5 := 48;
+		r_s6 := 1;
 		r4_executions := 0;
 		r6_executions := 0;
 		idle := 0
@@ -272,7 +272,7 @@ object protocol = {
 
 	before fail_test {
 		assert idle = 0;
-		assert (enabled_checker.is_enabled_r4(r_s4,r_s5) = false & enabled_checker.is_enabled_r6(r_s6) = false) | (((r4_executions) >= 24) & ((r6_executions) >= 24))
+		assert (enabled_checker.is_enabled_r4(r_s4,r_s5) = false & enabled_checker.is_enabled_r6(r_s6) = false) | (((r4_executions) >= 25) & ((r6_executions) >= 24))
 	}
 
 

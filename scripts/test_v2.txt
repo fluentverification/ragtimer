@@ -1,11 +1,6 @@
-> protocol.update_r4
-< inspector.check_guard_r4(1,50)
 > protocol.update_r6
 < inspector.check_guard_r6(1)
 > protocol.update_r4
-< inspector.check_guard_r4(1,49)
-> protocol.update_r6
-< inspector.check_guard_r6(1)
 > protocol.update_r4
 < inspector.check_guard_r4(1,48)
 > protocol.update_r6

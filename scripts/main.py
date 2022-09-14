@@ -17,23 +17,38 @@ if __name__ == "__main__":
     if "each" in sys.argv:
         each = True
 
-    reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, False)
+    reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=False)
     
-    with open("trace_list.txt", "w") as t:
-        t.write("")
+    # with open("trace_list.txt", "w") as t:
+    #     t.write("")
 
     paths = []
+
     for r in reactions1:
         if (r.tier == 0):
             depgraph.printPrefixes("trace_list.txt", "", r, paths)
+            paths[len(paths)-1] = r.name + "\t" + paths[len(paths)-1]
+            # print(paths)
+            # input("newpaths")
+
+    with open("trace_list.txt", "w") as trace_list:
+        for path in paths:
+            trace_list.write("_PREFIX_\t" + path + "\n")
 
     # print(paths)
     # quit()
-
+    
     o = subprocess.check_output(["make", "test"],universal_newlines=True)
-    # print(o)
     prefix = prefix_parser.parsePrefix(o)
-    # print(prefix)
+
+    # print(o)
+
+        # else:
+        #     prefix = prefix_parser.parsePrefix(o)
+        # input("===")
+
+                    
+        # print(prefix)
 
     j = len(prefix.values)
 
@@ -49,11 +64,11 @@ if __name__ == "__main__":
         print(50*"-")
         print(paths[a])
         print(50*"-")
-        reactions_v5.randTest(iters, reactions1, prefix, a, printing=True)
+        reactions_v5.randTest(iters, reactions1, prefix, a, printing=False)
 
         # os.system("make test")
         o = subprocess.check_output(["make", "test"],universal_newlines=True)
-        # print(o)
+        print(o)
         for line in o.splitlines(False):
             if "Total" in line:
                 prob += float(line.split(": ")[1])

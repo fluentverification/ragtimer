@@ -1156,11 +1156,11 @@ void test_v2::__init(){
         }
         {
             protocol__r_s1 = (1 & 1023);
-            protocol__r_s2 = (50 & 1023);
+            protocol__r_s2 = (51 & 1023);
             protocol__r_s3 = (0 & 1023);
-            protocol__r_s4 = (1 & 1023);
-            protocol__r_s5 = (50 & 1023);
-            protocol__r_s6 = (0 & 1023);
+            protocol__r_s4 = (0 & 1023);
+            protocol__r_s5 = (48 & 1023);
+            protocol__r_s6 = (1 & 1023);
             protocol__r4_executions = (0 & 1023);
             protocol__r6_executions = (0 & 1023);
             protocol__idle = (0 & 1);

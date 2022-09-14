@@ -4,6 +4,8 @@ Reaction objects store details about reactions.
 '''
 
 import math
+import sys
+from xmlrpc.client import MAXINT
 
 
 class Reaction:
@@ -19,6 +21,7 @@ class Reaction:
 		self.executions = 0
 		self.tier = -1
 		self.useless = False
+		self.enabledToExecute = 0
 	
 	# Add a reactant to the reaction
 	def addReactant(self, reactant):
@@ -30,10 +33,10 @@ class Reaction:
 
 	def check_usefulness(self, new_initials, new_targets, add_or_sub, parent):
 
-		print("Checking usefulness on", str(self.name))
-		print(new_initials)
-		print(new_targets)
-		print(len(self.dependsOn))
+		# print("Checking usefulness on", str(self.name))
+		# print(new_initials)
+		# print(new_targets)
+		# print(len(self.dependsOn))
 		infinite_dependsOn = True
 		for d in self.dependCount:
 			if d != 0:
@@ -41,11 +44,11 @@ class Reaction:
 		if infinite_dependsOn:
 			for i in range(len(new_initials)):
 				deltaR = new_targets[i] - new_initials[i]
-				print("deltaR",deltaR)
+				# print("deltaR",deltaR)
 				if ((add_or_sub[i] == 'a' and deltaR > 0) or (add_or_sub[i] == 's' and deltaR < 0)):
 					# print("add_or_sub",add_or_sub[i])
 					self.useless = True
-					print("Useless", str(self.name))
+					# print("Useless", str(self.name))
 					if parent:
 						parent.dependCount[len(parent.dependCount)-1] = 0
 					self.tier = -1
@@ -70,26 +73,29 @@ class Reaction:
 		r = r + "\nReactants " + str(self.reactants)
 		r = r + "\nProducts " + str(self.products)
 		r = r + "\nRequired Executions " + str(self.executions) 
+		r = r + "\nEnabled Executions " + str(self.enabledToExecute) 
 		r = r + "\nTier " + str(self.tier) + "\n"
 		for d in range(len(self.dependsOn)):
 			r = r + " - Depends On " + str(self.dependsOn[d].name) + " " + str(self.dependCount[d]) + " times\n"
 		if self.useless:
 			r = r + "USELESS"
 		return r
-	
+
 
 
 def printPrefixes(filename, path, reaction, paths):
 	path = reaction.name + "\t" + path
+	# print(path)
+	# input("-")
 	if (len(reaction.dependsOn) == 0):
 		with open(filename, 'a') as f:
 			paths.append(path)
-			f.write("_PREFIX_\t" + path + "\n")
+			# f.write("_PREFIX_\t" + path + "\n")
 			return
 	for r in reaction.dependsOn:
 		if r.tier > -1:
 			printPrefixes(filename, path, r, paths)
-	
+
 
 
 '''
@@ -101,7 +107,7 @@ Output: None
 
 def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_history, parent, add_or_sub, printing=True):
 	
-	print(add_or_sub)
+	# print(add_or_sub)
 
 	deltaTarget = []
 	needChems = []
@@ -125,8 +131,9 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 			deltaTarget.append(0)
 
 	if printing:
-		print("chemicals \t" + str(chemicals))
-		print("deltaTarget\t" + str(deltaTarget))
+		print("chemicals   \t" + str(chemicals))
+		print("deltaTarget \t" + str(deltaTarget))
+		print("add/subtract\t" + str(add_or_sub))
 
 	needReactions = []
 
@@ -198,6 +205,22 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 		r.executions = r.executions + reqExec
 		if printing:
 			print("\nRequired Executions\t",r.executions)
+
+		minEnabledExec = -1
+
+		for c in range(numChems):
+			if chemicals[c] in r.reactants:
+				if initials[c] > 0:
+					if minEnabledExec < 0:
+						minEnabledExec = initials[c]
+					else:
+						if initials[c] < minEnabledExec:
+							minEnabledExec = initials[c]
+		
+		if r.executions < minEnabledExec:
+			minEnabledExec = r.executions
+
+		r.enabledToExecute = minEnabledExec
 
 		# Find out new "initial state" after reqExec executions
 		new_initials = []

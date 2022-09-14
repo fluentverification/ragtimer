@@ -145,6 +145,7 @@ public class GetProbability
           for (int idx=0; idx < sim.getNumTransitions(); idx++) {
             String s1 = String.format("[%s]",tr_st[tdx]);
             String s2 = sim.getTransitionActionString(idx);
+            // System.out.println(s2);
             if (s1.equalsIgnoreCase(s2)) {
                 index = idx;
                 break;
@@ -154,6 +155,10 @@ public class GetProbability
           if (index == -1) {
             System.out.printf("ERROR - Index remains -1, invalid trace at line %d at %d", pathCount, tdx);
             System.out.println(" with transition " + tr_st[tdx]);
+            for (int idx=0; idx < sim.getNumTransitions(); idx++) {
+              String s2 = sim.getTransitionActionString(idx);
+              System.out.println("AVTRAN-" + s2);
+            }
             // System.out.println(pathCount);
             break;
           }
