@@ -58,6 +58,7 @@ if __name__ == "__main__":
     prefix = prefix_parser.parsePrefix(o)
 
     if "ERROR" in o:
+        print(o)
         print("old1", paths)
         enabledReacts = []
         for line in o.split("\n"):
