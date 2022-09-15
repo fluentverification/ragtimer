@@ -66,7 +66,8 @@ if __name__ == "__main__":
             # print(line)
             if "ERROR" in lines[line]:
                 for l2 in lines:
-                    if str(l2).find("[") > -1:
+                    print("l2",l2)
+                    if "AVTRAN" in l2:
                         s0 = l2.replace("]","").replace("[","")
                         print(s0)
                         s1 = s1.split("AVTRAN")[1]
