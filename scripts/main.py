@@ -1,3 +1,4 @@
+from cgitb import enable
 import os
 import reactions_v5
 import depgraph
@@ -74,10 +75,9 @@ if __name__ == "__main__":
                         print(s1)
                         s2 = s1.rstrip()
                         print(s2)
-                        enabledReacts.append(s2)
+                        if s2 not in enabledReacts:
+                            enabledReacts.append(s2)
                         print("enabledReacts",enabledReacts)
-                    if "ERROR" in l2:
-                        break
                 # invalid trace at line 1 at 0 with transition r6 
                 pathnumber = int(lines[line].split(" trace at line ")[1].split(" ")[0]) - 1
                 print(pathnumber)
@@ -85,7 +85,8 @@ if __name__ == "__main__":
                 print(enabledReacts)
                 for er in enabledReacts:
                     print(er + "\t" + paths[pathnumber])
-                    paths.append(er + "\t" + paths[pathnumber])
+                    if (er + "\t" + paths[pathnumber]) not in paths:
+                        paths.append(er + "\t" + paths[pathnumber])
                     # if er in paths[pathnumber]:
                     # for r in reactions1:
                     #     if r.name == er:
