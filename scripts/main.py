@@ -58,7 +58,7 @@ if __name__ == "__main__":
     o = subprocess.check_output(["make", "test"],universal_newlines=True)
     prefix = prefix_parser.parsePrefix(o)
 
-    while "ERROR" in o:
+    if "ERROR" in o:
         print(o)
         print("old1", paths)
         enabledReacts = []
