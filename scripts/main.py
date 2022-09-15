@@ -84,9 +84,11 @@ if __name__ == "__main__":
                 rempath = paths[pathnumber]
                 print(enabledReacts)
                 for er in enabledReacts:
-                    print(er + "\t" + paths[pathnumber])
-                    if (er + "\t" + paths[pathnumber]) not in paths:
-                        paths.append(er + "\t" + paths[pathnumber])
+                    for r in reactions1:
+                        if r.name == er and r.enabledToExecute > 0:
+                            print(er + "\t" + paths[pathnumber])
+                            if (er + "\t" + paths[pathnumber]) not in paths:
+                                paths.append(er + "\t" + paths[pathnumber])
                     # if er in paths[pathnumber]:
                     # for r in reactions1:
                     #     if r.name == er:
