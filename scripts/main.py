@@ -69,6 +69,8 @@ if __name__ == "__main__":
                 pathnumber = int(line.split(" trace at line ")[1].split(" ")[0]) - 1
                 print(pathnumber)
                 for er in enabledReacts:
+                    if er in paths[pathnumber]
+                    print(er + "\t" + paths[pathnumber])
                     paths[pathnumber] = er + "\t" + paths[pathnumber]
                     # for r in reactions1:
                     #     if r.name == er:
