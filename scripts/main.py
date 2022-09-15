@@ -58,7 +58,7 @@ if __name__ == "__main__":
     o = subprocess.check_output(["make", "test"],universal_newlines=True)
     prefix = prefix_parser.parsePrefix(o)
 
-    if "ERROR" in o:
+    while "ERROR" in o:
         print(o)
         print("old1", paths)
         enabledReacts = []
@@ -93,6 +93,12 @@ if __name__ == "__main__":
                 paths.remove(paths[pathnumber])
                 break
         print("new1", paths)
+        with open("trace_list.txt", "w") as trace_list:
+            for path in paths:
+                trace_list.write("_PREFIX_\t" + path + "\n")
+
+        o = subprocess.check_output(["make", "test"],universal_newlines=True)
+        prefix = prefix_parser.parsePrefix(o)
                             
 
                 # reactionname = line.split("with transition ")[1].strip()
