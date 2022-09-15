@@ -31,11 +31,10 @@ if __name__ == "__main__":
     paths = []
 
     for r in reactions1:
-        print(r)
+        # print(r)
         if (r.tier == 0):
             depgraph.printPrefixes("trace_list.txt", "", r, paths)
-            if r.enabledToExecute > 0 and r.tier == 0:
-                paths.append(r.name + "\t" + paths[len(paths)-1])
+            
                 # NEED TO HANDLE CASE WHERE THEY MAKE EQUIV. TRACES???
             
             # extraEnabled = 0
@@ -59,7 +58,29 @@ if __name__ == "__main__":
     prefix = prefix_parser.parsePrefix(o)
 
     if "ERROR" in o:
-        print("ERROR IN o")
+        print("old", paths)
+        enabledReacts = []
+        for line in o.split("\n"):
+            if "[" in line:
+                enabledReacts.append(line.replace("[","").replace("]",""))
+            if "ERROR" in line:
+                # invalid trace at line 1 at 0 with transition r6 
+                pathnumber = int(line.split(" trace at line ")[1].split(" ")[0]) - 1
+                for er in enabledReacts:
+                    for r in reactions1:
+                        if r.name == er:
+                            paths[pathnumber] = er + "\t" + paths[pathnumber]
+        print("new", paths)
+                            
+
+                # reactionname = line.split("with transition ")[1].strip()
+                # for r in reactions1:
+                #     if r.name == reactionname:
+                #         if r.enabledExecutions > 0:
+                #             paths[pathnumber] = r.name
+        # if r.enabledToExecute > 0 and r.tier == 0:
+        #         paths.append(r.name + "\t" + paths[len(paths)-1])
+        # print("ERROR IN o")
 
     # print(o)
 
