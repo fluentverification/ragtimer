@@ -62,7 +62,7 @@ if __name__ == "__main__":
         enabledReacts = []
         for line in o.split("\n"):
             print(line)
-            if str(line).find("AVTRAN") > -1:
+            if str(line).find("[") > -1:
                 s0 = line.replace("]","").replace("[","")
                 print(s0)
                 s1 = s1.split("AVTRAN")[1]
