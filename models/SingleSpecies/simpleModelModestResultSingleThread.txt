@@ -1,0 +1,27 @@
+﻿Peak memory usage: 143 MB
+Analysis results for model.modest
+Status:          Finished 
+Simulation time: 5.7 s
+
++ Property 1
+  Estimated value:     3.0631150547969376E-07 
+  Confidence interval: [2.7569988645024393E-07, 3.369231245091436E-07] 
+  Runs used:           22840 
+  Run type:            MA / RESTART 
+  Status:              Finished 
+
+  + Sample data
+    Mean:     3.0631150547969376E-07 
+    Variance: 5.558026241447411E-12 
+    Skewness: 11.662208602892063 
+    Kurtosis: 186.53093429007322 
+
+  + Error bounds
+    Statement: CI: 100(1 - α)% of intervals contain true value (CLT assumption) 
+    α:         0.050000000000000044 
+
+  + Importance function
+    Type:               Ad-hoc monolithic 
+    Level calc. method: Expected success (1) 
+    Level calc. sweeps: 8 
+    Levels:             20 
