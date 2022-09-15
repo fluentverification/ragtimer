@@ -71,7 +71,7 @@ if __name__ == "__main__":
                     if "AVTRAN" in l2:
                         s0 = l2.replace("]","").replace("[","")
                         print(s0)
-                        s1 = s1.split("AVTRAN")[1]
+                        s1 = s0.split("AVTRAN")[1]
                         print(s1)
                         s2 = s1.rstrip()
                         print(s2)
