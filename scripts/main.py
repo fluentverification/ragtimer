@@ -63,6 +63,7 @@ if __name__ == "__main__":
         for line in o.split("\n"):
             if "[" in line:
                 enabledReacts.append(line.replace("[","").replace("]",""))
+                print("enabledReacts",enabledReacts)
             if "ERROR" in line:
                 # invalid trace at line 1 at 0 with transition r6 
                 pathnumber = int(line.split(" trace at line ")[1].split(" ")[0]) - 1
