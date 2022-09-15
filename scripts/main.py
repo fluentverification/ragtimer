@@ -36,6 +36,7 @@ if __name__ == "__main__":
             depgraph.printPrefixes("trace_list.txt", "", r, paths)
             if r.enabledToExecute > 0 and r.tier == 0:
                 paths.append(r.name + "\t" + paths[len(paths)-1])
+                # NEED TO HANDLE CASE WHERE THEY MAKE EQUIV. TRACES???
             
             # extraEnabled = 0
             # for dr in range(len(r.dependCount)):
@@ -56,6 +57,9 @@ if __name__ == "__main__":
     
     o = subprocess.check_output(["make", "test"],universal_newlines=True)
     prefix = prefix_parser.parsePrefix(o)
+
+    if "ERROR" in o:
+        print("ERROR IN o")
 
     # print(o)
 
