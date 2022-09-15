@@ -33,7 +33,8 @@ if __name__ == "__main__":
     for r in reactions1:
         if (r.tier == 0):
             depgraph.printPrefixes("trace_list.txt", "", r, paths)
-            paths[len(paths)-1] = r.name + "\t" + paths[len(paths)-1]
+            if r.enabledToExecute > 0:
+                paths[len(paths)-1] = r.name + "\t" + paths[len(paths)-1]
             # print(paths)
             # input("newpaths")
 
