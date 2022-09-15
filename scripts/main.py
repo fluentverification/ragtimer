@@ -68,10 +68,11 @@ if __name__ == "__main__":
                 # invalid trace at line 1 at 0 with transition r6 
                 pathnumber = int(line.split(" trace at line ")[1].split(" ")[0]) - 1
                 print(pathnumber)
+                paths.remove(paths[pathnumber])
                 for er in enabledReacts:
-                    if er in paths[pathnumber]:
-                        print(er + "\t" + paths[pathnumber])
-                        paths[pathnumber] = er + "\t" + paths[pathnumber]
+                    print(er + "\t" + paths[pathnumber])
+                    paths.append(er + "\t" + paths[pathnumber])
+                    # if er in paths[pathnumber]:
                     # for r in reactions1:
                     #     if r.name == er:
         print("new", paths)
