@@ -1,0 +1,5 @@
+s2 = 80
+
+// here we just want a binary property
+// which we desire to reach 
+// (i.e. a bool that describes the failure state)
