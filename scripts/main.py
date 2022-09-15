@@ -62,7 +62,7 @@ if __name__ == "__main__":
         print("old1", paths)
         enabledReacts = []
         lines = o.split("\n")
-        for line in len(lines):
+        for line in range(len(lines)):
             # print(line)
             if "ERROR" in lines[line]:
                 for l2 in lines:
