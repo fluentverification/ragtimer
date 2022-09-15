@@ -1,0 +1,174 @@
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.cpp: In function ‘unsigned int hash_space::string_hash(const char*, unsigned int, unsigned int)’:
+test_v2.cpp:623:23: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                       ^
+test_v2.cpp:623:26: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                          ^
+test_v2.cpp:623:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                             ^
+test_v2.cpp:623:32: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                                ^~~
+test_v2.ivy: line 590: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+test_v3.cpp: In function ‘unsigned int hash_space::string_hash(const char*, unsigned int, unsigned int)’:
+test_v3.cpp:623:23: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                       ^
+test_v3.cpp:623:26: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                          ^
+test_v3.cpp:623:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                             ^
+test_v3.cpp:623:32: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+  623 |     register unsigned a, b, c, len;
+      |                                ^~~
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+r4
+r6
+--------------------------------------------------
+r4	r6	r4	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7fe70ddd39a0>, <reactions_v5.Species object at 0x7fe70ddd3790>, <reactions_v5.Species object at 0x7fe70ddd3910>, <reactions_v5.Species object at 0x7fe70ddd36d0>, <reactions_v5.Species object at 0x7fe70ddd3760>, <reactions_v5.Species object at 0x7fe70ddd39d0>]
+3
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 2141
+Running test for 250 simulation runs in group 1 of 2000
+Running test for 250 simulation runs in group 2 of 2000
+Running test for 250 simulation runs in group 3 of 2000
+Running test for 250 simulation runs in group 4 of 2000
+Running test for 250 simulation runs in group 5 of 2000
+Running test for 250 simulation runs in group 6 of 2000
+Running test for 250 simulation runs in group 7 of 2000
+Running test for 250 simulation runs in group 8 of 2000
+Running test for 250 simulation runs in group 9 of 2000
+Running test for 250 simulation runs in group 10 of 2000
+Running test for 250 simulation runs in group 11 of 2000
+Running test for 250 simulation runs in group 12 of 2000
+Running test for 250 simulation runs in group 13 of 2000
+Running test for 250 simulation runs in group 14 of 2000
+Running test for 250 simulation runs in group 15 of 2000
+Running test for 250 simulation runs in group 16 of 2000
+Running test for 250 simulation runs in group 17 of 2000
+Running test for 250 simulation runs in group 18 of 2000
+Running test for 250 simulation runs in group 19 of 2000
+Running test for 250 simulation runs in group 20 of 2000
+Running test for 250 simulation runs in group 21 of 2000
+Running test for 250 simulation runs in group 22 of 2000
+Running test for 250 simulation runs in group 23 of 2000
+Running test for 250 simulation runs in group 24 of 2000
+Running test for 250 simulation runs in group 25 of 2000
+Running test for 250 simulation runs in group 26 of 2000
+Running test for 250 simulation runs in group 27 of 2000
+Running test for 250 simulation runs in group 28 of 2000
+Running test for 250 simulation runs in group 29 of 2000
+Running test for 250 simulation runs in group 30 of 2000
+Running test for 250 simulation runs in group 31 of 2000
+Running test for 250 simulation runs in group 32 of 2000
+Running test for 250 simulation runs in group 33 of 2000
+Running test for 250 simulation runs in group 34 of 2000
+Running test for 250 simulation runs in group 35 of 2000
+Running test for 250 simulation runs in group 36 of 2000
+Running test for 250 simulation runs in group 37 of 2000
+Running test for 250 simulation runs in group 38 of 2000
+Running test for 250 simulation runs in group 39 of 2000
+Running test for 250 simulation runs in group 40 of 2000
+Running test for 250 simulation runs in group 41 of 2000
+Running test for 250 simulation runs in group 42 of 2000
+Running test for 250 simulation runs in group 43 of 2000
+Running test for 250 simulation runs in group 44 of 2000
+Running test for 250 simulation runs in group 45 of 2000
+Running test for 250 simulation runs in group 46 of 2000
+Running test for 250 simulation runs in group 47 of 2000
+Running test for 250 simulation runs in group 48 of 2000
+Running test for 250 simulation runs in group 49 of 2000
+Running test for 250 simulation runs in group 50 of 2000
+Running test for 250 simulation runs in group 51 of 2000
+Running test for 250 simulation runs in group 52 of 2000
+Running test for 250 simulation runs in group 53 of 2000
+Running test for 250 simulation runs in group 54 of 2000
+Running test for 250 simulation runs in group 55 of 2000
+Running test for 250 simulation runs in group 56 of 2000
+Running test for 250 simulation runs in group 57 of 2000
+Running test for 250 simulation runs in group 58 of 2000
+Running test for 250 simulation runs in group 59 of 2000
+Running test for 250 simulation runs in group 60 of 2000
+Running test for 250 simulation runs in group 61 of 2000
+Running test for 250 simulation runs in group 62 of 2000
+Running test for 250 simulation runs in group 63 of 2000
+Running test for 250 simulation runs in group 64 of 2000
+Running test for 250 simulation runs in group 65 of 2000
+Running test for 250 simulation runs in group 66 of 2000
+Running test for 250 simulation runs in group 67 of 2000
+Running test for 250 simulation runs in group 68 of 2000
+Running test for 250 simulation runs in group 69 of 2000
+Running test for 250 simulation runs in group 70 of 2000
+Running test for 250 simulation runs in group 71 of 2000
+Running test for 250 simulation runs in group 72 of 2000
+Running test for 250 simulation runs in group 73 of 2000
+Running test for 250 simulation runs in group 74 of 2000
+Running test for 250 simulation runs in group 75 of 2000
+Running test for 250 simulation runs in group 76 of 2000
+Running test for 250 simulation runs in group 77 of 2000
+Running test for 250 simulation runs in group 78 of 2000
+Running test for 250 simulation runs in group 79 of 2000
+Running test for 250 simulation runs in group 80 of 2000
+Running test for 250 simulation runs in group 81 of 2000
+Running test for 250 simulation runs in group 82 of 2000
+Running test for 250 simulation runs in group 83 of 2000
+Running test for 250 simulation runs in group 84 of 2000
+Running test for 250 simulation runs in group 85 of 2000
+Running test for 250 simulation runs in group 86 of 2000
+Running test for 250 simulation runs in group 87 of 2000
+Running test for 250 simulation runs in group 88 of 2000
+Running test for 250 simulation runs in group 89 of 2000
+Running test for 250 simulation runs in group 90 of 2000
+Running test for 250 simulation runs in group 91 of 2000
+Running test for 250 simulation runs in group 92 of 2000
+Running test for 250 simulation runs in group 93 of 2000
+Running test for 250 simulation runs in group 94 of 2000
+Running test for 250 simulation runs in group 95 of 2000
+Running test for 250 simulation runs in group 96 of 2000
+Running test for 250 simulation runs in group 97 of 2000
+Running test for 250 simulation runs in group 98 of 2000
+Running test for 250 simulation runs in group 99 of 2000
+Running test for 250 simulation runs in group 100 of 2000
+Running test for 250 simulation runs in group 101 of 2000
+Running test for 250 simulation runs in group 102 of 2000
+Running test for 250 simulation runs in group 103 of 2000
+Running test for 250 simulation runs in group 104 of 2000
+Running test for 250 simulation runs in group 105 of 2000
+Running test for 250 simulation runs in group 106 of 2000
+Running test for 250 simulation runs in group 107 of 2000
+Running test for 250 simulation runs in group 108 of 2000
+Running test for 250 simulation runs in group 109 of 2000
+Running test for 250 simulation runs in group 110 of 2000
+Running test for 250 simulation runs in group 111 of 2000
+Running test for 250 simulation runs in group 112 of 2000
+Running test for 250 simulation runs in group 113 of 2000
+Running test for 250 simulation runs in group 114 of 2000
+Running test for 250 simulation runs in group 115 of 2000
+Running test for 250 simulation runs in group 116 of 2000
+Running test for 250 simulation runs in group 117 of 2000
+Running test for 250 simulation runs in group 118 of 2000
+Running test for 250 simulation runs in group 119 of 2000
+Running test for 250 simulation runs in group 120 of 2000
+Running test for 250 simulation runs in group 121 of 2000
+Running test for 250 simulation runs in group 122 of 2000
+Running test for 250 simulation runs in group 123 of 2000
+Running test for 250 simulation runs in group 124 of 2000
+Running test for 250 simulation runs in group 125 of 2000
+Running test for 250 simulation runs in group 126 of 2000
+Running test for 250 simulation runs in group 127 of 2000
+Running test for 250 simulation runs in group 128 of 2000
+Running test for 250 simulation runs in group 129 of 2000
+Running test for 250 simulation runs in group 130 of 2000
+Running test for 250 simulation runs in group 131 of 2000
+Running test for 250 simulation runs in group 132 of 2000
