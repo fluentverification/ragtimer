@@ -58,7 +58,7 @@ if __name__ == "__main__":
     prefix = prefix_parser.parsePrefix(o)
 
     if "ERROR" in o:
-        print("old", paths)
+        print("old1", paths)
         enabledReacts = []
         for line in o.split("\n"):
             if "AVTRAN" in line:
@@ -76,7 +76,8 @@ if __name__ == "__main__":
                     # for r in reactions1:
                     #     if r.name == er:
                 paths.remove(paths[pathnumber])
-        print("new", paths)
+                break
+        print("new1", paths)
                             
 
                 # reactionname = line.split("with transition ")[1].strip()
