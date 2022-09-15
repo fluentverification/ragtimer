@@ -61,18 +61,20 @@ if __name__ == "__main__":
         print(o)
         print("old1", paths)
         enabledReacts = []
-        for line in o.split("\n"):
-            print(line)
-            if str(line).find("[") > -1:
-                s0 = line.replace("]","").replace("[","")
-                print(s0)
-                s1 = s1.split("AVTRAN")[1]
-                print(s1)
-                s2 = s1.rstrip()
-                print(s2)
-                enabledReacts.append(s2)
-                print("enabledReacts",enabledReacts)
+        lines = o.split("\n")
+        for line in len(lines):
+            # print(line)
             if "ERROR" in line:
+                for l2 in lines:
+                    if str(l2).find("[") > -1:
+                        s0 = l2.replace("]","").replace("[","")
+                        print(s0)
+                        s1 = s1.split("AVTRAN")[1]
+                        print(s1)
+                        s2 = s1.rstrip()
+                        print(s2)
+                        enabledReacts.append(s2)
+                        print("enabledReacts",enabledReacts)
                 # invalid trace at line 1 at 0 with transition r6 
                 pathnumber = int(line.split(" trace at line ")[1].split(" ")[0]) - 1
                 print(pathnumber)
