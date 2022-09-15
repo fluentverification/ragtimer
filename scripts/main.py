@@ -61,8 +61,8 @@ if __name__ == "__main__":
         print("old", paths)
         enabledReacts = []
         for line in o.split("\n"):
-            if "AVTRAN-" in line:
-                enabledReacts.append(line.split("AVTRAN-")[1].strip())
+            if "AVTRAN" in line:
+                enabledReacts.append(line.replace("]","").replace("[","").split("AVTRAN-")[1].strip())
                 print("enabledReacts",enabledReacts)
             if "ERROR" in line:
                 # invalid trace at line 1 at 0 with transition r6 
