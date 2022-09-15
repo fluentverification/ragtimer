@@ -64,7 +64,7 @@ if __name__ == "__main__":
         lines = o.split("\n")
         for line in len(lines):
             # print(line)
-            if "ERROR" in line:
+            if "ERROR" in lines[line]:
                 for l2 in lines:
                     if str(l2).find("[") > -1:
                         s0 = l2.replace("]","").replace("[","")
@@ -75,8 +75,10 @@ if __name__ == "__main__":
                         print(s2)
                         enabledReacts.append(s2)
                         print("enabledReacts",enabledReacts)
+                    if "ERROR" in l2:
+                        break
                 # invalid trace at line 1 at 0 with transition r6 
-                pathnumber = int(line.split(" trace at line ")[1].split(" ")[0]) - 1
+                pathnumber = int(lines[line].split(" trace at line ")[1].split(" ")[0]) - 1
                 print(pathnumber)
                 rempath = paths[pathnumber]
                 print(enabledReacts)
