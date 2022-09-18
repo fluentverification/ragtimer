@@ -51,5 +51,16 @@ To run RAGTIMER navigate to the scripts folder and give the command:
 ```sh
  $ python3 main.py <number of traces wanted>
 ```
+RAGTIMER uses the 'model.ragtimer' file found in this repository to generate results, to change the model please modify the 'model.ragtimer' file.
+By default, RAGTIMER only produces the shortest traces to a specified target, if it is preferred that not only the shortest traces are produced, i.e. there are a limited number of shortest traces available, then add the "loose" parameter when running RAGTIMER. This produces traces that consider all the reactions available but gives priority to the reactions needed to reach the goal. 
+```sh
+ $ python3 main.py <number of traces wanted> loose
+```
+
+To produce the specified number of traces for each of the available prefixes for the model add the "each" paramter when running RAGTIMER.
+gives priority to the reactions needed to reach the goal. 
+```sh
+ $ python3 main.py <number of traces wanted> each
+```
 
 For now, the necessary Python scripts are included in the `scripts` folder, and the RAGTIME and PRISM models are in the `models` folder.
