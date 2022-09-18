@@ -9,19 +9,19 @@ import sys
 class Options:
     # infile = "8reaction_input.txt"
     infile = "../model.ragtimer"
-    firstIvyModel = "test_v2.ivy"
-    firstIvyModelName = "test_v2"
-    firstTestResult = "test_v2.txt"
-    secondIvyModel = "test_v3.ivy"
-    secondIvyModelName = "test_v3"
-    secondTestResult = "test_v3.txt"
-    traceList = "trace_list.txt"
-    reactionList = "reaction_list.txt"
+    firstIvyModel = "test_v2.ivy"       #name of the first IVy model
+    firstIvyModelName = "test_v2"       #name of executable for first IVy model
+    firstTestResult = "test_v2.txt"     #name of file storing results from first IVy model
+    secondIvyModel = "test_v3.ivy"      #name of the second IVy model
+    secondIvyModelName = "test_v3"      #name of executable for second IVy model
+    secondTestResult = "test_v3.txt"    #currently not being used
+    traceList = "trace_list.txt"        #list of all of the traces by themselves
+    reactionList = "reaction_list.txt"  #information on each of the traces is stored in this file
 
 class Reaction:
     def __init__(self, priority, tierCount, executions):
         self.reactants = []
-        self.reactantsNum = []
+        self.reactantsNum = [] 
         self.products = []
         self.productsNum = []
         self.priority = priority
@@ -33,26 +33,26 @@ class Species:
         self.value = value
         self.name = name
 
-class SecondTarget:
-    def __init__(self, name, minAmount):
-        self.name = name
-        self.minAmount = minAmount
+#class SecondTarget:
+#    def __init__(self, name, minAmount):
+#        self.name = name
+#        self.minAmount = minAmount
 
-class TargetReaction:
-    def __init__(self, reaction, secondTargets):
-        self.reaction = reaction
-        self.secondTargets = secondTargets
+#class TargetReaction:
+#    def __init__(self, reaction, secondTargets):
+#        self.reaction = reaction
+#        self.secondTargets = secondTargets
 
 def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing=True):
 
-    o = "{"
-    c = "}"
+    o = "{"         #open bracket for text files
+    c = "}"         #close bracket for text files
 
-    reactions = []
+    reactions = []  #stores all the reactions
     count = 0
 
 
-    for obj in reactions1:
+    for obj in reactions1:  #transfers information from dependency graph to reactions in this file
         count += 1
         reactantsTemp = obj.reactants
         productsTemp = obj.products
@@ -74,12 +74,12 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
 
     numOfReactions = count
 
-    if loose:
+    if loose:  #if loose is specified, all reactions will be considered by raising the prioirty of unneeded reactions
         newTierIfLoose = len(reactions) + 1
         for react in reactions:
             if react.priority == -1:
                 react.priority = newTierIfLoose
-                react.tierCount = 25
+                react.tierCount = 25        #unneeded reactions will have an execution rate of 1/25
                 if printing:
                     print(react.reactants, react.priority)
 
@@ -87,7 +87,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         print("\n")
 
     spec = []
-    for s in prefix.varnames:
+    for s in prefix.varnames:   #add prefixes
         spec.append(s)
     
     if printing:
@@ -150,7 +150,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         for val in line.split():
             targets.append(int(val))
 
-    for obj in spec:
+    for obj in spec:    #add each species and it's initial values to speciesList
         count = 0
         for x in chemicals:
             count += 1
@@ -167,15 +167,15 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         print("\n")
 
     count = 0
-    for obj in targets:
+    for obj in targets:     #define targetSpecies and targetNum
         count += 1
         if obj == -1:
             continue
         else:
-            targetSpecies = chemicals[count - 1]
+            targetSpecies = chemicals[count - 1]  
             targetNum = obj
 
-    for obj in speciesList:
+    for obj in speciesList: #upOrDown corresponds to the inequality for target, right now only >= and <= is supported, (= is also implied)
         if obj.name == targetSpecies:
             if int(obj.value) > int(targetNum):
                 upOrDown = "3"
@@ -188,7 +188,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     print(speciesList)
     print(upOrDown)
 
-    for obj in speciesList:
+    for obj in speciesList: #this loop is techinically currently not needed but could be if more inequality options are added
         if obj.name == targetSpecies:
             if upOrDown == "1":
                 if int(obj.value) >= int(targetNum):
@@ -224,7 +224,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
             print("reaction", str(count), ":", str(obj.priority))
 
     ivyFile = open(Options.firstIvyModel, "w") #an ivy model for the CRN is made to have assertion failure at first idling action
-
+    #updater object defines actions for incrementing and decrementing num and defines types of variables
     ivyFile.write(f"""#lang ivy 1.7
 
     object updater = {o}
@@ -254,7 +254,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         equality = "<= "
     elif upOrDown == "4":
         equality = "< "
-
+    #goal object monitors when the goal is reached
     ivyFile.write(f"""
     object goal = {o}
         action achieved(v:updater.num)
@@ -267,7 +267,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     {c}
 
     """)
-
+    #enabled_checker checks if a reaction is able to fire before it does(testing environment checks actions in this object)
     ivyFile.write("object enabled_checker = {\n\n\t")
 
     count = 0
@@ -311,7 +311,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         """)
 
     ivyFile.write("\n}\n\n")
-
+    #The inspector object makes sure reactions executing have enough reactants to occur
     ivyFile.write("object inspector = {\n\t")
     count = 0
     for obj in reactions:
@@ -347,7 +347,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                                 ivyFile.write("\n\t}\n\n\t")
             
     ivyFile.write("\n}")
-
+    #the selector object can change the execution rate of reactions, giving priority to some reactions
     ivyFile.write("\n\nobject selector = {\n\t")
 
     count = 0
@@ -461,7 +461,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         """)
 
     ivyFile.write("\n}\n")
-
+    #protocol object is the layer 1 object that calls actions in all the other objects, it's actions are exported to the environment
     ivyFile.write("\nobject protocol = {\n\n\ttype 2bit\n\tinterpret 2bit -> bv[1]\n\tindividual idle : 2bit\n\n")
 
     for obj in spec:
@@ -490,6 +490,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     for obj in reactions:
         count += 1
         if obj.priority != -1:
+            #update_ri actions are exported to the environment
             ivyFile.write(f"""action update_r{count} =  {o}
             if selector.execute_r{count}""")
             if len(obj.reactants) == 0:
@@ -539,14 +540,15 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                 else:
                     ivyFile.write("\n\t\t")
                 ivyFile.write("}\n\t}\n\n\t")
-
+    #the idling action is only available after the goal has been reached
     ivyFile.write("\n\n\taction idling = {}\n\n\t")
-
+    #the fail_test action should only be called if there is a problem in the model
     ivyFile.write("\n\n\taction fail_test = {}\n\n\t")
 
     count = 0
     for obj in reactions:
         count += 1
+        #in these before blocks actions assumptions are found
         if obj.priority != -1:
             ivyFile.write(f"before update_r{count}")
             if len(obj.reactants) == 0:
@@ -597,7 +599,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         # else:
         #     if count == numOfReactions:
         #         ivyFile.write("\n\t}")
-        
+    #if fail test funs it will cause assertion failure and stop the test
     ivyFile.write("\n\n\tafter fail_test {\n\t\tassert false\n\t}\n\n}\n")
 
     ivyFile.write("\nexport protocol.fail_test\n")
@@ -624,11 +626,11 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     ivyFile.write("\nisolate iso_proto = protocol with enabled_checker, updater, goal, selector, inspector")
 
     ivyFile.close()        #ivy model complete
-
+    #testing ivy model by running ivy_to_cpp command and running the executable produced
     ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.firstIvyModel])
     ivy_to_cpp_command.wait()
 
-    print("starting to run initial test")
+    print("starting to run initial test")#initial test is used to find about how many iters are needed
     seed = random.randint(0,sys.maxsize)
     os.system(f"./{Options.firstIvyModelName} seed={seed} iters=10000 runs=1 >{Options.firstTestResult}")
     # os.system(f"./{Options.firstIvyModelName} seed=367 iters=10000 runs=1 >{Options.firstTestResult}")
@@ -656,7 +658,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
 
     ######
     ivyFile = open(Options.secondIvyModel, "w") #an ivy model for the CRN is made without assertion failure at first idling action
-
+    #object descriptions explained in comments surrounding firstIvyModel
     ivyFile.write(f"""#lang ivy 1.7
 
     object updater = {o}
@@ -1246,7 +1248,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
 
     # with open(Options.secondTestResult, "r") as f:
     count = 0
-    for line in cppout.split("\n"):
+    for line in cppout.split("\n"):  #results recorded
     #    print(line)    
 
 
