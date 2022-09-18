@@ -24,4 +24,4 @@ Simulation time: 5.7 s
     Type:               Ad-hoc monolithic 
     Level calc. method: Expected success (1) 
     Level calc. sweeps: 8 
-    Levels:             20 
+    Levels:             20  

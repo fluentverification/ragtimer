@@ -2,6 +2,7 @@
 impatient action r1;
 impatient action r2;
 
+
 int(0..250) s1 = 1;
 int(0..250) s2 = 40;
 
