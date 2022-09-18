@@ -41,12 +41,15 @@ All reactions and chemicals must have unique names. Names must include
 no whitespace characters. Use the number `0` to indicate a null reactant or product (i.e. spontaneous production or consumption). Catalysts can be included as normal; their behavior is accounted for in the dependency graph builder.
 
 ### IVy Models
-Two IVy Models are generated based off of the information in the input file. The first is written to the file 'test_v2.ivy' and testing of this model only produces one trace before intentionally using assertion failure to stop the tests. The second is written to the file 'test_v3.ivy' and can produce multiple traces. 
+Two IVy Models are generated based off of the information in the input file. The first is written to the file 'test_v2.ivy' and testing of this model only produces one trace before intentionally using assertion failure to stop the tests. The second is written to the file 'test_v3.ivy' and produces the number of traces that is specified by the user. 
 
 ## Dependency Graph
 Dependency graph processing documentation can be found at [docs/dependency.md](docs/dependency.md)
 
 ## Running RAGTIMER
-Run instructions coming soon, but it will just involve either calling a Python script or compiling an executable.
+To run RAGTIMER navigate to the scripts folder and give the command:
+'''sh
+python3 main.py <number of traces wanted>
+'''
 
 For now, the necessary Python scripts are included in the `scripts` folder, and the RAGTIME and PRISM models are in the `models` folder.
