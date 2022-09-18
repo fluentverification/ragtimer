@@ -49,7 +49,7 @@ Dependency graph processing documentation can be found at [docs/dependency.md](d
 ## Running RAGTIMER
 To run RAGTIMER navigate to the scripts folder and give the command:
 '''sh
-python3 main.py <number of traces wanted>
+ $ python3 main.py <number of traces wanted>
 '''
 
 For now, the necessary Python scripts are included in the `scripts` folder, and the RAGTIME and PRISM models are in the `models` folder.
