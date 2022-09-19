@@ -1,0 +1,38 @@
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 252: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+r1
+--------------------------------------------------
+r1	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7fdaaa7e0460>, <reactions_v5.Species object at 0x7fdaaa7e0280>]
+1
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 97
+Running test for 50 simulation runs in group 1 of 1
+finished randomized testing
+***Run 14 was a duplicate and has been thrown out of trace_list.txt
+***Run 35 was a duplicate and has been thrown out of trace_list.txt
+***Run 36 was a duplicate and has been thrown out of trace_list.txt
+***Run 38 was a duplicate and has been thrown out of trace_list.txt
+***Run 41 was a duplicate and has been thrown out of trace_list.txt
+***Run 42 was a duplicate and has been thrown out of trace_list.txt
+***Run 44 was a duplicate and has been thrown out of trace_list.txt
+***Run 48 was a duplicate and has been thrown out of trace_list.txt
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 1.190336e-17 at line 1
+New highest probability: 1.193675e-17 at line 3
+New highest probability: 4.902993e-17 at line 7
+New highest probability: 4.910137e-17 at line 30
+Total probability: 5.887494e-16
+
+Total Sum of Unique Path Probabilities: 5.887494e-16

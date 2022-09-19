@@ -1,0 +1,59 @@
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 350: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 350: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+r3
+r5
+r8
+--------------------------------------------------
+r3	r5	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7fe8eccd4a60>, <reactions_v5.Species object at 0x7fe8eccd4ac0>, <reactions_v5.Species object at 0x7fe8eccd4c10>, <reactions_v5.Species object at 0x7fe8eccd4c70>, <reactions_v5.Species object at 0x7fe8eccd4cd0>, <reactions_v5.Species object at 0x7fe8eccd4d30>, <reactions_v5.Species object at 0x7fe8eccd4d90>]
+1
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 165
+Running test for 25 simulation runs in group 1 of 1
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 5.565347e-81 at line 1
+New highest probability: 3.389725e-78 at line 3
+New highest probability: 1.423910e-72 at line 6
+New highest probability: 3.861221e-70 at line 12
+New highest probability: 2.581631e-65 at line 13
+Total probability: 2.583176e-65
+
+--------------------------------------------------
+r8	r5	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7fe8eccd4e20>, <reactions_v5.Species object at 0x7fe8eccd4b80>, <reactions_v5.Species object at 0x7fe8eccd4b20>, <reactions_v5.Species object at 0x7fe8eccd4b50>, <reactions_v5.Species object at 0x7fe8eccd4a30>, <reactions_v5.Species object at 0x7fe8eccd4be0>, <reactions_v5.Species object at 0x7fe8eccd4c40>]
+1
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 165
+Running test for 25 simulation runs in group 1 of 1
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 9.726596e-83 at line 1
+New highest probability: 2.589130e-82 at line 2
+New highest probability: 1.454520e-71 at line 4
+New highest probability: 1.114213e-70 at line 11
+New highest probability: 3.998918e-67 at line 14
+Total probability: 4.197030e-67
+
+Total Sum of Unique Path Probabilities: 2.6251463e-65

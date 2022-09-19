@@ -1,0 +1,75 @@
+bin/run: 21: [[: not found
+bin/run: 21: [[: not found
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 590: error: assertion failed
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+r4
+r6
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+Variables: (s1,s2,s3,s4,s5,s6)
+
+ERROR - Index remains -1, invalid trace at line 1 at 1 with transition r6
+AVTRAN-[r1]
+AVTRAN-[r4]
+Transitions: _PREFIX_	r6	r4	
+Probability: 1.000000e+00
+State: (1,50,0,1,50,0)
+
+
+old1 ['r6\tr4\t']
+l2 PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+l2 Variables: (s1,s2,s3,s4,s5,s6)
+l2 
+l2 ERROR - Index remains -1, invalid trace at line 1 at 1 with transition r6
+l2 AVTRAN-[r1]
+AVTRAN-r1
+r1
+r1
+enabledReacts ['r1']
+l2 AVTRAN-[r4]
+AVTRAN-r4
+r4
+r4
+enabledReacts ['r1', 'r4']
+l2 Transitions: _PREFIX_	r6	r4	
+l2 Probability: 1.000000e+00
+l2 State: (1,50,0,1,50,0)
+l2 
+l2 
+0
+['r1', 'r4']
+r4	r6	r4	
+new1 ['r4\tr6\tr4\t']
+PREFIX PATH:  ['r4\tr6\tr4\t']
+--------------------------------------------------
+r4	r6	r4	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7f2af138aa60>, <reactions_v5.Species object at 0x7f2af138aaf0>, <reactions_v5.Species object at 0x7f2af138aa90>, <reactions_v5.Species object at 0x7f2af138ab20>, <reactions_v5.Species object at 0x7f2af138ac10>, <reactions_v5.Species object at 0x7f2af138ac70>]
+3
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 133
+Running test for 50 simulation runs in group 1 of 1
+finished randomized testing
+Error!	Run 18 did not reach the target state
+
+Error!	Run 19 did not reach the target state
+
+Error!	Run 48 did not reach the target state
+
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 1.029445e-68 at line 1
+New highest probability: 7.072122e-68 at line 16
+New highest probability: 5.441397e-67 at line 30
+New highest probability: 1.462037e-63 at line 41
+Target state not reached and probability not counted from line 48 to line 48
+Total probability: 1.462662e-63
+
+Total Sum of Unique Path Probabilities: 1.462662e-63
