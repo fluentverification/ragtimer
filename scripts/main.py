@@ -11,8 +11,12 @@ if __name__ == "__main__":
 
     PRINTING = False
 
+    print()
+    print(80*"=")
     print("Expect to see a message claiming an error: assertion failure.")
     print("This message indicates correct functionality.")
+    print(80*"=")
+    print()
 
     i = sys.argv[1]
     each = False
@@ -146,4 +150,11 @@ if __name__ == "__main__":
             if "Total" in line:
                 prob += float(line.split(": ")[1])
 
+    print()
+    print(80*"=")
     print("Total Sum of Unique Path Probabilities:", prob)
+    print(80*"=")
+    print()
+    print()
+    print()
+    print()
