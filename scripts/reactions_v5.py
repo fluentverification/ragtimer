@@ -43,7 +43,7 @@ class Species:
 #        self.reaction = reaction
 #        self.secondTargets = secondTargets
 
-def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing=True):
+def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing=False):
 
     o = "{"         #open bracket for text files
     c = "}"         #close bracket for text files

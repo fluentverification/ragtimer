@@ -366,12 +366,12 @@ def makeDepGraph(infile, printing=True):
 	unreachable = True
 	for r in reactions:
 		if r.tier >= 0 and not(r.useless):
-			print(r.name)
+			# print(r.name)
 			unreachable = False
 	
 	if unreachable:
-		if printing:
-			print("\nUNREACHABLE PROPERTY! Your probability is automatically zero!\n")
+		# if printing:
+		print("\nUNREACHABLE PROPERTY! Your probability is automatically zero!\n")
 		return None
 
 	return reactions

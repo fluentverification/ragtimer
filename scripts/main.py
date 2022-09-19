@@ -59,30 +59,30 @@ if __name__ == "__main__":
     prefix = prefix_parser.parsePrefix(o)
 
     if "ERROR" in o:
-        print(o)
-        print("old1", paths)
+        # print(o)
+        # print("old1", paths)
         enabledReacts = []
         lines = o.split("\n")
         for line in range(len(lines)):
             # print(line)
             if "ERROR" in lines[line]:
                 for l2 in lines:
-                    print("l2",l2)
+                    # print("l2",l2)
                     if "AVTRAN-" in l2:
                         s0 = l2.replace("]","").replace("[","")
-                        print(s0)
+                        # print(s0)
                         s1 = s0.split("AVTRAN-")[1]
-                        print(s1)
+                        # print(s1)
                         s2 = s1.rstrip()
-                        print(s2)
+                        # print(s2)
                         if s2 not in enabledReacts:
                             enabledReacts.append(s2)
                         print("enabledReacts",enabledReacts)
                 # invalid trace at line 1 at 0 with transition r6 
                 pathnumber = int(lines[line].split(" trace at line ")[1].split(" ")[0]) - 1
-                print(pathnumber)
+                # print(pathnumber)
                 rempath = paths[pathnumber]
-                print(enabledReacts)
+                # print(enabledReacts)
                 for er in enabledReacts:
                     for r in reactions1:
                         if r.name == er and r.enabledToExecute > 0:
@@ -94,11 +94,11 @@ if __name__ == "__main__":
                     #     if r.name == er:
                 paths.remove(paths[pathnumber])
                 break
-        print("new1", paths)
+        # print("new1", paths)
 
         with open("trace_list.txt", "w") as trace_list:
             for path in paths:
-                print("PREFIX PATH: ", paths)
+                # print("PREFIX PATH: ", paths)
                 trace_list.write("_PREFIX_\t" + path + "\n")
 
         o = subprocess.check_output(["make", "test"],universal_newlines=True)
@@ -141,7 +141,7 @@ if __name__ == "__main__":
 
         # os.system("make test")
         o = subprocess.check_output(["make", "test"],universal_newlines=True)
-        print(o)
+        # print(o)
         for line in o.splitlines(False):
             if "Total" in line:
                 prob += float(line.split(": ")[1])
