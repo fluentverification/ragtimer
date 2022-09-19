@@ -2650,7 +2650,7 @@ with open("test_v2.txt", "r") as f:
             if line[11:17] != "idling":
                 iters += 1
                 if iters == first_iters * 2:
-                    print("Error!\tRun", count+1, "did not reach the target state\n")
+                    print("Run", count+1, "did not reach the target state\n")
         if line[0] == "<":
             if line[2] == "i":
                 transitions += 1

@@ -1270,7 +1270,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
             if line[11:17] != "idling":
                 iters += 1
                 if iters == math.floor(first_iters * 1.25):
-                    print("Error!\tRun", count+1, "did not reach the target state\n")
+                    print("Run", count+1, "did not reach the target state\n")
                 if line[11:20] == "fail_test":
                     print("Error occurred during randomized testing!")
                     exit(1)
