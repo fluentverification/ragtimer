@@ -81,7 +81,7 @@ if __name__ == "__main__":
                         # print(s2)
                         if s2 not in enabledReacts:
                             enabledReacts.append(s2)
-                        print("enabledReacts",enabledReacts)
+                        # print("enabledReacts",enabledReacts)
                 # invalid trace at line 1 at 0 with transition r6 
                 pathnumber = int(lines[line].split(" trace at line ")[1].split(" ")[0]) - 1
                 # print(pathnumber)
@@ -90,7 +90,7 @@ if __name__ == "__main__":
                 for er in enabledReacts:
                     for r in reactions1:
                         if r.name == er and r.enabledToExecute > 0:
-                            print(er + "\t" + paths[pathnumber])
+                            # print(er + "\t" + paths[pathnumber])
                             if (er + "\t" + paths[pathnumber]) not in paths:
                                 paths.append(er + "\t" + paths[pathnumber])
                     # if er in paths[pathnumber]:
