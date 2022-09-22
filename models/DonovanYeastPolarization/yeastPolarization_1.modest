@@ -19,7 +19,7 @@ int(0..150) G_d = 0;
 property "1" = filter(values, Pmin(<>[T <= 20] (G_bg >= 50)), initial);
 property Importance = G_bg;
 
-//command ran: modest modes yeastPolarization_1.modest --rare Restart --relative-width --ifun-prop Importance 0 50 -J 1
+//command ran: modest modes yeastPolarization_1.modest --rare Restart --relative-width --ifun-prop Importance 0 50 -J 1 -O yeastPolarizationResults.txt
 
 process R_def()
 {
