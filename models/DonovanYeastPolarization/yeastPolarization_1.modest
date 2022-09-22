@@ -11,13 +11,16 @@ impatient action R8;
 int(0..150) R_ = 50;
 int(0..150) L = 2;
 int(0..150) RL = 0;
-int(0..150) G_ = 49;
+int(0..150) G_ = 50;
 int(0..150) G_a = 0;
 int(0..150) G_bg = 0;
 int(0..150) G_d = 0;
 
 property "1" = filter(values, Pmin(<>[T <= 20] (G_bg >= 50)), initial);
 property Importance = G_bg;
+
+//command ran: modest modes yeastPolarization_1.modest --rare Restart --relative-width --ifun-prop Importance 0 50 -J 1
+
 process R_def()
 {
    process l()

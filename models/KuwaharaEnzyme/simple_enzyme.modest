@@ -19,6 +19,8 @@ int(0..200) S6 = 0;
 property "1" = filter(values, Pmin(<>[T <= 100] (S5 == THETA)), initial);
 property Importance = max(0, -S5+50);
 
+//command ran: modest modes simple_enzyme.modest --rare Restart --relative-width --ifun-prop Importance 0 25 -J 1
+
 process S1()
 {
    process l()
