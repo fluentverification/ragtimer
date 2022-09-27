@@ -11,12 +11,12 @@ if __name__ == "__main__":
 
     PRINTING = False
 
-    print()
-    print(80*"=")
-    print("Expect to see a message claiming an error: assertion failure.")
-    print("This message indicates correct functionality.")
-    print(80*"=")
-    print()
+    print(f"""
+{80*"="}
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+{80*"="}
+""")
 
     i = sys.argv[1]
     each = False
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         loose = True
 
     reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=PRINTING)
-    
+
     # with open("trace_list.txt", "w") as t:
     #     t.write("")
 
@@ -38,10 +38,10 @@ if __name__ == "__main__":
     for r in reactions1:
         # print(r)
         if (r.tier == 0):
-            depgraph.printPrefixes("trace_list.txt", "", r, paths)
-            
+            depgraph.printPrefixes("textfiles/trace_list.txt", "", r, paths)
+
                 # NEED TO HANDLE CASE WHERE THEY MAKE EQUIV. TRACES???
-            
+
             # extraEnabled = 0
             # for dr in range(len(r.dependCount)):
             #     if r.dependCount[dr] > 0:
@@ -52,13 +52,13 @@ if __name__ == "__main__":
             # # print(paths)
             # # input("newpaths")
 
-    with open("trace_list.txt", "w") as trace_list:
+    with open("textfiles/trace_list.txt", "w") as trace_list:
         for path in paths:
             trace_list.write("_PREFIX_\t" + path + "\n")
 
     # print(paths)
     # quit()
-    
+
     o = subprocess.check_output(["make", "test"],universal_newlines=True)
     prefix = prefix_parser.parsePrefix(o)
 
@@ -82,7 +82,7 @@ if __name__ == "__main__":
                         if s2 not in enabledReacts:
                             enabledReacts.append(s2)
                         # print("enabledReacts",enabledReacts)
-                # invalid trace at line 1 at 0 with transition r6 
+                # invalid trace at line 1 at 0 with transition r6
                 pathnumber = int(lines[line].split(" trace at line ")[1].split(" ")[0]) - 1
                 # print(pathnumber)
                 rempath = paths[pathnumber]
@@ -100,14 +100,14 @@ if __name__ == "__main__":
                 break
         # print("new1", paths)
 
-        with open("trace_list.txt", "w") as trace_list:
+        with open("textfiles/trace_list.txt", "w") as trace_list:
             for path in paths:
                 # print("PREFIX PATH: ", paths)
                 trace_list.write("_PREFIX_\t" + path + "\n")
 
         o = subprocess.check_output(["make", "test"],universal_newlines=True)
         prefix = prefix_parser.parsePrefix(o)
-                            
+
 
                 # reactionname = line.split("with transition ")[1].strip()
                 # for r in reactions1:
@@ -124,7 +124,7 @@ if __name__ == "__main__":
         #     prefix = prefix_parser.parsePrefix(o)
         # input("===")
 
-                    
+
         # print(prefix)
 
     j = len(prefix.values)
@@ -138,9 +138,9 @@ if __name__ == "__main__":
     prob = float(0.0)
 
     for a in range(len(paths)):
-        print(50*"-")
-        print(paths[a])
-        print(50*"-")
+        print(f"""{50*"-"}
+{paths[a]}
+{50*"-"}""")
         reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=PRINTING)
 
         # os.system("make test")
@@ -150,11 +150,8 @@ if __name__ == "__main__":
             if "Total" in line:
                 prob += float(line.split(": ")[1])
 
-    print()
-    print(80*"=")
-    print("Total Sum of Unique Path Probabilities:", prob)
-    print(80*"=")
-    print()
-    print()
-    print()
-    print()
+    print(f"""
+{80*"="}
+Total Sum of Unique Path Probabilities: {prob}
+{80*"="}
+    """)
