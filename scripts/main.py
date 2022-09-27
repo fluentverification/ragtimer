@@ -38,7 +38,7 @@ This message indicates correct functionality.
     for r in reactions1:
         # print(r)
         if (r.tier == 0):
-            depgraph.printPrefixes("trace_list.txt", "", r, paths)
+            depgraph.printPrefixes("textfiles/trace_list.txt", "", r, paths)
 
                 # NEED TO HANDLE CASE WHERE THEY MAKE EQUIV. TRACES???
 
@@ -52,7 +52,7 @@ This message indicates correct functionality.
             # # print(paths)
             # # input("newpaths")
 
-    with open("trace_list.txt", "w") as trace_list:
+    with open("textfiles/trace_list.txt", "w") as trace_list:
         for path in paths:
             trace_list.write("_PREFIX_\t" + path + "\n")
 
@@ -100,7 +100,7 @@ This message indicates correct functionality.
                 break
         # print("new1", paths)
 
-        with open("trace_list.txt", "w") as trace_list:
+        with open("textfiles/trace_list.txt", "w") as trace_list:
             for path in paths:
                 # print("PREFIX PATH: ", paths)
                 trace_list.write("_PREFIX_\t" + path + "\n")
@@ -138,9 +138,9 @@ This message indicates correct functionality.
     prob = float(0.0)
 
     for a in range(len(paths)):
-        print(50*"-")
-        print(paths[a])
-        print(50*"-")
+        print(f"""{50*"-"}
+{paths[a]}
+{50*"-"}""")
         reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=PRINTING)
 
         # os.system("make test")
