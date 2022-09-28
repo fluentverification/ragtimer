@@ -3,6 +3,19 @@
 # RAGTIMER
 Random Assume Guarantee Testing Induced Model Executions for Reachability (RAGTIMER)
 
+## Installation Instructions
+
+The following instructions should guide installation of RAGTIMER and its dependencies. Better instructions are coming soon.
+
+1. Install Microsoft's version of IVy, with instructions for Debian 11 available at https://www.landonjtaylor.net/ivy
+
+2. Install PRISM following instructions at https://prismmodelchecker.org
+
+3. Modify Makefile in the RAGTIMER scripts directory to match your existing PRISM installation folder (not the prism/prism folder, simply the main prism directory)
+
+4. Clone the RAGTIMER repository and play around. The model should be located at scripts/model.sm scripts/model.csl scripts/model.ragtimer as shown by existing files. 
+
+
 ## IVy Model Generator
 ### Input File Format
 
