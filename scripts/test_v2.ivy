@@ -30,44 +30,8 @@
 
     object enabled_checker = {
 
-	action is_enabled_r1(reactant1:updater.num,reactant2:updater.num) returns(y:bool) = {
+	action is_enabled_r4(reactant1:updater.num,reactant2:updater.num) returns(y:bool) = {
             if reactant1 >= 1 & reactant2 >= 1 {
-                y := true
-            }
-            else {
-                y := false
-            }
-        }
-            
-        action is_enabled_r2(reactant1:updater.num) returns(y:bool) = {
-            if reactant1 >= 1 {
-                y := true
-            }
-            else {
-                y := false
-            }
-        }
-            
-        action is_enabled_r3(reactant1:updater.num) returns(y:bool) = {
-            if reactant1 >= 1 {
-                y := true
-            }
-            else {
-                y := false
-            }
-        }
-            
-        action is_enabled_r4(reactant1:updater.num,reactant2:updater.num) returns(y:bool) = {
-            if reactant1 >= 1 & reactant2 >= 1 {
-                y := true
-            }
-            else {
-                y := false
-            }
-        }
-            
-        action is_enabled_r5(reactant1:updater.num) returns(y:bool) = {
-            if reactant1 >= 1 {
                 y := true
             }
             else {
@@ -88,29 +52,9 @@
 }
 
 object inspector = {
-	action check_guard_r1(reactant1:updater.num,reactant2:updater.num)
-	before check_guard_r1 {
-            assert reactant1 >= 1 & reactant2 >= 1
-	}
-
-	action check_guard_r2(reactant1:updater.num)
-	before check_guard_r2 {
-            assert reactant1 >= 1
-	}
-
-	action check_guard_r3(reactant1:updater.num)
-	before check_guard_r3 {
-            assert reactant1 >= 1
-	}
-
 	action check_guard_r4(reactant1:updater.num,reactant2:updater.num)
 	before check_guard_r4 {
             assert reactant1 >= 1 & reactant2 >= 1
-	}
-
-	action check_guard_r5(reactant1:updater.num)
-	before check_guard_r5 {
-            assert reactant1 >= 1
 	}
 
 	action check_guard_r6(reactant1:updater.num)
@@ -122,205 +66,33 @@ object inspector = {
 }
 
 object selector = {
-	individual r1_exec : updater.exec_var
-	individual r2_exec : updater.exec_var
-	individual r3_exec : updater.exec_var
 	individual r4_exec : updater.exec_var
-	individual r5_exec : updater.exec_var
 	individual r6_exec : updater.exec_var
 	
-	individual r1_rate : updater.exec_var
-	individual r2_rate : updater.exec_var
-	individual r3_rate : updater.exec_var
 	individual r4_rate : updater.exec_var
-	individual r5_rate : updater.exec_var
 	individual r6_rate : updater.exec_var
 	
-	individual r1_count : updater.exec_var
-	individual r2_count : updater.exec_var
-	individual r3_count : updater.exec_var
 	individual r4_count : updater.exec_var
-	individual r5_count : updater.exec_var
 	individual r6_count : updater.exec_var
 	
-	individual r1_count_rate : updater.exec_var
-	individual r2_count_rate : updater.exec_var
-	individual r3_count_rate : updater.exec_var
 	individual r4_count_rate : updater.exec_var
-	individual r5_count_rate : updater.exec_var
 	individual r6_count_rate : updater.exec_var
 	
-	individual r1_stage : updater.exec_stage
-	individual r2_stage : updater.exec_stage
-	individual r3_stage : updater.exec_stage
 	individual r4_stage : updater.exec_stage
-	individual r5_stage : updater.exec_stage
 	individual r6_stage : updater.exec_stage
 	
 
 	after init {
-		r1_count := 0;
-		r2_count := 0;
-		r3_count := 0;
 		r4_count := 0;
-		r5_count := 0;
 		r6_count := 0;
 		
 
-		r1_count_rate := 4;
-		r2_count_rate := 4;
-		r3_count_rate := 4;
 		r4_count_rate := 4;
-		r5_count_rate := 4;
 		r6_count_rate := 4;
 		
 	}
 
-	action execute_r1 returns(y:bool) = {
-            r1_exec := r1_exec + 1;
-            if r1_exec >= r1_rate {
-                y := true;
-                r1_exec := 0;
-                r1_count := r1_count + 1
-            }
-            else {
-                y := false
-            };
-            if r1_count >= r1_count_rate {
-                r1_stage := r1_stage + 1;
-                r1_count := 0;
-                r1_count_rate := 4;
-                r1_rate := 25
-            }
-            else if r1_stage = 1 {
-                r1_count_rate := 3;
-                r1_rate := 25
-            }
-            else if r1_stage = 2 {
-                r1_count_rate := 5;
-                r1_rate := 25
-            }
-            else if r1_stage = 3 {
-                r1_count_rate := 4;
-                r1_rate := 25
-            }
-            else if r1_stage = 4 {
-                r1_count_rate := 4;
-                r1_rate := 25
-            }
-            else if r1_stage = 5 {
-                r1_count_rate := 5;
-                r1_rate := 25
-            }
-            else if r1_stage = 6 {
-                r1_count_rate := 3;
-                r1_rate := 25
-            }
-            else if r1_stage = 7 {
-                r1_count_rate := 4;
-                r1_rate := 25
-            }
-            else {
-                r1_stage := 0
-            }
-        }
-        action execute_r2 returns(y:bool) = {
-            r2_exec := r2_exec + 1;
-            if r2_exec >= r2_rate {
-                y := true;
-                r2_exec := 0;
-                r2_count := r2_count + 1
-            }
-            else {
-                y := false
-            };
-            if r2_count >= r2_count_rate {
-                r2_stage := r2_stage + 1;
-                r2_count := 0;
-                r2_count_rate := 4;
-                r2_rate := 25
-            }
-            else if r2_stage = 1 {
-                r2_count_rate := 3;
-                r2_rate := 25
-            }
-            else if r2_stage = 2 {
-                r2_count_rate := 5;
-                r2_rate := 25
-            }
-            else if r2_stage = 3 {
-                r2_count_rate := 4;
-                r2_rate := 25
-            }
-            else if r2_stage = 4 {
-                r2_count_rate := 4;
-                r2_rate := 25
-            }
-            else if r2_stage = 5 {
-                r2_count_rate := 5;
-                r2_rate := 25
-            }
-            else if r2_stage = 6 {
-                r2_count_rate := 3;
-                r2_rate := 25
-            }
-            else if r2_stage = 7 {
-                r2_count_rate := 4;
-                r2_rate := 25
-            }
-            else {
-                r2_stage := 0
-            }
-        }
-        action execute_r3 returns(y:bool) = {
-            r3_exec := r3_exec + 1;
-            if r3_exec >= r3_rate {
-                y := true;
-                r3_exec := 0;
-                r3_count := r3_count + 1
-            }
-            else {
-                y := false
-            };
-            if r3_count >= r3_count_rate {
-                r3_stage := r3_stage + 1;
-                r3_count := 0;
-                r3_count_rate := 4;
-                r3_rate := 25
-            }
-            else if r3_stage = 1 {
-                r3_count_rate := 3;
-                r3_rate := 25
-            }
-            else if r3_stage = 2 {
-                r3_count_rate := 5;
-                r3_rate := 25
-            }
-            else if r3_stage = 3 {
-                r3_count_rate := 4;
-                r3_rate := 25
-            }
-            else if r3_stage = 4 {
-                r3_count_rate := 4;
-                r3_rate := 25
-            }
-            else if r3_stage = 5 {
-                r3_count_rate := 5;
-                r3_rate := 25
-            }
-            else if r3_stage = 6 {
-                r3_count_rate := 3;
-                r3_rate := 25
-            }
-            else if r3_stage = 7 {
-                r3_count_rate := 4;
-                r3_rate := 25
-            }
-            else {
-                r3_stage := 0
-            }
-        }
-        action execute_r4 returns(y:bool) = {
+	action execute_r4 returns(y:bool) = {
             r4_exec := r4_exec + 1;
             if r4_exec >= r4_rate {
                 y := true;
@@ -366,54 +138,6 @@ object selector = {
             }
             else {
                 r4_stage := 0
-            }
-        }
-        action execute_r5 returns(y:bool) = {
-            r5_exec := r5_exec + 1;
-            if r5_exec >= r5_rate {
-                y := true;
-                r5_exec := 0;
-                r5_count := r5_count + 1
-            }
-            else {
-                y := false
-            };
-            if r5_count >= r5_count_rate {
-                r5_stage := r5_stage + 1;
-                r5_count := 0;
-                r5_count_rate := 4;
-                r5_rate := 25
-            }
-            else if r5_stage = 1 {
-                r5_count_rate := 3;
-                r5_rate := 25
-            }
-            else if r5_stage = 2 {
-                r5_count_rate := 5;
-                r5_rate := 25
-            }
-            else if r5_stage = 3 {
-                r5_count_rate := 4;
-                r5_rate := 25
-            }
-            else if r5_stage = 4 {
-                r5_count_rate := 4;
-                r5_rate := 25
-            }
-            else if r5_stage = 5 {
-                r5_count_rate := 5;
-                r5_rate := 25
-            }
-            else if r5_stage = 6 {
-                r5_count_rate := 3;
-                r5_rate := 25
-            }
-            else if r5_stage = 7 {
-                r5_count_rate := 4;
-                r5_rate := 25
-            }
-            else {
-                r5_stage := 0
             }
         }
         action execute_r6 returns(y:bool) = {
@@ -479,6 +203,8 @@ object protocol = {
 	individual r_s4 : updater.num
 	individual r_s5 : updater.num
 	individual r_s6 : updater.num
+	individual r4_executions : updater.num
+	individual r6_executions : updater.num
 
 	after init {
 		r_s1 := 1;
@@ -487,34 +213,9 @@ object protocol = {
 		r_s4 := 0;
 		r_s5 := 48;
 		r_s6 := 1;
+		r4_executions := 0;
+		r6_executions := 0;
 		idle := 0
-	}
-
-	action update_r1 =  {
-            if selector.execute_r1 {
-			call inspector.check_guard_r1(r_s1,r_s2);
-			r_s1 := updater.decr(r_s1);
-			r_s2 := updater.decr(r_s2);
-			r_s3 := updater.incr(r_s3)
-		}
-	}
-
-	action update_r2 =  {
-            if selector.execute_r2 {
-			call inspector.check_guard_r2(r_s3);
-			r_s3 := updater.decr(r_s3);
-			r_s1 := updater.incr(r_s1);
-			r_s2 := updater.incr(r_s2)
-		}
-	}
-
-	action update_r3 =  {
-            if selector.execute_r3 {
-			call inspector.check_guard_r3(r_s3);
-			r_s3 := updater.decr(r_s3);
-			r_s1 := updater.incr(r_s1);
-			r_s5 := updater.incr(r_s5)
-		}
 	}
 
 	action update_r4 =  {
@@ -523,18 +224,10 @@ object protocol = {
 			r_s4 := updater.decr(r_s4);
 			r_s5 := updater.decr(r_s5);
 			r_s6 := updater.incr(r_s6);
+			r4_executions := updater.incr(r4_executions);
 			if r_s5 <= 25 {
 				call goal.achieved(r_s5)
 			}
-		}
-	}
-
-	action update_r5 =  {
-            if selector.execute_r5 {
-			call inspector.check_guard_r5(r_s6);
-			r_s6 := updater.decr(r_s6);
-			r_s4 := updater.incr(r_s4);
-			r_s5 := updater.incr(r_s5)
 		}
 	}
 
@@ -543,7 +236,8 @@ object protocol = {
 			call inspector.check_guard_r6(r_s6);
 			r_s6 := updater.decr(r_s6);
 			r_s4 := updater.incr(r_s4);
-			r_s2 := updater.incr(r_s2)
+			r_s2 := updater.incr(r_s2);
+			r6_executions := updater.incr(r6_executions)
 		}
 	}
 
@@ -555,25 +249,9 @@ object protocol = {
 
 	action fail_test = {}
 
-	before update_r1 {
-		assert idle = 0;
-		assert enabled_checker.is_enabled_r1(r_s1,r_s2)
-	}
-	before update_r2 {
-		assert idle = 0;
-		assert enabled_checker.is_enabled_r2(r_s3)
-	}
-	before update_r3 {
-		assert idle = 0;
-		assert enabled_checker.is_enabled_r3(r_s3)
-	}
 	before update_r4 {
 		assert idle = 0;
 		assert enabled_checker.is_enabled_r4(r_s4,r_s5)
-	}
-	before update_r5 {
-		assert idle = 0;
-		assert enabled_checker.is_enabled_r5(r_s6)
 	}
 	before update_r6 {
 		assert idle = 0;
@@ -594,7 +272,7 @@ object protocol = {
 
 	before fail_test {
 		assert idle = 0;
-		assert (enabled_checker.is_enabled_r1(r_s1,r_s2) = false & enabled_checker.is_enabled_r2(r_s3) = false & enabled_checker.is_enabled_r3(r_s3) = false & enabled_checker.is_enabled_r4(r_s4,r_s5) = false & enabled_checker.is_enabled_r5(r_s6) = false & enabled_checker.is_enabled_r6(r_s6) = false)
+		assert (enabled_checker.is_enabled_r4(r_s4,r_s5) = false & enabled_checker.is_enabled_r6(r_s6) = false)
 	}
 
 	after fail_test {
@@ -604,19 +282,11 @@ object protocol = {
 }
 
 export protocol.fail_test
-export protocol.update_r1
-export protocol.update_r2
-export protocol.update_r3
 export protocol.update_r4
-export protocol.update_r5
 export protocol.update_r6
 export protocol.idling
 import goal.achieved
-import inspector.check_guard_r1
-import inspector.check_guard_r2
-import inspector.check_guard_r3
 import inspector.check_guard_r4
-import inspector.check_guard_r5
 import inspector.check_guard_r6
 
 isolate iso_proto = protocol with enabled_checker, updater, goal, selector, inspector
