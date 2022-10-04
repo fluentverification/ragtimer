@@ -1,3 +1,5 @@
+make
+
 cp ../models/SingleSpecies/2reaction.ragtimer ../model.ragtimer
 cp ../models/SingleSpecies/model.sm ../model.sm
 cp ../models/SingleSpecies/model.csl ../model.csl
