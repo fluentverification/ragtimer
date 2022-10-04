@@ -1,0 +1,64 @@
+bin/run: 21: [[: not found
+test_v2.ivy(280): error: redefining r_r (from test_v2.ivy: line 273)
+test_v2.ivy(281): error: redefining r_l (from test_v2.ivy: line 274)
+test_v2.ivy(282): error: redefining r_rl (from test_v2.ivy: line 275)
+test_v2.ivy(283): error: redefining r_g (from test_v2.ivy: line 276)
+test_v2.ivy(284): error: redefining r_ga (from test_v2.ivy: line 277)
+test_v2.ivy(285): error: redefining r_gbg (from test_v2.ivy: line 278)
+test_v2.ivy(286): error: redefining r_gd (from test_v2.ivy: line 279)
+test_v2.ivy(280): error: redefining protocol.r_r (from test_v2.ivy: line 273)
+test_v2.ivy(281): error: redefining protocol.r_l (from test_v2.ivy: line 274)
+test_v2.ivy(282): error: redefining protocol.r_rl (from test_v2.ivy: line 275)
+test_v2.ivy(283): error: redefining protocol.r_g (from test_v2.ivy: line 276)
+test_v2.ivy(284): error: redefining protocol.r_ga (from test_v2.ivy: line 277)
+test_v2.ivy(285): error: redefining protocol.r_gbg (from test_v2.ivy: line 278)
+test_v2.ivy(286): error: redefining protocol.r_gd (from test_v2.ivy: line 279)
+sh: 1: ./test_v2: not found
+test_v3.ivy(280): error: redefining r_r (from test_v3.ivy: line 273)
+test_v3.ivy(281): error: redefining r_l (from test_v3.ivy: line 274)
+test_v3.ivy(282): error: redefining r_rl (from test_v3.ivy: line 275)
+test_v3.ivy(283): error: redefining r_g (from test_v3.ivy: line 276)
+test_v3.ivy(284): error: redefining r_ga (from test_v3.ivy: line 277)
+test_v3.ivy(285): error: redefining r_gbg (from test_v3.ivy: line 278)
+test_v3.ivy(286): error: redefining r_gd (from test_v3.ivy: line 279)
+test_v3.ivy(280): error: redefining protocol.r_r (from test_v3.ivy: line 273)
+test_v3.ivy(281): error: redefining protocol.r_l (from test_v3.ivy: line 274)
+test_v3.ivy(282): error: redefining protocol.r_rl (from test_v3.ivy: line 275)
+test_v3.ivy(283): error: redefining protocol.r_g (from test_v3.ivy: line 276)
+test_v3.ivy(284): error: redefining protocol.r_ga (from test_v3.ivy: line 277)
+test_v3.ivy(285): error: redefining protocol.r_gbg (from test_v3.ivy: line 278)
+test_v3.ivy(286): error: redefining protocol.r_gd (from test_v3.ivy: line 279)
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+Variables: (r,l,rl,g,ga,gbg,gd)
+
+Transitions: _PREFIX_	r3	r5	
+Probability: 3.928779e-02
+State: (49,2,0,49,1,1,0)
+
+Variables: (r,l,rl,g,ga,gbg,gd)
+
+Transitions: _PREFIX_	r8	r5	
+Probability: 2.971006e-02
+State: (50,2,0,49,1,1,0)
+
+Total probability: 0.000000e+00
+
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 0
+starting to run rest of tests
+./test_v3 iters=0.0 seed=2410 runs=0
+Traceback (most recent call last):
+  File "/home/landon/ragtimer/scripts/main.py", line 33, in <module>
+    reactions_v5.randTest(i, reactions1, prefix, False, "", [])
+  File "/home/landon/ragtimer/scripts/reactions_v5.py", line 1132, in randTest
+    cppout = subprocess.check_output(fullstring.split(" "), universal_newlines = True)
+  File "/usr/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.9/subprocess.py", line 1823, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: './test_v3'
