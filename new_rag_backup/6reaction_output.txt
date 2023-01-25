@@ -1,0 +1,71 @@
+bin/run: 21: [[: not found
+Traceback (most recent call last):
+  File "/usr/local/bin/ivy_to_cpp", line 11, in <module>
+    load_entry_point('ms-ivy==1.7.0', 'console_scripts', 'ivy_to_cpp')()
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_to_cpp.py", line 5134, in main
+    main_int(False)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_to_cpp.py", line 5177, in main_int
+    ivy_init.ivy_init(create_isolate=False)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_init.py", line 106, in ivy_init
+    source_file(fn,f,**skwargs)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_init.py", line 72, in source_file
+    ivy_load_file(f,**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_compiler.py", line 2171, in ivy_load_file
+    decls = read_module(f)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_compiler.py", line 2143, in read_module
+    reload(ivy_parser)
+  File "/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/ivy_parser.py", line 2668, in <module>
+    parser = yacc.yacc(start='top',tabmodule='ivy_parsetab',errorlog=yacc.NullLogger(),outputdir=tabdir,debug=None)
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 3444, in yacc
+    lr = LRGeneratedTable(grammar, method, debuglog)
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 2134, in __init__
+    self.grammar.compute_follow()
+  File "/usr/local/lib/python2.7/dist-packages/ply-3.11-py2.7.egg/ply/yacc.py", line 1898, in compute_follow
+    if B in self.Nonterminals:
+KeyboardInterrupt
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+['a', 'a', 'a', 'a', 's', 'a']
+['a', 'a', 'a', 'a', 's', 'a']
+['a', 'a', 'a', 'a', 's', 'a']
+Checking usefulness on r5
+[1, 50, 0, 25, 74, 25]
+[-1, -1, -1, 25, 50, 24]
+0
+deltaR -2
+deltaR -51
+deltaR -1
+deltaR 0
+deltaR -24
+Useless r5
+['a', 'a', 'a', 'a', 's', 'a']
+Checking usefulness on r6
+[1, 74, 0, 25, 50, 25]
+[-1, -1, -1, 25, 50, 24]
+0
+deltaR -2
+deltaR -75
+deltaR -1
+deltaR 0
+deltaR 0
+deltaR -1
+Checking usefulness on r4
+[1, 50, 0, 1, 50, 25]
+[-1, -1, -1, 25, 50, -1]
+2
+r6
+--------------------------------------------------
+r5	r4	
+--------------------------------------------------
+Traceback (most recent call last):
+  File "/home/landon/ragtimer/scripts/main.py", line 52, in <module>
+    reactions_v5.randTest(iters, reactions1, prefix, a, False)
+  File "/home/landon/ragtimer/scripts/reactions_v5.py", line 613, in randTest
+    ivy_to_cpp_command.wait()
+  File "/usr/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/lib/python3.9/subprocess.py", line 1919, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/lib/python3.9/subprocess.py", line 1877, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt

@@ -1,0 +1,408 @@
+
+================================================================================
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+================================================================================
+
+==================================================
+chemicals   	['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+deltaTarget 	[0, 0, 0, 0, 0, 0, 10, 0, 0]
+add/subtract	['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Check reaction R1 to obtain CodY
+Check reaction R10 to obtain CodY
+Check reaction R12 to obtain CodY
+
+--------------------------------------------------
+TIER 0 Checking R1 From parent None
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 1, 1, 1, 1, 1, 10, 10, 10]
+Current Target State 	 [-1, -1, -1, -1, -1, -1, 20, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 10, 0, 0]
+Chemicals Required   	 ['CodY']
+In these quantities  	 [10]
+
+Required Executions	 10
+Initial After 10 Execs	 [11, 1, 1, 1, 1, 1, 20, 10, 10]
+Target After 10 Execs	 [10, -1, -1, -1, -1, -1, 20, -1, -1]
+
+R1 - Rate 0.1
+Reactants ['codY']
+Products ['codY', 'CodY']
+Required Executions 10
+Enabled Executions 1
+Tier 0
+
+chemicals   	['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+deltaTarget 	[0, 0, 0, 0, 0, 0, 0, 0, 0]
+add/subtract	['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+
+--------------------------------------------------
+TIER 0 Checking R10 From parent None
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 1, 1, 1, 1, 1, 10, 10, 10]
+Current Target State 	 [-1, -1, -1, -1, -1, -1, 20, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 10, 0, 0]
+Chemicals Required   	 ['CodY']
+In these quantities  	 [10]
+
+Required Executions	 10
+Initial After 10 Execs	 [1, 11, 1, 1, 1, 1, 20, 10, 10]
+Target After 10 Execs	 [-1, -1, -1, -1, 10, -1, 20, -1, -1]
+
+R10 - Rate 0.1
+Reactants ['CodY_flache']
+Products ['CodY', 'flache']
+Required Executions 10
+Enabled Executions 1
+Tier 0
+
+chemicals   	['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+deltaTarget 	[0, 0, 0, 0, 9, 0, 0, 0, 0]
+add/subtract	['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Check reaction R9 to obtain CodY_flache
+
+--------------------------------------------------
+TIER 1 Checking R9 From parent R10
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 1, 1, 1, 20, 10, 10]
+Current Target State 	 [-1, -1, -1, -1, 10, -1, 20, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 9, 0, 0, 0, 0]
+Chemicals Required   	 ['CodY_flache', 'CodY']
+In these quantities  	 [9, 0]
+
+Required Executions	 9
+Initial After 9 Execs	 [1, 11, 1, 1, 10, 1, 20, 10, 10]
+Target After 9 Execs	 [-1, 9, -1, -1, 10, -1, 29, -1, -1]
+
+R9 - Rate 0.02
+Reactants ['CodY', 'flache']
+Products ['CodY_flache']
+Required Executions 9
+Enabled Executions 9
+Tier 1
+
+chemicals   	['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+deltaTarget 	[0, 0, 0, 0, 0, 0, 9, 0, 0]
+add/subtract	['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Check reaction R1 to obtain CodY
+Check reaction R10 to obtain CodY
+Check reaction R12 to obtain CodY
+
+--------------------------------------------------
+TIER 2 Checking R1 From parent R9
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 1, 10, 1, 20, 10, 10]
+Current Target State 	 [-1, 9, -1, -1, 10, -1, 29, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 9, 0, 0]
+Chemicals Required   	 ['flache', 'CodY_flache', 'CodY']
+In these quantities  	 [0, 0, 9]
+
+R1 in reaction history. CYCLE DETECTED.
+
+
+
+--------------------------------------------------
+TIER 2 Checking R10 From parent R9
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 1, 10, 1, 20, 10, 10]
+Current Target State 	 [-1, 9, -1, -1, 10, -1, 29, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 9, 0, 0]
+Chemicals Required   	 ['flache', 'CodY_flache', 'CodY']
+In these quantities  	 [0, 0, 9]
+
+R10 in reaction history. CYCLE DETECTED.
+
+
+
+--------------------------------------------------
+TIER 2 Checking R12 From parent R9
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 1, 10, 1, 20, 10, 10]
+Current Target State 	 [-1, 9, -1, -1, 10, -1, 29, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 9, 0, 0]
+Chemicals Required   	 ['flache', 'CodY_flache', 'CodY']
+In these quantities  	 [0, 0, 9]
+
+Required Executions	 9
+Initial After 9 Execs	 [1, 11, 1, 10, 10, 1, 29, 10, 10]
+Target After 9 Execs	 [-1, 9, -1, -1, 10, 9, 29, -1, -1]
+
+R12 - Rate 0.1
+Reactants ['CodY_hag']
+Products ['CodY', 'hag']
+Required Executions 9
+Enabled Executions 1
+Tier 2
+
+chemicals   	['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+deltaTarget 	[0, 0, 0, 0, 0, 8, 0, 0, 0]
+add/subtract	['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Check reaction R11 to obtain CodY_hag
+
+--------------------------------------------------
+TIER 3 Checking R11 From parent R12
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 10, 10, 1, 29, 10, 10]
+Current Target State 	 [-1, 9, -1, -1, 10, 9, 29, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 8, 0, 0, 0]
+Chemicals Required   	 ['flache', 'CodY_flache', 'CodY_hag', 'CodY']
+In these quantities  	 [0, 0, 8, 0]
+
+Required Executions	 8
+Initial After 8 Execs	 [1, 11, 1, 10, 10, 9, 29, 10, 10]
+Target After 8 Execs	 [-1, 9, -1, 8, 10, 9, 37, -1, -1]
+
+R11 - Rate 0.01
+Reactants ['CodY', 'hag']
+Products ['CodY_hag']
+Required Executions 8
+Enabled Executions 8
+Tier 3
+
+chemicals   	['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+deltaTarget 	[0, 0, 0, 0, 0, 0, 8, 0, 0]
+add/subtract	['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Check reaction R1 to obtain CodY
+Check reaction R10 to obtain CodY
+Check reaction R12 to obtain CodY
+
+--------------------------------------------------
+TIER 4 Checking R1 From parent R11
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 10, 10, 9, 29, 10, 10]
+Current Target State 	 [-1, 9, -1, 8, 10, 9, 37, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 8, 0, 0]
+Chemicals Required   	 ['flache', 'hag', 'CodY_flache', 'CodY_hag', 'CodY']
+In these quantities  	 [0, 0, 0, 0, 8]
+
+R1 in reaction history. CYCLE DETECTED.
+
+
+
+--------------------------------------------------
+TIER 4 Checking R10 From parent R11
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 10, 10, 9, 29, 10, 10]
+Current Target State 	 [-1, 9, -1, 8, 10, 9, 37, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 8, 0, 0]
+Chemicals Required   	 ['flache', 'hag', 'CodY_flache', 'CodY_hag', 'CodY']
+In these quantities  	 [0, 0, 0, 0, 8]
+
+R10 in reaction history. CYCLE DETECTED.
+
+
+
+--------------------------------------------------
+TIER 4 Checking R12 From parent R11
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 11, 1, 10, 10, 9, 29, 10, 10]bin/run: 21: [[: not found
+g++ -Wno-parentheses-equality  -std=c++11  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -Xlinker -rpath -Xlinker /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 189: error: assertion failed
+g++ -Wno-parentheses-equality  -std=c++11  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -Xlinker -rpath -Xlinker /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+
+Current Target State 	 [-1, 9, -1, 8, 10, 9, 37, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 8, 0, 0]
+Chemicals Required   	 ['flache', 'hag', 'CodY_flache', 'CodY_hag', 'CodY']
+In these quantities  	 [0, 0, 0, 0, 8]
+
+R12 in reaction history. CYCLE DETECTED.
+
+
+
+--------------------------------------------------
+TIER 0 Checking R12 From parent None
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 1, 1, 1, 1, 1, 10, 10, 10]
+Current Target State 	 [-1, -1, -1, -1, -1, -1, 20, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 0, 10, 0, 0]
+Chemicals Required   	 ['CodY']
+In these quantities  	 [10]
+
+Required Executions	 19
+Initial After 10 Execs	 [1, 1, 1, 11, 1, 1, 20, 10, 10]
+Target After 10 Execs	 [-1, -1, -1, -1, -1, 10, 20, -1, -1]
+
+R12 - Rate 0.1
+Reactants ['CodY_hag']
+Products ['CodY', 'hag']
+Required Executions 19
+Enabled Executions 1
+Tier 0
+ - Depends On R11 0 times
+USELESS
+chemicals   	['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+deltaTarget 	[0, 0, 0, 0, 0, 9, 0, 0, 0]
+add/subtract	['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Check reaction R11 to obtain CodY_hag
+
+--------------------------------------------------
+TIER 1 Checking R11 From parent R12
+--------------------------------------------------
+
+List of Chemicals    	 ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+Current Initial State	 [1, 1, 1, 11, 1, 1, 20, 10, 10]
+Current Target State 	 [-1, -1, -1, -1, -1, 10, 20, -1, -1]
+Delta Target-Initial 	 [0, 0, 0, 0, 0, 9, 0, 0, 0]
+Chemicals Required   	 ['CodY_hag', 'CodY']
+In these quantities  	 [9, 0]
+
+R11 in reaction history. CYCLE DETECTED.
+
+
+
+==================================================
+NECESSARY REACTIONS
+==================================================
+
+R1 - Rate 0.1
+Reactants ['codY']
+Products ['codY', 'CodY']
+Required Executions 10
+Enabled Executions 1
+Tier 0
+
+==================================================
+R1	
+--------------------------------------------------
+R1	
+--------------------------------------------------
+
+
+prefix.varnames ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+SPEC ['codY', 'flache', 'SigD_hag', 'hag', 'CodY_flache', 'CodY_hag', 'CodY', 'SigD', 'Hag']
+The initial values reported are:
+codY = 1
+flache = 1
+SigD_hag = 1
+hag = 1
+CodY_flache = 1
+CodY_hag = 1
+CodY = 11
+SigD = 10
+Hag = 10
+
+
+[<reactions_v5.Species object at 0x7fb560457370>, <reactions_v5.Species object at 0x7fb5604573d0>, <reactions_v5.Species object at 0x7fb560457430>, <reactions_v5.Species object at 0x7fb560457490>, <reactions_v5.Species object at 0x7fb5604574f0>, <reactions_v5.Species object at 0x7fb560457550>, <reactions_v5.Species object at 0x7fb5604575b0>, <reactions_v5.Species object at 0x7fb560457610>, <reactions_v5.Species object at 0x7fb560457670>]
+1
+
+
+The following priorities have been noted for the reactions: 
+
+reaction 1 : 0
+reaction 2 : -1
+reaction 3 : -1
+reaction 4 : -1
+reaction 5 : -1
+reaction 6 : -1
+reaction 7 : -1
+reaction 8 : -1
+reaction 9 : -1
+reaction 10 : -1
+reaction 11 : -1
+reaction 12 : -1
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 10
+Running test for 1 simulation runs in group 1 of 1
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+
+
+Average number of transitions in a trace is: 9.0
+The biggest number of transitions recorded in a trace is: 9
+The smallest number of transitions recorded in a trace is: 9
+
+Average number of iterations needed in a trace is: 9.0
+The biggest number of iterations needed for a trace was: 9
+The smallest number of iterations needed for a trace was: 9
+
+
+Average number of reaction 1 executions in a trace is: 9.0
+The biggest number of reaction 1 executions recorded in a trace is: 9
+The smallest number of reaction 1 executions recorded in a trace is: 0
+
+
+Average number of reaction 2 executions in a trace is: 0.0
+The biggest number of reaction 2 executions recorded in a trace is: 0
+The smallest number of reaction 2 executions recorded in a trace is: 0
+
+
+Average number of reaction 3 executions in a trace is: 0.0
+The biggest number of reaction 3 executions recorded in a trace is: 0
+The smallest number of reaction 3 executions recorded in a trace is: 0
+
+
+Average number of reaction 4 executions in a trace is: 0.0
+The biggest number of reaction 4 executions recorded in a trace is: 0
+The smallest number of reaction 4 executions recorded in a trace is: 0
+
+
+Average number of reaction 5 executions in a trace is: 0.0
+The biggest number of reaction 5 executions recorded in a trace is: 0
+The smallest number of reaction 5 executions recorded in a trace is: 0
+
+
+Average number of reaction 6 executions in a trace is: 0.0
+The biggest number of reaction 6 executions recorded in a trace is: 0
+The smallest number of reaction 6 executions recorded in a trace is: 0
+
+
+Average number of reaction 7 executions in a trace is: 0.0
+The biggest number of reaction 7 executions recorded in a trace is: 0
+The smallest number of reaction 7 executions recorded in a trace is: 0
+
+
+Average number of reaction 8 executions in a trace is: 0.0
+The biggest number of reaction 8 executions recorded in a trace is: 0
+The smallest number of reaction 8 executions recorded in a trace is: 0
+
+
+Average number of reaction 9 executions in a trace is: 0.0
+The biggest number of reaction 9 executions recorded in a trace is: 0
+The smallest number of reaction 9 executions recorded in a trace is: 0
+
+
+Average number of reaction 10 executions in a trace is: 0.0
+unable to compute max/min, likely because iterations has no elements.
+
+
+Average number of reaction 11 executions in a trace is: 0.0
+unable to compute max/min, likely because iterations has no elements.
+
+
+Average number of reaction 12 executions in a trace is: 0.0
+unable to compute max/min, likely because iterations has no elements.
+
+================================================================================
+Total Sum of Unique Path Probabilities: 2.068284e-15
+================================================================================
+
+
+
+

@@ -1,0 +1,23 @@
+Run 1:
+
+r1	r1	r1	r1	r1	r1	r1	r1	r1	
+
+Run 1 information
+
+Iterations before idling was reached: 9
+Number of transitions: 9
+r1executions: 9
+r2executions: 0
+r3executions: 0
+r4executions: 0
+r5executions: 0
+r6executions: 0
+r7executions: 0
+r8executions: 0
+r9executions: 0
+r10executions: 0
+r11executions: 0
+r12executions: 0
+
+
+

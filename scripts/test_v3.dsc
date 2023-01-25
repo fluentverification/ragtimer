@@ -1,0 +1,1 @@
+{"processes": [{"indices": [], "binary": "test_v3", "params": [], "name": "iso_proto"}], "test_params": ["iters", "runs", "seed", "delay", "wait", "modelfile"]}

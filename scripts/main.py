@@ -9,7 +9,7 @@ import math
 
 if __name__ == "__main__":
 
-    PRINTING = False
+    PRINTING = True
 
     print()
     print(80*"=")
@@ -146,6 +146,7 @@ if __name__ == "__main__":
         # os.system("make test")
         o = subprocess.check_output(["make", "test"],universal_newlines=True)
         # print(o)
+
         for line in o.splitlines(False):
             if "Total" in line:
                 prob += float(line.split(": ")[1])

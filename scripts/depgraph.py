@@ -22,6 +22,7 @@ class Reaction:
 		self.tier = -1
 		self.useless = False
 		self.enabledToExecute = 0
+		self.parents = []
 	
 	# Add a reactant to the reaction
 	def addReactant(self, reactant):
@@ -65,7 +66,6 @@ class Reaction:
 		# 	parent.dependCount[len(parent.dependCount)-1] = math.inf
 		# 	parent.dependsOn.append("APPROPRIATE DEPENDENCY NOT FOUND. BRANCH UNREACHABLE")
 
-
 	# Custom tostring function for reactions
 	def __str__(self) -> str:
 		r = "\n" + self.name
@@ -82,19 +82,24 @@ class Reaction:
 		return r
 
 
+# Found a bug. Recursion doesn't terminate when we have to deal with
+# cases where every reaction has a dependency.
 
-def printPrefixes(filename, path, reaction, paths):
+def printPrefixes(filename, path, reaction, paths, depth=0):
 	path = reaction.name + "\t" + path
-	# print(path)
+	print(path)
 	# input("-")
+	# if (len(reaction.dependsOn) == 0 or reaction.name in path.split('\t')):
 	if (len(reaction.dependsOn) == 0):
 		with open(filename, 'a') as f:
 			paths.append(path)
+			# print("End of Path")
 			# f.write("_PREFIX_\t" + path + "\n")
 			return
 	for r in reaction.dependsOn:
 		if r.tier > -1:
-			printPrefixes(filename, path, r, paths)
+			# print("printPrefixes", depth)
+			printPrefixes(filename, path, r, paths, depth+1)
 
 
 
@@ -105,7 +110,7 @@ Inputs: recursion depth, reaction array, chemical name array, initial values,
 Output: None
 '''
 
-def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_history, parent, add_or_sub, printing=True):
+def buildGraph(recdepth, reactions, chemicals, initials, targets, parent, add_or_sub, printing=True):
 	
 	# print(add_or_sub)
 
@@ -172,23 +177,29 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 			print("In these quantities  \t",needChemQty)
 
 		# Check for cycles and alert user
-		if r.name in reaction_history:
-			if printing:
-				print()
-				print(r.name, "in reaction history. CYCLE DETECTED.\n")
-				print()
-			
-			continue
+		if parent:
+			if r.name in r.parents:
+				if printing:
+					print()
+					print(r.name, "in reaction history. CYCLE DETECTED.\n")
+					print()
+				continue
 
 		# Add current reaction to the reaction history (to look for cycles)
-		r_hist = []
-		for rh in reaction_history:
-			r_hist.append(rh)
-		r_hist.append(r.name)
+		# r_hist = []
+		if parent:
+			for rh in parent.parents:
+				r.parents.append(rh)
+		# r_hist.append(r.name)
+		r.parents.append(r.name)
+
+		# TODO: SIMPLIFY THE REACTION VECTOR SUCH THAT ALL WE DEAL WITH IS SUMS
+		# TO DEAL WITH THE ANNOYING A -> A + A CASE.
 
 		# Update required number of executions
 		reqExec = 0
 		for d in range(numChems):
+			print("DELTATARGET", d, "= ", deltaTarget[d])
 			if deltaTarget[d] > 0:
 				for p in range(len(r.products)):
 					if chemicals[d] in r.products[p]:
@@ -260,7 +271,7 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, reaction_histo
 			print(r)
 
 		# Recurse (find requirements for this reaction)
-		buildGraph(recdepth+1, reactions, chemicals, new_initials, new_targets, r_hist, r, add_or_sub, printing)
+		buildGraph(recdepth+1, reactions, chemicals, new_initials, new_targets, r, add_or_sub, printing)
 
 		r.check_usefulness(new_initials, new_targets, add_or_sub, parent)
 
@@ -273,6 +284,8 @@ Output: Array of reaction objects
 '''
 
 def makeDepGraph(infile, printing=True):
+	
+	# printing = True # TODO: Remove this line after debugging.
 	
 	chemicals = [] # Stores string names of chemicals
 	initials = [] # Stores initial values of chemicals
@@ -344,7 +357,7 @@ def makeDepGraph(infile, printing=True):
 			add_or_sub.append('a')
 
 	# Recursively find the necessary reactions
-	buildGraph(0, reactions, chemicals, initials, targets, reaction_history, None, add_or_sub, printing)
+	buildGraph(0, reactions, chemicals, initials, targets, None, add_or_sub, printing)
 
 	if printing:
 		# Print the list of necessary reactions and their dependencies

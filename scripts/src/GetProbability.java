@@ -39,21 +39,21 @@ public class GetProbability
       int pathCount = 0;
       double recordHigh = 0.0f;
       int invalidSince = -2;
-
+      
       boolean newInit = false;
-
+      
       // give PRISM output a log file
       PrismLog mainLog = new PrismDevNullLog();
-
+            
       // initialise (with an s) PRISM engine
       Prism prism = new Prism(mainLog);
       prism.initialise();
-
+      
       // parse the prism model
       // For now, model.sm is the model file.
       // ModulesFile modulesFile = prism.parseModelFile(new File("../models/DonovanYeastPolarization/yeastPolarization.sm"));
       ModulesFile modulesFile = prism.parseModelFile(new File("../model.sm"));
-
+      
       // load the prism model
       prism.loadPRISMModel(modulesFile);
 
@@ -73,6 +73,8 @@ public class GetProbability
       String x_p;
       x_p = br_p.readLine();
       Expression target = prism.parsePropertiesString(x_p).getProperty(0);
+
+      System.out.println(target);
 
       // Read in the traces
 			FileReader fr = new FileReader("trace_list.txt");
@@ -175,7 +177,6 @@ public class GetProbability
         if (newInit) {
           System.out.printf("Transitions: %s\nProbability: %e\nState: %s\n\n", x, pathProbability, sim.getCurrentState());
         }
-
         // Check that we end up at a state satisfying the property
         else if (target.evaluateBoolean(sim.getCurrentState())) {
           // If we end up in a target state, update our total probability

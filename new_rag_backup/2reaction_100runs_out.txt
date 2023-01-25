@@ -1,0 +1,165 @@
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+g++  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -Wl,-rpath=/usr/local/lib/python2.7/dist-packages/ms_ivy-1.7.0-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+==================================================
+chemicals   	['s1', 's2']
+deltaTarget 	[0, 40]
+add/subtract	['a', 'a']
+Check reaction r1 to obtain s2
+
+--------------------------------------------------
+TIER 0 Checking r1 From parent None
+--------------------------------------------------
+
+List of Chemicals    	 ['s1', 's2']
+Current Initial State	 [1, 40]
+Current Target State 	 [-1, 80]
+Delta Target-Initial 	 [0, 40]
+Chemicals Required   	 ['s2']
+In these quantities  	 [40]
+
+Required Executions	 40
+Initial After 40 Execs	 [41, 80]
+Target After 40 Execs	 [40, 80]
+
+r1 - Rate 1.0
+Reactants ['s1']
+Products ['s1', 's2']
+Required Executions 40
+Enabled Executions 1
+Tier 0
+
+chemicals   	['s1', 's2']
+deltaTarget 	[0, 0]
+add/subtract	['a', 'a']
+
+==================================================
+NECESSARY REACTIONS
+==================================================
+
+r1 - Rate 1.0
+Reactants ['s1']
+Products ['s1', 's2']
+Required Executions 40
+Enabled Executions 1
+Tier 0
+
+==================================================
+r1
+--------------------------------------------------
+r1	r1	
+--------------------------------------------------
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 39
+Running test for 100 simulation runs in group 1 of 1
+finished randomized testing
+***Run 1 was a duplicate and has been thrown out of trace_list.txt
+***Run 2 was a duplicate and has been thrown out of trace_list.txt
+***Run 3 was a duplicate and has been thrown out of trace_list.txt
+***Run 4 was a duplicate and has been thrown out of trace_list.txt
+***Run 5 was a duplicate and has been thrown out of trace_list.txt
+***Run 6 was a duplicate and has been thrown out of trace_list.txt
+***Run 7 was a duplicate and has been thrown out of trace_list.txt
+***Run 8 was a duplicate and has been thrown out of trace_list.txt
+***Run 9 was a duplicate and has been thrown out of trace_list.txt
+***Run 10 was a duplicate and has been thrown out of trace_list.txt
+***Run 11 was a duplicate and has been thrown out of trace_list.txt
+***Run 12 was a duplicate and has been thrown out of trace_list.txt
+***Run 13 was a duplicate and has been thrown out of trace_list.txt
+***Run 14 was a duplicate and has been thrown out of trace_list.txt
+***Run 15 was a duplicate and has been thrown out of trace_list.txt
+***Run 16 was a duplicate and has been thrown out of trace_list.txt
+***Run 17 was a duplicate and has been thrown out of trace_list.txt
+***Run 18 was a duplicate and has been thrown out of trace_list.txt
+***Run 19 was a duplicate and has been thrown out of trace_list.txt
+***Run 20 was a duplicate and has been thrown out of trace_list.txt
+***Run 21 was a duplicate and has been thrown out of trace_list.txt
+***Run 22 was a duplicate and has been thrown out of trace_list.txt
+***Run 23 was a duplicate and has been thrown out of trace_list.txt
+***Run 24 was a duplicate and has been thrown out of trace_list.txt
+***Run 25 was a duplicate and has been thrown out of trace_list.txt
+***Run 26 was a duplicate and has been thrown out of trace_list.txt
+***Run 27 was a duplicate and has been thrown out of trace_list.txt
+***Run 28 was a duplicate and has been thrown out of trace_list.txt
+***Run 29 was a duplicate and has been thrown out of trace_list.txt
+***Run 30 was a duplicate and has been thrown out of trace_list.txt
+***Run 31 was a duplicate and has been thrown out of trace_list.txt
+***Run 32 was a duplicate and has been thrown out of trace_list.txt
+***Run 33 was a duplicate and has been thrown out of trace_list.txt
+***Run 34 was a duplicate and has been thrown out of trace_list.txt
+***Run 35 was a duplicate and has been thrown out of trace_list.txt
+***Run 36 was a duplicate and has been thrown out of trace_list.txt
+***Run 37 was a duplicate and has been thrown out of trace_list.txt
+***Run 38 was a duplicate and has been thrown out of trace_list.txt
+***Run 39 was a duplicate and has been thrown out of trace_list.txt
+***Run 40 was a duplicate and has been thrown out of trace_list.txt
+***Run 41 was a duplicate and has been thrown out of trace_list.txt
+***Run 42 was a duplicate and has been thrown out of trace_list.txt
+***Run 43 was a duplicate and has been thrown out of trace_list.txt
+***Run 44 was a duplicate and has been thrown out of trace_list.txt
+***Run 45 was a duplicate and has been thrown out of trace_list.txt
+***Run 46 was a duplicate and has been thrown out of trace_list.txt
+***Run 47 was a duplicate and has been thrown out of trace_list.txt
+***Run 48 was a duplicate and has been thrown out of trace_list.txt
+***Run 49 was a duplicate and has been thrown out of trace_list.txt
+***Run 50 was a duplicate and has been thrown out of trace_list.txt
+***Run 51 was a duplicate and has been thrown out of trace_list.txt
+***Run 52 was a duplicate and has been thrown out of trace_list.txt
+***Run 53 was a duplicate and has been thrown out of trace_list.txt
+***Run 54 was a duplicate and has been thrown out of trace_list.txt
+***Run 55 was a duplicate and has been thrown out of trace_list.txt
+***Run 56 was a duplicate and has been thrown out of trace_list.txt
+***Run 57 was a duplicate and has been thrown out of trace_list.txt
+***Run 58 was a duplicate and has been thrown out of trace_list.txt
+***Run 59 was a duplicate and has been thrown out of trace_list.txt
+***Run 60 was a duplicate and has been thrown out of trace_list.txt
+***Run 61 was a duplicate and has been thrown out of trace_list.txt
+***Run 62 was a duplicate and has been thrown out of trace_list.txt
+***Run 63 was a duplicate and has been thrown out of trace_list.txt
+***Run 64 was a duplicate and has been thrown out of trace_list.txt
+***Run 65 was a duplicate and has been thrown out of trace_list.txt
+***Run 66 was a duplicate and has been thrown out of trace_list.txt
+***Run 67 was a duplicate and has been thrown out of trace_list.txt
+***Run 68 was a duplicate and has been thrown out of trace_list.txt
+***Run 69 was a duplicate and has been thrown out of trace_list.txt
+***Run 70 was a duplicate and has been thrown out of trace_list.txt
+***Run 71 was a duplicate and has been thrown out of trace_list.txt
+***Run 72 was a duplicate and has been thrown out of trace_list.txt
+***Run 73 was a duplicate and has been thrown out of trace_list.txt
+***Run 74 was a duplicate and has been thrown out of trace_list.txt
+***Run 75 was a duplicate and has been thrown out of trace_list.txt
+***Run 76 was a duplicate and has been thrown out of trace_list.txt
+***Run 77 was a duplicate and has been thrown out of trace_list.txt
+***Run 78 was a duplicate and has been thrown out of trace_list.txt
+***Run 79 was a duplicate and has been thrown out of trace_list.txt
+***Run 80 was a duplicate and has been thrown out of trace_list.txt
+***Run 81 was a duplicate and has been thrown out of trace_list.txt
+***Run 82 was a duplicate and has been thrown out of trace_list.txt
+***Run 83 was a duplicate and has been thrown out of trace_list.txt
+***Run 84 was a duplicate and has been thrown out of trace_list.txt
+***Run 85 was a duplicate and has been thrown out of trace_list.txt
+***Run 86 was a duplicate and has been thrown out of trace_list.txt
+***Run 87 was a duplicate and has been thrown out of trace_list.txt
+***Run 88 was a duplicate and has been thrown out of trace_list.txt
+***Run 89 was a duplicate and has been thrown out of trace_list.txt
+***Run 90 was a duplicate and has been thrown out of trace_list.txt
+***Run 91 was a duplicate and has been thrown out of trace_list.txt
+***Run 92 was a duplicate and has been thrown out of trace_list.txt
+***Run 93 was a duplicate and has been thrown out of trace_list.txt
+***Run 94 was a duplicate and has been thrown out of trace_list.txt
+***Run 95 was a duplicate and has been thrown out of trace_list.txt
+***Run 96 was a duplicate and has been thrown out of trace_list.txt
+***Run 97 was a duplicate and has been thrown out of trace_list.txt
+***Run 98 was a duplicate and has been thrown out of trace_list.txt
+***Run 99 was a duplicate and has been thrown out of trace_list.txt
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+PRISM_DIR=/usr/local/prism-src/prism PRISM_MAINCLASS=simulate.GetProbability bin/run
+New highest probability: 1.940103e-16 at line 1
+Total probability: 1.940103e-16
+
+Total Sum of Unique Path Probabilities: 1.940103e-16

@@ -1184,9 +1184,9 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     # split runs up so we can 
     intRuns = int(runswanted)
     runsSplit = []
-    while intRuns > 250:
-        runsSplit.append(250)
-        intRuns -= 250
+    while intRuns > 100:
+        runsSplit.append(100)
+        intRuns -= 100
     if intRuns > 0:
         runsSplit.append(intRuns)
 
@@ -1205,7 +1205,15 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
 
         cppout += subprocess.check_output(runCommand, universal_newlines = True)
 
+        # print(80*"-")
+        # print(80*"-")
+        # print("C++ OUTPUT FOLLOWS")
+        # print(80*"-")
         # print(cppout)
+        # print(80*"-")
+        # print("END C++ OUTPUT")
+        # print(80*"-")
+        # print(80*"-")
 
         # firsthalf = f"./{Options.secondIvyModelName} iters="
         # middle = str(math.ceil(first_iters*1.25))
@@ -1365,5 +1373,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
 
         for x in range(numOfReactions):
             print("\n\nAverage number of reaction", x+1, "executions in a trace is:", Total[x]/int(runswanted))
-            print("The biggest number of reaction", x+1, "executions recorded in a trace is:", max(iterations[x]))
-            print("The smallest number of reaction", x+1, "executions recorded in a trace is:", min(iterations[x]))
+            try:
+                print("The biggest number of reaction", x+1, "executions recorded in a trace is:", max(iterations[x]))
+                print("The smallest number of reaction", x+1, "executions recorded in a trace is:", min(iterations[x]))
+            except:
+                print("unable to compute max/min, likely because iterations has no elements.")

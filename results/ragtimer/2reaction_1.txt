@@ -1,0 +1,77 @@
+bin/run: 21: [[: not found
+g++ -Wno-parentheses-equality  -std=c++11  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -Xlinker -rpath -Xlinker /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -g -o test_v2 test_v2.cpp -lz3 -pthread
+test_v2.ivy: line 252: error: assertion failed
+g++ -Wno-parentheses-equality  -std=c++11  -I /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/include -L /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -Xlinker -rpath -Xlinker /usr/local/lib/python2.7/dist-packages/ms_ivy-1.8.24-py2.7.egg/ivy/lib -g -o test_v3 test_v3.cpp -lz3 -pthread
+bin/run: 21: [[: not found
+
+================================================================================
+Expect to see a message claiming an error: assertion failure.
+This message indicates correct functionality.
+================================================================================
+
+==================================================
+chemicals   	['s1', 's2']
+deltaTarget 	[0, 40]
+add/subtract	['a', 'a']
+Check reaction r1 to obtain s2
+
+--------------------------------------------------
+TIER 0 Checking r1 From parent None
+--------------------------------------------------
+
+List of Chemicals    	 ['s1', 's2']
+Current Initial State	 [1, 40]
+Current Target State 	 [-1, 80]
+Delta Target-Initial 	 [0, 40]
+Chemicals Required   	 ['s2']
+In these quantities  	 [40]
+
+Required Executions	 40
+Initial After 40 Execs	 [41, 80]
+Target After 40 Execs	 [40, 80]
+
+r1 - Rate 1.0
+Reactants ['s1']
+Products ['s1', 's2']
+Required Executions 40
+Enabled Executions 1
+Tier 0
+
+chemicals   	['s1', 's2']
+deltaTarget 	[0, 0]
+add/subtract	['a', 'a']
+
+==================================================
+NECESSARY REACTIONS
+==================================================
+
+r1 - Rate 1.0
+Reactants ['s1']
+Products ['s1', 's2']
+Required Executions 40
+Enabled Executions 1
+Tier 0
+
+==================================================
+--------------------------------------------------
+r1	
+--------------------------------------------------
+[<reactions_v5.Species object at 0x7efd9e975a30>, <reactions_v5.Species object at 0x7efd9e9758e0>]
+1
+starting to run initial test
+finished initial test
+The iters recorded for this initial example is 92
+Running test for 1 simulation runs in group 1 of 1
+finished randomized testing
+
+The traces recorded and the information on those traces are stored in 'trace_list.txt'
+
+The traces by themselves are found in 'reaction_list.txt'
+
+================================================================================
+Total Sum of Unique Path Probabilities: 1.164669e-17
+================================================================================
+
+
+
+

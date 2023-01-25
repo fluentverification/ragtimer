@@ -1,0 +1,211 @@
+#lang ivy 1.7
+
+    object updater = {
+        type num
+        interpret num -> bv[10]
+        type exec_var
+        interpret exec_var -> bv[8]
+        type exec_stage
+        interpret exec_stage -> bv[3]
+        
+        action incr(x:num) returns(y:num) = {
+            y := x + 1
+        }
+        
+        action decr(x:num) returns(y:num) = {
+            y := x - 1
+        }
+    }
+
+    
+    object goal = {
+        action achieved(v:updater.num)
+        object spec = {
+            before achieved {
+                assert v >=  20;
+                protocol.idle := 1
+            }
+        }
+    }
+
+    object enabled_checker = {
+
+	action is_enabled_r1(reactant1:updater.num) returns(y:bool) = {
+            if reactant1 >= 1 {
+                y := true
+            }
+            else {
+                y := false
+            }
+        }
+            
+        
+}
+
+object inspector = {
+	action check_guard_r1(reactant1:updater.num)
+	before check_guard_r1 {
+            assert reactant1 >= 1
+	}
+
+	
+}
+
+object selector = {
+	individual r1_exec : updater.exec_var
+	
+	individual r1_rate : updater.exec_var
+	
+	individual r1_count : updater.exec_var
+	
+	individual r1_count_rate : updater.exec_var
+	
+	individual r1_stage : updater.exec_stage
+	
+
+	after init {
+		r1_count := 0;
+		
+
+		r1_count_rate := 4;
+		
+	}
+
+	action execute_r1 returns(y:bool) = {
+            r1_exec := r1_exec + 1;
+            if r1_exec >= r1_rate {
+                y := true;
+                r1_exec := 0;
+                r1_count := r1_count + 1
+            }
+            else {
+                y := false
+            };
+            if r1_count >= r1_count_rate {
+                r1_stage := r1_stage + 1;
+                r1_count := 0;
+                r1_count_rate := 4;
+                r1_rate := 1
+            }
+            else if r1_stage = 1 {
+                r1_count_rate := 3;
+                r1_rate := 1
+            }
+            else if r1_stage = 2 {
+                r1_count_rate := 5;
+                r1_rate := 1
+            }
+            else if r1_stage = 3 {
+                r1_count_rate := 4;
+                r1_rate := 1
+            }
+            else if r1_stage = 4 {
+                r1_count_rate := 4;
+                r1_rate := 1
+            }
+            else if r1_stage = 5 {
+                r1_count_rate := 5;
+                r1_rate := 1
+            }
+            else if r1_stage = 6 {
+                r1_count_rate := 3;
+                r1_rate := 1
+            }
+            else if r1_stage = 7 {
+                r1_count_rate := 4;
+                r1_rate := 1
+            }
+            else {
+                r1_stage := 0
+            }
+        }
+        
+}
+
+object protocol = {
+
+	type 2bit
+	interpret 2bit -> bv[1]
+	individual idle : 2bit
+
+	individual r_codY : updater.num
+	individual r_flache : updater.num
+	individual r_SigD_hag : updater.num
+	individual r_hag : updater.num
+	individual r_CodY_flache : updater.num
+	individual r_CodY_hag : updater.num
+	individual r_CodY : updater.num
+	individual r_SigD : updater.num
+	individual r_Hag : updater.num
+	individual r1_executions : updater.num
+
+	after init {
+		r_codY := 1;
+		r_flache := 1;
+		r_SigD_hag := 1;
+		r_hag := 1;
+		r_CodY_flache := 1;
+		r_CodY_hag := 1;
+		r_CodY := 11;
+		r_SigD := 10;
+		r_Hag := 10;
+		r1_executions := 0;
+		idle := 0
+	}
+
+	action update_r1 =  {
+            if selector.execute_r1 {
+			call inspector.check_guard_r1(r_codY);
+			r_codY := updater.decr(r_codY);
+			r_codY := updater.incr(r_codY);
+			r_CodY := updater.incr(r_CodY);
+			r1_executions := updater.incr(r1_executions);
+			if r_CodY >= 20 {
+				call goal.achieved(r_CodY)
+			}
+		}
+	}
+
+	
+
+	action idling = {}
+
+	
+
+	action fail_test = {}
+
+	before update_r1 {
+		assert idle = 0;
+		assert enabled_checker.is_enabled_r1(r_codY)
+	}
+	
+
+	before idling {
+		assert idle = 1
+	}
+
+
+	after idling {
+		assert idle = 0
+	}
+
+
+
+	before fail_test {
+		assert idle = 0;
+		assert (enabled_checker.is_enabled_r1(r_codY) = false)
+	}
+
+	after fail_test {
+		assert false
+	}
+
+}
+
+export protocol.fail_test
+export protocol.update_r1
+export protocol.idling
+import goal.achieved
+import inspector.check_guard_r1
+
+isolate iso_proto = protocol with enabled_checker, updater, goal, selector, inspector
