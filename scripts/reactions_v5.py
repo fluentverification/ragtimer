@@ -6,6 +6,8 @@ import random
 import prefix_parser
 import sys
 
+ITER_MULTIPLIER = 1.25 # default is 1.25, increase if your paths aren't making it to a target
+
 class Options:
     # infile = "8reaction_input.txt"
     infile = "../model.ragtimer"
@@ -79,7 +81,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         for react in reactions:
             if react.priority == -1:
                 react.priority = newTierIfLoose
-                react.tierCount = 25        #unneeded reactions will have an execution rate of 1/25
+                react.tierCount = newTierIfLoose * 3        #unneeded reactions will have an execution rate of 1/25
                 if printing:
                     print(react.reactants, react.priority)
 
@@ -184,9 +186,6 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
             elif int(obj.value) == int(targetNum):
                 print("\nSpecified target is already achieved in target state, please start over")
                 exit()
-
-    print(speciesList)
-    print(upOrDown)
 
     for obj in speciesList: #this loop is techinically currently not needed but could be if more inequality options are added
         if obj.name == targetSpecies:
@@ -627,12 +626,13 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
 
     ivyFile.close()        #ivy model complete
     #testing ivy model by running ivy_to_cpp command and running the executable produced
-    ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.firstIvyModel])
+    ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.firstIvyModel], stdout=subprocess.DEVNULL)
     ivy_to_cpp_command.wait()
 
     print("starting to run initial test")#initial test is used to find about how many iters are needed
     seed = random.randint(0,sys.maxsize)
-    os.system(f"./{Options.firstIvyModelName} seed={seed} iters=10000 runs=1 >{Options.firstTestResult}")
+    os.system(f"./{Options.firstIvyModelName} seed={seed} iters=10000 runs=1 > {Options.firstTestResult} 2> ignore.txt")
+    # os.system(f"./{Options.firstIvyModelName} seed={seed} iters=10000 runs=1 >{Options.firstTestResult} >>ignore.txt")
     # os.system(f"./{Options.firstIvyModelName} seed=367 iters=10000 runs=1 >{Options.firstTestResult}")
     print("finished initial test") #test is run and results are stored in test_v2.txt
 
@@ -1175,7 +1175,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
 
     ivyFile.close()        #ivy model complete
 
-    ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.secondIvyModel])
+    ivy_to_cpp_command = subprocess.Popen(["ivy_to_cpp", "isolate=iso_proto", "target=test", "build=true", Options.secondIvyModel], stdout=subprocess.DEVNULL)
     ivy_to_cpp_command.wait()
 
     # runswanted = input("How many traces do you want to the target specified? (Type an integer greater than 0): ") #Amount of traces desired is recorded
@@ -1198,7 +1198,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
         print("Running test for " + str(r) + " simulation runs in group " + str(group) + " of " + str(len(runsSplit)))
         runCommand = []
         runCommand.append(f"./{Options.secondIvyModelName}")
-        runCommand.append("iters=" + str(math.ceil(first_iters*1.25)))
+        runCommand.append("iters=" + str(math.ceil(first_iters*ITER_MULTIPLIER)))
         seed = random.randint(0,sys.maxsize)
         runCommand.append("seed=" + str(seed))
         runCommand.append("runs=" + str(r))
@@ -1264,6 +1264,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
     #        print(line)
     #        continue
         count3 += 1
+        failToReachTarget = False
         # line = f.readline()
         if not line:
             break
@@ -1279,6 +1280,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                 iters += 1
                 if iters == math.floor(first_iters * 1.25):
                     print("Run", count+1, "did not reach the target state\n")
+                    failToReachTarget = True
                 if line[11:20] == "fail_test":
                     print("Error occurred during randomized testing!")
                     exit(1)
@@ -1289,11 +1291,13 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                 transitionmap.write("\t")
                 #tracelistfile.write(line[24:26])
                 #tracelistfile.write("\t")
-                trace.append(line[24:26])
+                trace.append(line[24:26]) # TODO: We require lowercase r followed by a number
                 reaction_exec_count[int(line[25])-1] += 1
         if line[0] == "t":
             if trace in tracelist:
-                print(f"***Run {count} was a duplicate and has been thrown out of {Options.traceList}")
+                print(f"  Run {count+1} was a duplicate and has been thrown out of {Options.traceList}")
+            elif failToReachTarget:
+                print(f"  Run {count+1} failed to reach the target and has been thrown out of {Options.traceList}")
             else:
                 tracelist.append(trace)
                 # tracelistfile.write(f"{prefixTrans}\t")    
@@ -1320,8 +1324,8 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
             iters = 0
             transitions = 0
 
-    print(f"\nThe traces recorded and the information on those traces are stored in '{Options.traceList}'")
-    print(f"\nThe traces by themselves are found in '{Options.reactionList}'")
+    print(f"\nThe traces recorded and the information on those traces are stored in '{Options.reactionList}'")
+    print(f"\nThe traces by themselves (i.e. for simulation and commuting) are found in '{Options.traceList}'")
     transitionmap.close()
 
     tracelistfile.close()
@@ -1364,12 +1368,15 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                         iterations[x].append(int(line[14]))
 
     if printing:
-        print("\n\nAverage number of transitions in a trace is:", Totaltran/int(runswanted))
+        print("\n")
+        print(50*"-")
+        print("Average number of transitions in a trace is:", Totaltran/int(runswanted))
         print("The biggest number of transitions recorded in a trace is:", max(Totaltranlist))
         print("The smallest number of transitions recorded in a trace is:", min(Totaltranlist))
         print("\nAverage number of iterations needed in a trace is:", Totaliter/int(runswanted))
         print("The biggest number of iterations needed for a trace was:", max(Totaliterlist))
         print("The smallest number of iterations needed for a trace was:", min(Totaliterlist))
+        print(50*"-")
 
         for x in range(numOfReactions):
             print("\n\nAverage number of reaction", x+1, "executions in a trace is:", Total[x]/int(runswanted))

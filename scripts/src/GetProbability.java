@@ -148,7 +148,7 @@ public class GetProbability
             String s1 = String.format("[%s]",tr_st[tdx]);
             String s2 = sim.getTransitionActionString(idx);
             // System.out.println(s2);
-            if (s1.equalsIgnoreCase(s2)) {
+            if (s1.equals(s2)) {
                 index = idx;
                 break;
             }

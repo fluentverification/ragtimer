@@ -1293,7 +1293,7 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                 reaction_exec_count[int(line[25])-1] += 1
         if line[0] == "t":
             if trace in tracelist:
-                print(f"***Run {count} was a duplicate and has been thrown out of {Options.traceList}")
+                print(f"***Run {count+1} was a duplicate and has been thrown out of {Options.traceList}")
             else:
                 tracelist.append(trace)
                 # tracelistfile.write(f"{prefixTrans}\t")    
@@ -1364,12 +1364,14 @@ def randTest(runswanted, reactions1, prefix, prefix_index, loose=False, printing
                         iterations[x].append(int(line[14]))
 
     if printing:
+        print(50*"-")
         print("\n\nAverage number of transitions in a trace is:", Totaltran/int(runswanted))
         print("The biggest number of transitions recorded in a trace is:", max(Totaltranlist))
         print("The smallest number of transitions recorded in a trace is:", min(Totaltranlist))
         print("\nAverage number of iterations needed in a trace is:", Totaliter/int(runswanted))
         print("The biggest number of iterations needed for a trace was:", max(Totaliterlist))
         print("The smallest number of iterations needed for a trace was:", min(Totaliterlist))
+        print(50*"-")
 
         for x in range(numOfReactions):
             print("\n\nAverage number of reaction", x+1, "executions in a trace is:", Total[x]/int(runswanted))

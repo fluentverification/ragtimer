@@ -87,7 +87,7 @@ class Reaction:
 
 def printPrefixes(filename, path, reaction, paths, depth=0):
 	path = reaction.name + "\t" + path
-	print(path)
+	print(path.replace("\t", " "))
 	# input("-")
 	# if (len(reaction.dependsOn) == 0 or reaction.name in path.split('\t')):
 	if (len(reaction.dependsOn) == 0):
@@ -199,7 +199,8 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, parent, add_or
 		# Update required number of executions
 		reqExec = 0
 		for d in range(numChems):
-			print("DELTATARGET", d, "= ", deltaTarget[d])
+			if printing:
+				print("DELTATARGET", d, "= ", deltaTarget[d])
 			if deltaTarget[d] > 0:
 				for p in range(len(r.products)):
 					if chemicals[d] in r.products[p]:
@@ -386,7 +387,7 @@ def makeDepGraph(infile, printing=True):
 		# if printing:
 		print("\nUNREACHABLE PROPERTY! Your probability is automatically zero!\n")
 		return None
-
+	
 	return reactions
 
 

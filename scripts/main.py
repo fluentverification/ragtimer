@@ -9,12 +9,12 @@ import math
 
 if __name__ == "__main__":
 
-    PRINTING = True
+    PRINTING = False
 
     print()
     print(80*"=")
-    print("Expect to see a message claiming an error: assertion failure.")
-    print("This message indicates correct functionality.")
+    print("Welcome to RAGTIMER for trace generation.")
+    print("This is a work in progress. Please submit bug reports.")
     print(80*"=")
     print()
 
@@ -28,6 +28,7 @@ if __name__ == "__main__":
     if "loose" in sys.argv:
         loose = True
 
+    print("Constructing a dependency graph")
     reactions1 = depgraph.makeDepGraph(reactions_v5.Options.infile, printing=PRINTING)
     
     # with open("trace_list.txt", "w") as t:
@@ -35,11 +36,13 @@ if __name__ == "__main__":
 
     paths = []
 
+    print("Finished constructing a dependency graph, found these prefixes:")
     for r in reactions1:
         # print(r)
         if (r.tier == 0):
             depgraph.printPrefixes("trace_list.txt", "", r, paths)
             
+    print()
                 # NEED TO HANDLE CASE WHERE THEY MAKE EQUIV. TRACES???
             
             # extraEnabled = 0
@@ -59,8 +62,9 @@ if __name__ == "__main__":
     # print(paths)
     # quit()
     
-    o = subprocess.check_output(["make", "test"],universal_newlines=True)
+    o = subprocess.check_output(["make", "test"], universal_newlines=True, stderr=subprocess.DEVNULL)
     prefix = prefix_parser.parsePrefix(o)
+    
 
     if "ERROR" in o:
         # print(o)
@@ -139,17 +143,20 @@ if __name__ == "__main__":
 
     for a in range(len(paths)):
         print(50*"-")
-        print(paths[a])
+        print("Testing Prefix", paths[a].replace("\t", " "))
         print(50*"-")
-        reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=PRINTING)
 
+        reactions_v5.randTest(iters, reactions1, prefix, a, loose=loose, printing=PRINTING)
         # os.system("make test")
-        o = subprocess.check_output(["make", "test"],universal_newlines=True)
+        o = subprocess.check_output(["make", "test"], universal_newlines=True, stderr=subprocess.DEVNULL)
         # print(o)
 
         for line in o.splitlines(False):
             if "Total" in line:
                 prob += float(line.split(": ")[1])
+                print(line.replace("Total probability", "Probability in this prefix"))
+
+        print("Running total probability: ", prob)
 
     print()
     print(80*"=")

@@ -1,23 +1,76 @@
 Run 1:
 
-r1	r1	r1	r1	r1	r1	r1	r1	r1	
+r8	r8	r5	r5	r8	r5	r3	r5	r3	r5	r8	r5	r3	r8	r8	r5	r3	r5	r8	r5	r3	r5	r5	r3	r5	r5	r3	r8	r8	r3	r5	r8	r3	r3	r8	r5	r5	r3	r8	r5	r5	r5	r8	r3	r5	r5	r5	r5	r3	r5	r3	r8	r5	r5	r5	r3	r5	r3	r5	r5	r8	r5	r8	r3	r5	r3	r5	r5	r8	r5	r3	r5	r8	r3	r5	r5	r8	r3	r5	r5	r8	r5	r3	r8	r3	r3	r3	r3	r8	r3	r5	r8	r5	r5	r5	r5	r5	r5	r5	
 
 Run 1 information
 
-Iterations before idling was reached: 9
-Number of transitions: 9
-r1executions: 9
+Iterations before idling was reached: 151
+Number of transitions: 99
+r1executions: 0
 r2executions: 0
-r3executions: 0
+r3executions: 27
 r4executions: 0
-r5executions: 0
+r5executions: 49
 r6executions: 0
 r7executions: 0
-r8executions: 0
-r9executions: 0
-r10executions: 0
-r11executions: 0
-r12executions: 0
+r8executions: 23
+
+
+
+Run 2:
+
+r3	r5	r3	r5	r8	r3	r5	r5	r8	r5	r3	r3	r3	r5	r8	r5	r5	r5	r8	r5	r3	r5	r8	r8	r3	r5	r8	r5	r5	r5	r8	r8	r3	r5	r3	r5	r8	r8	r8	r3	r8	r8	r5	r3	r3	r8	r5	r3	r5	r5	r5	r5	r3	r5	r8	r8	r3	r3	r5	r3	r5	r8	r5	r3	r3	r5	r5	r8	r3	r5	r8	r3	r5	r8	r5	r5	r5	r5	r3	r5	r3	r5	r5	r8	r3	r5	r8	r5	r8	r3	r5	r5	r5	r5	r5	r5	r5	r5	r5	
+
+Run 2 information
+
+Iterations before idling was reached: 149
+Number of transitions: 99
+r1executions: 0
+r2executions: 0
+r3executions: 26
+r4executions: 0
+r5executions: 49
+r6executions: 0
+r7executions: 0
+r8executions: 24
+
+
+
+Run 3:
+
+r3	r5	r3	r5	r8	r3	r3	r5	r3	r8	r3	r8	r8	r8	r8	r8	r5	r5	r3	r8	r8	r3	r3	r8	r8	r8	r3	r5	r3	r5	r8	r8	r5	r3	r8	r5	r3	r5	r5	r5	r5	r5	r3	r8	r8	r8	r3	r5	r5	r3	r5	r5	r5	r3	r3	r5	r8	r5	r5	r3	r5	r5	r3	r8	r5	r5	r5	r3	r5	r8	r5	r5	r5	r5	r3	r5	r3	r3	r3	r5	r5	r5	r5	r8	r5	r8	r5	r3	r8	r5	r5	r5	r5	r5	r5	r5	r5	r5	r5	
+
+Run 3 information
+
+Iterations before idling was reached: 150
+Number of transitions: 99
+r1executions: 0
+r2executions: 0
+r3executions: 26
+r4executions: 0
+r5executions: 49
+r6executions: 0
+r7executions: 0
+r8executions: 24
+
+
+
+Run 4:
+
+r3	r8	r3	r5	r5	r3	r5	r5	r8	r5	r3	r5	r8	r3	r5	r5	r3	r5	r3	r5	r3	r8	r5	r8	r3	r5	r5	r8	r5	r3	r3	r5	r5	r5	r8	r3	r5	r5	r8	r5	r3	r8	r3	r5	r5	r5	r8	r3	r5	r8	r3	r5	r5	r5	r3	r5	r8	r5	r8	r5	r8	r3	r8	r8	r5	r5	r8	r3	r3	r8	r3	r3	r3	r8	r3	r8	r3	r5	r5	r3	r8	r5	r8	r3	r5	r5	r8	r5	r5	r5	r5	r5	r5	r5	r5	r5	r5	r5	r5	
+
+Run 4 information
+
+Iterations before idling was reached: 149
+Number of transitions: 99
+r1executions: 0
+r2executions: 0
+r3executions: 27
+r4executions: 0
+r5executions: 49
+r6executions: 0
+r7executions: 0
+r8executions: 23
 
 
 

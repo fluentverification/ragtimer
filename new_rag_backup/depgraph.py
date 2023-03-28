@@ -199,7 +199,8 @@ def buildGraph(recdepth, reactions, chemicals, initials, targets, parent, add_or
 		# Update required number of executions
 		reqExec = 0
 		for d in range(numChems):
-			print("DELTATARGET", d, "= ", deltaTarget[d])
+			if printing:
+				print("DELTATARGET", d, "= ", deltaTarget[d])
 			if deltaTarget[d] > 0:
 				for p in range(len(r.products)):
 					if chemicals[d] in r.products[p]:
