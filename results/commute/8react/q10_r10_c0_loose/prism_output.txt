@@ -1,0 +1,72 @@
+PRISM
+=====
+
+Version: 4.5
+Date: Tue Apr 18 16:33:27 MDT 2023
+Hostname: deeplearning
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '_commute/prism.tra,sta,lab' -ctmc model.csl
+
+Importing model (CTMC) from "_commute/prism.tra", "_commute/prism.sta", "_commute/prism.lab"...
+
+Parsing properties file "model.csl"...
+
+1 property:
+(1) P=? [ F<=20 (G_bg>=50) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=20 (G_bg>=50) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 129 iterations in 0.38 seconds (average 0.002969, setup 0.00)
+
+Time for model construction: 2.163 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        CTMC
+States:      4559 (1 initial)
+Transitions: 24926
+
+Rate matrix: 173881 nodes (2437 terminal), 24926 minterms, vars: 33r/33c
+
+Computing probabilities...
+Engine: Hybrid
+
+Number of non-absorbing states: 4496 of 4559 (98.6%)
+
+Building hybrid MTBDD matrix... [levels=33, nodes=194244] [8.9 MB]
+Adding explicit sparse matrices... [levels=33, num=1, compact] [132.8 KB]
+Creating vector for diagonals... [dist=4450, compact] [43.7 KB]
+Allocating iteration vectors... [3 x 35.6 KB]
+TOTAL: [9.2 MB]
+
+Uniformisation: q.t = 52489.756716 x 20.000000 = 1049795.134320
+Fox-Glynn: left = 1042620, right = 1058491
+
+Starting iterations...
+Iteration 91207 (of 1058491): max relative diff=0.000756, 5.00 sec so far
+Iteration 182323 (of 1058491): max relative diff=0.000291, 10.00 sec so far
+Iteration 273961 (of 1058491): max relative diff=0.000137, 15.00 sec so far
+Iteration 365162 (of 1058491): max relative diff=0.000062, 20.00 sec so far
+Iteration 456616 (of 1058491): max relative diff=0.000021, 25.00 sec so far
+Iteration 547670 (of 1058491): max relative diff=0.000003, 30.01 sec so far
+
+Steady state detected at iteration 638668
+
+Iterative method: 638668 iterations in 40.46 seconds (average 0.000055, setup 5.46)
+
+Value in the initial state: 9.063849528731123E-139
+
+Time for model checking: 40.779 seconds.
+
+Result: 9.063849528731123E-139 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

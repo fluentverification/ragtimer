@@ -1,0 +1,67 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Tue Apr 18 12:15:59 MDT 2023
+Hostname: el304b
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '8react/q1_r2_c0_/prism.tra,sta,lab' -ctmc 8react/q1_r2_c0_/model.csl
+
+Importing model from "8react/q1_r2_c0_/prism.tra", "8react/q1_r2_c0_/prism.sta", "8react/q1_r2_c0_/prism.lab"...
+Using specified model type: CTMC
+
+Parsing properties file "8react/q1_r2_c0_/model.csl"...
+
+1 property:
+(1) P=? [ F<=20 (G_bg>=50) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=20 (G_bg>=50) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 103 iterations in 0.06 seconds (average 0.000592, setup 0.00)
+
+Time for model construction: 0.26 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        CTMC
+States:      808 (1 initial)
+Transitions: 3760
+
+Rate matrix: 56584 nodes (871 terminal), 3760 minterms, vars: 32r/32c
+
+Computing probabilities...
+Engine: Hybrid
+
+Number of non-absorbing states: 798 of 808 (98.8%)
+
+Building hybrid MTBDD matrix... [levels=32, nodes=59783] [2.7 MB]
+Adding explicit sparse matrices... [levels=32, num=1, compact] [24.4 KB]
+Creating vector for diagonals... [dist=793, compact] [7.8 KB]
+Allocating iteration vectors... [3 x 6.3 KB]
+TOTAL: [2.8 MB]
+
+Uniformisation: q.t = 15.915468 x 20.000000 = 318.309360
+Fox-Glynn: left = 0, right = 417
+
+Starting iterations...
+
+Steady state detected at iteration 190
+
+Iterative method: 190 iterations in 0.44 seconds (average 0.000011, setup 0.43)
+
+Value in the initial state: 1.8978910408428504E-40
+
+Time for model checking: 0.369 seconds.
+
+Result: 1.8978910408428504E-40
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

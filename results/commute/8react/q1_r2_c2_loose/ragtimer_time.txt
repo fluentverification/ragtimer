@@ -1,0 +1,2 @@
+31.33user 1.51system 0:20.62elapsed 159%CPU (0avgtext+0avgdata 762776maxresident)k
+0inputs+68328outputs (32major+656803minor)pagefaults 0swaps

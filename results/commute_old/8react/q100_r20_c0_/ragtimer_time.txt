@@ -1,0 +1,2 @@
+56.04user 2.46system 0:40.24elapsed 145%CPU (0avgtext+0avgdata 1463124maxresident)k
+0inputs+69048outputs (45major+1201598minor)pagefaults 0swaps

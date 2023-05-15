@@ -1,0 +1,69 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Tue Apr 18 12:38:24 MDT 2023
+Hostname: el304b
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '8react/q1_r2_c2_loose/prism.tra,sta,lab' -ctmc 8react/q1_r2_c2_loose/model.csl
+
+Importing model from "8react/q1_r2_c2_loose/prism.tra", "8react/q1_r2_c2_loose/prism.sta", "8react/q1_r2_c2_loose/prism.lab"...
+Using specified model type: CTMC
+
+Parsing properties file "8react/q1_r2_c2_loose/model.csl"...
+
+1 property:
+(1) P=? [ F<=20 (G_bg>=50) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=20 (G_bg>=50) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 110 iterations in 0.09 seconds (average 0.000827, setup 0.00)
+
+Time for model construction: 0.533 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        CTMC
+States:      2198 (1 initial)
+Transitions: 8657
+
+Rate matrix: 106804 nodes (1884 terminal), 8657 minterms, vars: 32r/32c
+
+Computing probabilities...
+Engine: Hybrid
+
+Number of non-absorbing states: 2177 of 2198 (99.0%)
+
+Building hybrid MTBDD matrix... [levels=32, nodes=112403] [5.1 MB]
+Adding explicit sparse matrices... [levels=32, num=1, compact] [56.7 KB]
+Creating vector for diagonals... [dist=2174, compact] [21.3 KB]
+Allocating iteration vectors... [3 x 17.2 KB]
+TOTAL: [5.3 MB]
+
+Uniformisation: q.t = 52489.864224 x 20.000000 = 1049797.284480
+Fox-Glynn: left = 1042622, right = 1058493
+
+Starting iterations...
+Iteration 179879 (of 1058493): max relative diff=0.000150, 5.00 sec so far
+Iteration 368371 (of 1058493): max relative diff=0.000006, 10.00 sec so far
+
+Steady state detected at iteration 464846
+
+Iterative method: 464846 iterations in 14.09 seconds (average 0.000027, setup 1.49)
+
+Value in the initial state: 4.1670227858372093E-237
+
+Time for model checking: 14.38 seconds.
+
+Result: 4.1670227858372093E-237
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

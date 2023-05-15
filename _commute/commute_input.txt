@@ -1,0 +1,5 @@
+model model.sm
+property gbg = 50
+timeBound 200
+recursionBound 10
+export both

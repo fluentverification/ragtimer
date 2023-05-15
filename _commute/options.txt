@@ -1,0 +1,12 @@
+model ../model.sm
+trace ../commute_traces.txt
+property G_bg >= 50
+
+recursionBound 20
+timeBound 100000
+flexbility 0.0
+terminate depth
+cycleLength 4
+
+
+verbose false

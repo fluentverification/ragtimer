@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Tue Apr 18 12:15:53 MDT 2023
+Hostname: el304b
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '6react/q10_r20_c2_/prism.tra,sta,lab' -ctmc 6react/q10_r20_c2_/model.csl
+
+Importing model from "6react/q10_r20_c2_/prism.tra", "6react/q10_r20_c2_/prism.sta", "6react/q10_r20_c2_/prism.lab"...
+Using specified model type: CTMC
+
+Parsing properties file "6react/q10_r20_c2_/model.csl"...
+
+1 property:
+(1) P=? [ F<=100 (s4<=25) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=100 (s4<=25) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 51 iterations in 0.01 seconds (average 0.000196, setup 0.00)
+
+Time for model construction: 0.03 seconds.
+
+Warning: Deadlocks detected and fixed in 3 states
+
+Type:        CTMC
+States:      87 (1 initial)
+Transitions: 204
+
+Rate matrix: 3961 nodes (62 terminal), 204 minterms, vars: 21r/21c
+
+Value in the initial state: 1.0
+
+Time for model checking: 0.003 seconds.
+
+Result: 1.0
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
