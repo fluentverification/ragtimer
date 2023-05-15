@@ -1,0 +1,1946 @@
+mkdir: cannot create directory ‘results/commute/2react’: File exists
+mkdir: cannot create directory ‘results/commute/2react/q1_r2_c0_’: File exists
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/2react/2react.* .
+mv 2react.sm model.sm
+mv 2react.csl model.csl
+mv 2react.prop model.prop
+mv 2react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/6react/6react.* .
+mv 6react.sm model.sm
+mv 6react.csl model.csl
+mv 6react.prop model.prop
+mv 6react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 0 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 2 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 1 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 10 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute  qty 100 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 2 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 10 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 1 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 10 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t
+
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+cp models/8react/8react.* .
+mv 8react.sm model.sm
+mv 8react.csl model.csl
+mv 8react.prop model.prop
+mv 8react.ragtimer model.ragtimer
+running /usr/bin/time -o ragtimer_time.txt python3 ragtimer.py commute loose qty 100 bound r recbound 20 cycle 4 1> ragtimer_output.txt 2> /dev/null
+running / u s r / b i n / t i m e   - o   p r i s m _ t i m e . t x t   p r i s m   - i m p o r t m o d e l   _ c o m m u t e / p r i s m . t r a , s t a , l a b   - c t m c   m o d e l . c s l   >   p r i s m _ o u t p u t . t x t

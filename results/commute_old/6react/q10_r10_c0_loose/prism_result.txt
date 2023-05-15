@@ -1,0 +1,72 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Tue Apr 18 15:13:08 MDT 2023
+Hostname: el304b
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '6react/q10_r10_c0_loose/prism.tra,sta,lab' -ctmc 6react/q10_r10_c0_loose/model.csl
+
+Importing model from "6react/q10_r10_c0_loose/prism.tra", "6react/q10_r10_c0_loose/prism.sta", "6react/q10_r10_c0_loose/prism.lab"...
+Using specified model type: CTMC
+
+Parsing properties file "6react/q10_r10_c0_loose/model.csl"...
+
+1 property:
+(1) P=? [ F>=100 (s4>=25) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F>=100 (s4>=25) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 53 iterations in 0.01 seconds (average 0.000170, setup 0.00)
+
+Time for model construction: 0.025 seconds.
+
+Warning: Deadlocks detected and fixed in 2 states
+
+Type:        CTMC
+States:      57 (1 initial)
+Transitions: 115
+
+Rate matrix: 2655 nodes (53 terminal), 115 minterms, vars: 21r/21c
+
+Diagonals vector: 578 nodes (31 terminal), 57 minterms
+Embedded Markov chain: 3026 nodes (104 terminal), 115 minterms
+
+yes = 0, no = 57, maybe = 0
+
+Computing probabilities...
+Engine: Hybrid
+
+Number of non-absorbing states: 57 of 57 (100.0%)
+
+Building hybrid MTBDD matrix... [levels=21, nodes=2656] [124.5 KB]
+Adding explicit sparse matrices... [levels=21, num=1, compact] [0.9 KB]
+Creating vector for diagonals... [dist=30, compact] [0.3 KB]
+Allocating iteration vectors... [3 x 0.4 KB]
+TOTAL: [127.1 KB]
+
+Uniformisation: q.t = 102.000000 x 100.000000 = 10200.000000
+Fox-Glynn: left = 9490, right = 11059
+
+Starting iterations...
+
+Steady state detected at iteration 1
+
+Iterative method: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.0
+
+Time for model checking: 0.006 seconds.
+
+Result: 0.0
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

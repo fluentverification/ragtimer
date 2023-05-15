@@ -1,0 +1,2 @@
+43.04user 1.98system 0:28.15elapsed 159%CPU (0avgtext+0avgdata 1871460maxresident)k
+0inputs+69672outputs (40major+913722minor)pagefaults 0swaps

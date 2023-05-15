@@ -1,0 +1,26 @@
+ctmc
+
+const double k1 = 1.0;
+const double k2 = 0.025;
+
+const int MAX_AMOUNT = 250;
+
+module s1
+
+    s1 : [0..MAX_AMOUNT] init 1;
+
+    [r1] s1>0 -> (s1' = s1);
+endmodule
+
+module s2
+
+    s2 : [0..MAX_AMOUNT] init 40;
+
+    [r1] s2<=MAX_AMOUNT-1 -> (s2' = s2 + 1);
+    [r2] s2>0 -> (s2' = s2 - 1);
+endmodule
+
+module reactionRates
+    [r1] (k1*s1)>0 -> (k1*s1) : true;
+    [r2] (k2*s2)>0 -> (k2*s2) : true;
+endmodule

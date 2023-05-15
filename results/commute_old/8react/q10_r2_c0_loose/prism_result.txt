@@ -1,0 +1,72 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Tue Apr 18 12:16:24 MDT 2023
+Hostname: el304b
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '8react/q10_r2_c0_loose/prism.tra,sta,lab' -ctmc 8react/q10_r2_c0_loose/model.csl
+
+Importing model from "8react/q10_r2_c0_loose/prism.tra", "8react/q10_r2_c0_loose/prism.sta", "8react/q10_r2_c0_loose/prism.lab"...
+Using specified model type: CTMC
+
+Parsing properties file "8react/q10_r2_c0_loose/model.csl"...
+
+1 property:
+(1) P=? [ F<=20 (G_bg>=50) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=20 (G_bg>=50) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 112 iterations in 0.12 seconds (average 0.001054, setup 0.00)
+
+Time for model construction: 0.489 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        CTMC
+States:      1650 (1 initial)
+Transitions: 6180
+
+Rate matrix: 108051 nodes (1751 terminal), 6180 minterms, vars: 32r/32c
+
+Computing probabilities...
+Engine: Hybrid
+
+Number of non-absorbing states: 1634 of 1650 (99.0%)
+
+Building hybrid MTBDD matrix... [levels=32, nodes=117279] [5.4 MB]
+Adding explicit sparse matrices... [levels=32, num=1, compact] [44.0 KB]
+Creating vector for diagonals... [dist=1631, compact] [16.0 KB]
+Allocating iteration vectors... [3 x 12.9 KB]
+TOTAL: [5.5 MB]
+
+Uniformisation: q.t = 94258.308732 x 20.000000 = 1885166.174640
+Fox-Glynn: left = 1875552, right = 1896818
+
+Starting iterations...
+Iteration 245658 (of 1896818): max relative diff=0.000326, 5.00 sec so far
+Iteration 494891 (of 1896818): max relative diff=0.000114, 10.00 sec so far
+Iteration 744275 (of 1896818): max relative diff=0.000044, 15.00 sec so far
+Iteration 990996 (of 1896818): max relative diff=0.000013, 20.00 sec so far
+Iteration 1237213 (of 1896818): max relative diff=0.000001, 25.00 sec so far
+
+Steady state detected at iteration 1350480
+
+Iterative method: 1350480 iterations in 29.09 seconds (average 0.000020, setup 1.78)
+
+Value in the initial state: 9.07419991936818E-86
+
+Time for model checking: 29.968 seconds.
+
+Result: 9.07419991936818E-86
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

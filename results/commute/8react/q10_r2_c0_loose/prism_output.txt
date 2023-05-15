@@ -1,0 +1,69 @@
+PRISM
+=====
+
+Version: 4.5
+Date: Tue Apr 18 16:27:39 MDT 2023
+Hostname: deeplearning
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '_commute/prism.tra,sta,lab' -ctmc model.csl
+
+Importing model (CTMC) from "_commute/prism.tra", "_commute/prism.sta", "_commute/prism.lab"...
+
+Parsing properties file "model.csl"...
+
+1 property:
+(1) P=? [ F<=20 (G_bg>=50) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=20 (G_bg>=50) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 116 iterations in 0.12 seconds (average 0.001078, setup 0.00)
+
+Time for model construction: 0.585 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        CTMC
+States:      1473 (1 initial)
+Transitions: 5988
+
+Rate matrix: 96339 nodes (1532 terminal), 5988 minterms, vars: 32r/32c
+
+Computing probabilities...
+Engine: Hybrid
+
+Number of non-absorbing states: 1458 of 1473 (99.0%)
+
+Building hybrid MTBDD matrix... [levels=32, nodes=103526] [4.7 MB]
+Adding explicit sparse matrices... [levels=32, num=1, compact] [40.8 KB]
+Creating vector for diagonals... [dist=1456, compact] [14.3 KB]
+Allocating iteration vectors... [3 x 11.5 KB]
+TOTAL: [4.8 MB]
+
+Uniformisation: q.t = 104968.159200 x 20.000000 = 2099363.184000
+Fox-Glynn: left = 2089218, right = 2111659
+
+Starting iterations...
+Iteration 351617 (of 2111659): max relative diff=0.000157, 5.00 sec so far
+Iteration 698096 (of 2111659): max relative diff=0.000039, 10.00 sec so far
+Iteration 1043558 (of 2111659): max relative diff=0.000005, 15.00 sec so far
+
+Steady state detected at iteration 1288395
+
+Iterative method: 1288395 iterations in 19.29 seconds (average 0.000014, setup 0.76)
+
+Value in the initial state: 2.5822538131948918E-139
+
+Time for model checking: 19.852 seconds.
+
+Result: 2.5822538131948918E-139 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

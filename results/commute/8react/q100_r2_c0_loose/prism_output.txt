@@ -1,0 +1,87 @@
+PRISM
+=====
+
+Version: 4.5
+Date: Tue Apr 18 16:28:40 MDT 2023
+Hostname: deeplearning
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism -importmodel '_commute/prism.tra,sta,lab' -ctmc model.csl
+
+Importing model (CTMC) from "_commute/prism.tra", "_commute/prism.sta", "_commute/prism.lab"...
+
+Parsing properties file "model.csl"...
+
+1 property:
+(1) P=? [ F<=20 (G_bg>=50) ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=20 (G_bg>=50) ]
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 133 iterations in 0.61 seconds (average 0.004571, setup 0.00)
+
+Time for model construction: 2.956 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        CTMC
+States:      6562 (1 initial)
+Transitions: 25663
+
+Rate matrix: 327627 nodes (6159 terminal), 25663 minterms, vars: 33r/33c
+
+Computing probabilities...
+Engine: Hybrid
+
+Number of non-absorbing states: 6473 of 6562 (98.6%)
+
+Building hybrid MTBDD matrix... [levels=33, nodes=376452] [17.2 MB]
+Adding explicit sparse matrices... [levels=33, num=1, compact] [172.6 KB]
+Creating vector for diagonals... [dist=6413, compact] [62.9 KB]
+Allocating iteration vectors... [3 x 51.3 KB]
+TOTAL: [17.6 MB]
+
+Uniformisation: q.t = 104968.869732 x 20.000000 = 2099377.394640
+Fox-Glynn: left = 2089232, right = 2111674
+
+Starting iterations...
+Iteration 70779 (of 2111674): max relative diff=0.001351, 5.00 sec so far
+Iteration 140861 (of 2111674): max relative diff=0.000633, 10.00 sec so far
+Iteration 211544 (of 2111674): max relative diff=0.000391, 15.00 sec so far
+Iteration 281815 (of 2111674): max relative diff=0.000270, 20.00 sec so far
+Iteration 352213 (of 2111674): max relative diff=0.000198, 25.00 sec so far
+Iteration 422768 (of 2111674): max relative diff=0.000150, 30.01 sec so far
+Iteration 493412 (of 2111674): max relative diff=0.000117, 35.01 sec so far
+Iteration 564008 (of 2111674): max relative diff=0.000093, 40.01 sec so far
+Iteration 634435 (of 2111674): max relative diff=0.000076, 45.01 sec so far
+Iteration 704625 (of 2111674): max relative diff=0.000062, 50.01 sec so far
+Iteration 775204 (of 2111674): max relative diff=0.000050, 55.01 sec so far
+Iteration 845995 (of 2111674): max relative diff=0.000039, 60.01 sec so far
+Iteration 916197 (of 2111674): max relative diff=0.000030, 65.01 sec so far
+Iteration 986965 (of 2111674): max relative diff=0.000022, 70.01 sec so far
+Iteration 1056933 (of 2111674): max relative diff=0.000016, 75.02 sec so far
+Iteration 1126995 (of 2111674): max relative diff=0.000010, 80.02 sec so far
+Iteration 1197550 (of 2111674): max relative diff=0.000006, 85.02 sec so far
+Iteration 1267786 (of 2111674): max relative diff=0.000003, 90.02 sec so far
+Iteration 1338460 (of 2111674): max relative diff=0.000002, 95.02 sec so far
+Iteration 1408782 (of 2111674): max relative diff=0.000001, 100.02 sec so far
+Iteration 1479034 (of 2111674): max relative diff=0.000000, 105.02 sec so far
+
+Steady state detected at iteration 1495671
+
+Iterative method: 1495671 iterations in 189.29 seconds (average 0.000071, setup 83.08)
+
+Value in the initial state: 2.1227050268940978E-52
+
+Time for model checking: 190.932 seconds.
+
+Result: 2.1227050268940978E-52 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
