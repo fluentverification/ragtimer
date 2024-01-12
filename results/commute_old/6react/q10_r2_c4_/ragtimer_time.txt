@@ -1,2 +1,0 @@
-19.65user 1.04system 0:10.95elapsed 188%CPU (0avgtext+0avgdata 192884maxresident)k
-0inputs+31672outputs (40major+342145minor)pagefaults 0swaps
